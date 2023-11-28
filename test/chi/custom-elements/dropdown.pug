@@ -138,6 +138,7 @@ chi-dropdown#dropdown-level-4(position="right-start" reference="#test-nesting-le
       a.chi-dropdown__menu-item(href='#' slot='menu') Menu item 2
       a.chi-dropdown__menu-item(href='#' slot='menu') Menu item 2
 
+button(id="test_button") change items
 
 
 script.
@@ -168,3 +169,24 @@ script.
 
     isReferenceDropdownActive = !isReferenceDropdownActive;
   });
+
+  const dropdown = document.querySelector('.test-dropdown-button-uppercase chi-dropdown')
+  
+  dropdown.focus();
+
+  let counter = 0;
+
+  document.getElementById('test_button').addEventListener('click', function() {
+    counter += 1;
+    document.querySelectorAll('.test-dropdown-button-uppercase chi-dropdown a')
+      .forEach(item => item.remove());
+
+    const items = [0,1,2];
+    items.map(i => { 
+        const el = document.createElement('a');
+        el.innerText = `test item ${i + counter}`;
+        el.setAttribute('slot', 'menu');
+        el.classList.add('chi-dropdown__menu-item')
+        return el
+    }).forEach(el => dropdown.appendChild(el));
+  })

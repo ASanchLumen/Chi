@@ -112,6 +112,8 @@ export class Dropdown {
   @Event({ eventName: 'chiDropdownItemSelected' })
   eventItemSelected: EventEmitter;
 
+  @State() _updatePopover: boolean = false;
+
   @State() _menuHeader: boolean;
   @State() _menuFooter: boolean;
 
@@ -181,7 +183,7 @@ export class Dropdown {
 
   @Method()
   async updatePopper() {
-    this._popper.update();
+    this._updatePopover = !this._updatePopover;
   }
 
   @Listen('keydown', { target: 'parent' })
