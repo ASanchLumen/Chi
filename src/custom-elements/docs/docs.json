@@ -1,13 +1,13 @@
 {
-  "timestamp": "2023-11-27T12:19:51",
+  "timestamp": "2023-11-29T08:23:37",
   "compiler": {
     "name": "@stencil/core",
-    "version": "1.8.9",
-    "typescriptVersion": "3.7.5"
+    "version": "1.13.0",
+    "typescriptVersion": "3.8.3"
   },
   "components": [
     {
-      "filePath": "src/components/alert/alert.tsx",
+      "filePath": "./src/components/alert/alert.tsx",
       "encapsulation": "scoped",
       "tag": "chi-alert",
       "docs": "",
@@ -195,8 +195,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [
         "chi-icon",
@@ -215,7 +217,7 @@
       }
     },
     {
-      "filePath": "src/components/badge/badge.tsx",
+      "filePath": "./src/components/badge/badge.tsx",
       "encapsulation": "scoped",
       "tag": "chi-badge",
       "docs": "",
@@ -305,14 +307,16 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src/components/brand/brand.tsx",
+      "filePath": "./src/components/brand/brand.tsx",
       "encapsulation": "scoped",
       "tag": "chi-brand",
       "docs": "",
@@ -387,14 +391,16 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src/components/button/button.tsx",
+      "filePath": "./src/components/button/button.tsx",
       "encapsulation": "scoped",
       "tag": "chi-button",
       "docs": "",
@@ -596,8 +602,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "chi-alert",
         "chi-carousel",
@@ -626,7 +634,7 @@
       }
     },
     {
-      "filePath": "src/components/carousel/carousel.tsx",
+      "filePath": "./src/components/carousel/carousel.tsx",
       "encapsulation": "scoped",
       "tag": "chi-carousel",
       "docs": "",
@@ -744,8 +752,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [
         "chi-button",
@@ -762,7 +772,7 @@
       }
     },
     {
-      "filePath": "src/components/checkbox/checkbox.tsx",
+      "filePath": "./src/components/checkbox/checkbox.tsx",
       "encapsulation": "scoped",
       "tag": "chi-checkbox",
       "docs": "",
@@ -904,14 +914,16 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src/components/date/date.tsx",
+      "filePath": "./src/components/date/date.tsx",
       "encapsulation": "scoped",
       "tag": "chi-date",
       "readme": "# chi-date\n\n\n",
@@ -1122,8 +1134,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "chi-date-picker"
       ],
@@ -1140,7 +1154,7 @@
       }
     },
     {
-      "filePath": "src/components/date-picker/date-picker.tsx",
+      "filePath": "./src/components/date-picker/date-picker.tsx",
       "encapsulation": "scoped",
       "tag": "chi-date-picker",
       "readme": "# chi-date-picker\n\n\n",
@@ -1468,8 +1482,26 @@
           "docsTags": []
         }
       ],
+      "listeners": [
+        {
+          "event": "chiDateChange",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "chiPopoverShow",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "chiTimeChange",
+          "capture": false,
+          "passive": false
+        }
+      ],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [
         "chi-date",
@@ -1496,7 +1528,7 @@
       }
     },
     {
-      "filePath": "src/components/drawer/drawer.tsx",
+      "filePath": "./src/components/drawer/drawer.tsx",
       "encapsulation": "scoped",
       "tag": "chi-drawer",
       "readme": "# chi-drawer\n\n\n",
@@ -1710,8 +1742,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [
         "chi-icon"
@@ -1723,7 +1757,7 @@
       }
     },
     {
-      "filePath": "src/components/dropdown/dropdown.tsx",
+      "filePath": "./src/components/dropdown/dropdown.tsx",
       "encapsulation": "scoped",
       "tag": "chi-dropdown",
       "docs": "",
@@ -2132,8 +2166,17 @@
           "docsTags": []
         }
       ],
+      "listeners": [
+        {
+          "event": "keydown",
+          "target": "parent",
+          "capture": false,
+          "passive": false
+        }
+      ],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "chi-search-input",
         "chi-tabs"
@@ -2157,7 +2200,7 @@
       }
     },
     {
-      "filePath": "src/components/expansion-panel/expansion-panel.tsx",
+      "filePath": "./src/components/expansion-panel/expansion-panel.tsx",
       "encapsulation": "scoped",
       "tag": "chi-expansion-panel",
       "docs": "",
@@ -2267,14 +2310,16 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src/components/helper-message/helper-message.tsx",
+      "filePath": "./src/components/helper-message/helper-message.tsx",
       "encapsulation": "scoped",
       "tag": "chi-helper-message",
       "docs": "",
@@ -2309,8 +2354,10 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "chi-text-input",
         "chi-textarea"
@@ -2331,7 +2378,7 @@
       }
     },
     {
-      "filePath": "src/components/icon/icon.tsx",
+      "filePath": "./src/components/icon/icon.tsx",
       "encapsulation": "scoped",
       "tag": "chi-icon",
       "readme": "# chi-icon\n\n\n",
@@ -2451,8 +2498,10 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "chi-alert",
         "chi-button",
@@ -2504,7 +2553,7 @@
       }
     },
     {
-      "filePath": "src/components/label/label.tsx",
+      "filePath": "./src/components/label/label.tsx",
       "encapsulation": "scoped",
       "tag": "chi-label",
       "docs": "",
@@ -2581,14 +2630,16 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src/components/link/link.tsx",
+      "filePath": "./src/components/link/link.tsx",
       "encapsulation": "scoped",
       "tag": "chi-link",
       "docs": "",
@@ -2762,14 +2813,16 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src/components/app-layout/app-layout.tsx",
+      "filePath": "./src/components/app-layout/app-layout.tsx",
       "encapsulation": "scoped",
       "tag": "chi-main",
       "docs": "",
@@ -2887,14 +2940,16 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src/components/marketing-icon/marketing-icon.tsx",
+      "filePath": "./src/components/marketing-icon/marketing-icon.tsx",
       "encapsulation": "scoped",
       "tag": "chi-marketing-icon",
       "readme": "# chi-marketing-icon\n\n\n",
@@ -2975,14 +3030,16 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src/components/number-input/number-input.tsx",
+      "filePath": "./src/components/number-input/number-input.tsx",
       "encapsulation": "scoped",
       "tag": "chi-number-input",
       "docs": "",
@@ -3197,8 +3254,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [
         "chi-icon"
@@ -3210,7 +3269,7 @@
       }
     },
     {
-      "filePath": "src/components/pagination/pagination.tsx",
+      "filePath": "./src/components/pagination/pagination.tsx",
       "encapsulation": "scoped",
       "tag": "chi-pagination",
       "docs": "",
@@ -3408,14 +3467,16 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src/components/phone-input/phone-input.tsx",
+      "filePath": "./src/components/phone-input/phone-input.tsx",
       "encapsulation": "scoped",
       "tag": "chi-phone-input",
       "docs": "",
@@ -4467,6 +4528,22 @@
           "required": false
         },
         {
+          "name": "helperMessage",
+          "type": "string",
+          "mutable": false,
+          "attr": "helper-message",
+          "reflectToAttr": true,
+          "docs": "To display an additional helper text message below the Phone input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "inputMask",
           "type": "boolean",
           "mutable": false,
@@ -4605,8 +4682,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [
         "chi-search-input",
@@ -4637,7 +4716,7 @@
       }
     },
     {
-      "filePath": "src/components/popover/popover.tsx",
+      "filePath": "./src/components/popover/popover.tsx",
       "encapsulation": "scoped",
       "tag": "chi-popover",
       "readme": "# chi-popover\n\n\n",
@@ -4956,8 +5035,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "chi-date-picker",
         "chi-time-picker"
@@ -4981,7 +5062,7 @@
       }
     },
     {
-      "filePath": "src/components/progress/progress.tsx",
+      "filePath": "./src/components/progress/progress.tsx",
       "encapsulation": "scoped",
       "tag": "chi-progress",
       "docs": "",
@@ -5041,14 +5122,16 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src/components/search-input/search-input.tsx",
+      "filePath": "./src/components/search-input/search-input.tsx",
       "encapsulation": "scoped",
       "tag": "chi-search-input",
       "docs": "",
@@ -5304,8 +5387,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "chi-phone-input"
       ],
@@ -5328,7 +5413,7 @@
       }
     },
     {
-      "filePath": "src/components/spinner/spinner.tsx",
+      "filePath": "./src/components/spinner/spinner.tsx",
       "encapsulation": "scoped",
       "tag": "chi-spinner",
       "docs": "",
@@ -5387,8 +5472,10 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "chi-alert",
         "chi-text-input"
@@ -5404,7 +5491,7 @@
       }
     },
     {
-      "filePath": "src/components/toggle-switch/toggle-switch.tsx",
+      "filePath": "./src/components/toggle-switch/toggle-switch.tsx",
       "encapsulation": "scoped",
       "tag": "chi-switch",
       "docs": "",
@@ -5523,14 +5610,16 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src/components/tabs/tabs.tsx",
+      "filePath": "./src/components/tabs/tabs.tsx",
       "encapsulation": "scoped",
       "tag": "chi-tabs",
       "docs": "",
@@ -5718,8 +5807,16 @@
           "docsTags": []
         }
       ],
+      "listeners": [
+        {
+          "event": "chiDropdownHide",
+          "capture": false,
+          "passive": false
+        }
+      ],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [
         "chi-dropdown"
@@ -5737,7 +5834,7 @@
       }
     },
     {
-      "filePath": "src/components/text-input/text-input.tsx",
+      "filePath": "./src/components/text-input/text-input.tsx",
       "encapsulation": "scoped",
       "tag": "chi-text-input",
       "docs": "",
@@ -6212,8 +6309,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "chi-phone-input"
       ],
@@ -6237,7 +6336,7 @@
       }
     },
     {
-      "filePath": "src/components/textarea/textarea.tsx",
+      "filePath": "./src/components/textarea/textarea.tsx",
       "encapsulation": "scoped",
       "tag": "chi-textarea",
       "docs": "",
@@ -6595,8 +6694,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [
         "chi-icon",
@@ -6613,7 +6714,7 @@
       }
     },
     {
-      "filePath": "src/components/time/time.tsx",
+      "filePath": "./src/components/time/time.tsx",
       "encapsulation": "scoped",
       "tag": "chi-time",
       "docs": "",
@@ -6704,8 +6805,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "chi-date-picker",
         "chi-time-picker"
@@ -6721,7 +6824,7 @@
       }
     },
     {
-      "filePath": "src/components/time-picker/time-picker.tsx",
+      "filePath": "./src/components/time-picker/time-picker.tsx",
       "encapsulation": "scoped",
       "tag": "chi-time-picker",
       "docs": "",
@@ -6843,8 +6946,21 @@
         }
       ],
       "events": [],
+      "listeners": [
+        {
+          "event": "chiPopoverShow",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "chiTimeChange",
+          "capture": false,
+          "passive": false
+        }
+      ],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [
         "chi-popover",

@@ -112,7 +112,7 @@ export class Dropdown {
   @Event({ eventName: 'chiDropdownItemSelected' })
   eventItemSelected: EventEmitter;
 
-  @State() _updatePopover: boolean = false;
+  @State() _forceRender: boolean = false;
 
   @State() _menuHeader: boolean;
   @State() _menuFooter: boolean;
@@ -181,9 +181,10 @@ export class Dropdown {
     }
   }
 
+
   @Method()
   async updatePopper() {
-    this._updatePopover = !this._updatePopover;
+    this._forceRender = !this._forceRender;
   }
 
   @Listen('keydown', { target: 'parent' })
@@ -456,10 +457,10 @@ export class Dropdown {
         class={DROPDOWN_CLASSES.MENU_ITEMS_WRAPPER}
         ref={ref => (this._dropdownMenuItemsWrapper = ref)}
       >
-        <slot name="menu" />
+        <slot name="menu" onSlotchange={this.updatePopper.bind(this)} />
       </div>
     ) : (
-      <slot name="menu" />
+      <slot name="menu" onSlotchange={this.updatePopper.bind(this)} />
     );
 
     const menu = (

@@ -61,7 +61,7 @@ export class Time {
   excludedMinutesArray = [];
   excludedSecondsArray = [];
 
-  @Watch('excluded-hours')
+  @Watch('_excludedHours')
   updateExcludedHours() {
     if (this._excludedHours) {
       this._excludedHours.split(',').map(time => {
@@ -70,7 +70,7 @@ export class Time {
     }
   }
 
-  @Watch('excluded-minutes')
+  @Watch('_excludedMinutes')
   updateExcludedMinutes() {
     if (this._excludedMinutes) {
       this._excludedMinutes.split(',').map(time => {
@@ -79,7 +79,7 @@ export class Time {
     }
   }
 
-  @Watch('excluded-seconds')
+  @Watch('_excludedSeconds')
   updateExcludedSeconds() {
     if (this._excludedSeconds) {
       this._excludedSeconds.split(',').map(time => {

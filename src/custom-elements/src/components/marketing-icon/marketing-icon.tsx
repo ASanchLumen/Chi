@@ -61,7 +61,7 @@ export class MarketingIcon {
     }
   }
 
-  @Watch('mode')
+  // @Watch('mode')
   validateMode(newValue: ChiMarketingIconModes) {
     const validValues = MARKETING_ICON_MODES.join(', ');
 
@@ -116,8 +116,8 @@ export class MarketingIcon {
         }`}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
+          // xmlns="http://www.w3.org/2000/svg"
+          // xmlnsXlink="http://www.w3.org/1999/xlink"
           aria-hidden="true"
         >
           <use xlinkHref={`#icon-${this.variant}-${this.icon}`} />

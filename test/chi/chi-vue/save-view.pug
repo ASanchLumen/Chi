@@ -33,6 +33,7 @@ script(nomodule='' src='../../js/ce/ux-chi-ce/ux-chi-ce.js')
     ) {{item}}
 
   chi-button.-mt--3(@click="changeItems") Change items
+  chi-button.-mt--3(@click="updatePopper") Update popper
 
 script.
   new Vue({
@@ -65,6 +66,10 @@ script.
       changeItems() {
         this.reportedList = [...this.reportedList, "Test element"]
         console.log('items', this.reportedList)
+        //- const dropdown = this.$el.querySelector('#dropdown-list')
+        //- dropdown.updatePopper();
+     },
+      updatePopper() {
         const dropdown = this.$el.querySelector('#dropdown-list')
         dropdown.updatePopper();
      }

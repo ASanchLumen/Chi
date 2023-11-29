@@ -94,8 +94,8 @@ export class Icon {
     const extraClass = this.extraClass && this.extraClass;
     return <div class={`chi-icon ${this.getClass()} ${extraClass}`}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
+        // xmlns="http://www.w3.org/2000/svg"
+        // xmlnsXlink="http://www.w3.org/1999/xlink"
         aria-hidden="true"
       >
         <use xlinkHref={'#icon-' + this.icon}/>

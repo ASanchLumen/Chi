@@ -26,7 +26,7 @@
     "popper.js": "1.15.0"
   },
   "devDependencies": {
-    "@stencil/core": "1.8.9",
+    "@stencil/core": "1.13.0",
     "@stencil/sass": "1.0.1",
     "tslint": "5.16.0"
   },
