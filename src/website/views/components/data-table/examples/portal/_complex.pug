@@ -82,14 +82,14 @@ h3 Complex
                 <ExamplePopover :name="payload.name" :id="payload.id" />
               </template>
               <template v-slot:toolbar>
-                <ChiToolbar>
+                <ChiDataTableToolbar>
                   <template v-slot:start></template>
                   <template v-slot:end>
                     <chi-button @chiClick="printTable" variant="flat" type="icon" aria-label="Print data table complex example">
                       <chi-icon icon="print"></chi-icon>
                     </chi-button>
                   </template>
-                </ChiToolbar>
+                </ChiDataTableToolbar>
               </template>
               <template v-slot:bulk-actions>
                 <div class="chi-bulk-actions__buttons">
