@@ -11,6 +11,8 @@
 
   <!--  PRODUCTION: no need to test style changes -->
   <link rel="stylesheet" href="https://assets.ctl.io/chi/5.43.0/chi.css">
+  <script src="https://assets.ctl.io/chi/5.43.0/js/chi.js" integrity="sha256-QrqSLxUsQwxddEI9YvRqsMWwEqkADI9P5z9mBHfqaFQ=" crossorigin="anonymous"></script>
+
   <link rel="icon" href="assets/favicon.ico">
 
 
@@ -108,7 +110,7 @@
     },
     "expansion-panel": {
       customHTML: `
-        <chi-expansion-panel step="1" title="Panel title" state="active">
+        <chi-expansion-panel step="1" title="Panel title" state="active" state-icon>
           <div slot="active">
             <div class="chi-epanel__subtitle">
               Optional subtitle
@@ -123,9 +125,21 @@
             </chi-button>
           </div>
         </chi-expansion-panel>
-        <chi-expansion-panel step="2" title="Panel title"></chi-expansion-panel>
-        <chi-expansion-panel step="3" title="Panel title"></chi-expansion-panel>
-        <chi-expansion-panel step="4" title="Panel title"></chi-expansion-panel>
+        <chi-expansion-panel step="2" title="Panel title">
+          <p class="chi-epanel__text">
+            Content in expansion panel (e.g. a form to select a product package)
+          </p>
+        </chi-expansion-panel>
+        <chi-expansion-panel step="3" title="Panel title">
+          <p class="chi-epanel__text">
+            Content in expansion panel (e.g. a form to select a product package)
+          </p>
+        </chi-expansion-panel>
+        <chi-expansion-panel step="4" title="Panel title">
+          <p class="chi-epanel__text">
+            Content in expansion panel (e.g. a form to select a product package)
+          </p>
+        </chi-expansion-panel>
       `
     },
     "helper-message": {
