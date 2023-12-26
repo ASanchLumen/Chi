@@ -412,14 +412,13 @@ export class Dropdown {
     const menuItems = this._getDropdownMenuItems();
 
     document.body.addEventListener('click', this.handlerClick.bind(this));
+    document.addEventListener('keydown', this.handleKeyDown.bind(this));
 
     if (this.preventItemSelected) return;
 
     menuItems.forEach((item: HTMLElement) => {
       item.addEventListener('click', this.handlerSelectedMenuItem.bind(this));
     });
-
-    document.body.addEventListener('keydown', this.handleKeyDown.bind(this));
   }
 
   _removeEventListeners() {
