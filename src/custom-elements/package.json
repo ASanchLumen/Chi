@@ -15,7 +15,8 @@
     "start.es5": "stencil build --dev --watch --serve --es5",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll"
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "prettier": "prettier --write src/**/*.tsx"
   },
   "dependencies": {
     "all-country-data": "1.0.3",
@@ -28,6 +29,7 @@
     "@stencil/sass": "3.0.7",
     "@types/jest": "^29.5.11",
     "@types/node": "^20.10.5",
+    "prettier": "^3.1.1",
     "tslint": "5.16.0"
   },
   "license": "MIT"
