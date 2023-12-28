@@ -58,7 +58,7 @@ addheader_docs() {
 
 start() {
     cd /chi
-    unbuffer npm run start 2>&1 | addheader_chi &
+    unbuffer npm run start 2>&1 | addheader_chi
 
     # cd /chi/src/documentation
     # echo -e "Documentation"

@@ -9,6 +9,7 @@ export const config: Config = {
   devServer: {
     openBrowser: IS_DEV
   },
+  buildEs5: true,
   sourceMap: false,
   plugins: [
     sass(
