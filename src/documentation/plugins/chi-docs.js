@@ -2,8 +2,9 @@ import Vue from 'vue';
 import axios from 'axios';
 
 async function getDocs() {
+  // TODO: this needs to account for prod...
   return await axios
-    .get(`${process.env.BASE_URL}js/ce/docs.json`)
+    .get(`${process.env.BASE_URL}docs.json`)
     .then((response) => {
       return response.data;
     })

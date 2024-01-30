@@ -1,3 +1,4 @@
+import { defineNuxtConfig } from '@nuxt/bridge';
 import {
   BASE_URL,
   DOCS_ENV,
@@ -8,13 +9,19 @@ import {
   DEFAULT_DOCS_CSS,
 } from './constants/constants';
 
-const CopyPlugin = require('copy-webpack-plugin');
+import CopyPlugin from 'copy-webpack-plugin';
 
 const CHI_ASSETS_SOURCE_URL = DOCS_ENV === 'development' ? `${TEMP_DEVELOPMENT_FALLBACK_URL}/` : BASE_URL;
 
-export default {
+export default defineNuxtConfig({
+  bridge: {
+    typescript: true,
+    capi: true,
+    nitro: false, // If migration to Nitro is complete, set to true
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    titleTemplate: 'Chi - %s',
     htmlAttrs: {
       lang: 'en',
       class: 'chi',
@@ -78,7 +85,6 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
     '@nuxt/image',
   ],
 
@@ -106,6 +112,10 @@ export default {
               ignore: ['.DS_Store'],
             },
           },
+          // DOCS_ENV === 'development' && {
+          //   from: path.join(__dirname, '..', '..', 'dist', 'js', 'ce', 'docs.json'),
+          //   to: path.join(__dirname, 'assets')
+          // }
         ],
       }),
     ],
@@ -148,4 +158,4 @@ export default {
       }),
     ],
   },
-};
+});

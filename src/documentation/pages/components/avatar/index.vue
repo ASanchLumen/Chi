@@ -31,6 +31,9 @@ Vue.config.ignoredElements = ['chi-grid', 'chi-avatar'];
     return {
       pageTabs: standardComponentPageTabs
     };
+  },
+  head: {
+    title: 'Avatar'
   }
 })
 export default class Avatar extends Vue {}
