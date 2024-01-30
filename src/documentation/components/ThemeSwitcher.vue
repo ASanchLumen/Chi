@@ -10,7 +10,7 @@
         >
         <div class="-d--flex -w--100">
           <div class="-align-items--center -mr--1">
-            <nuxt-img
+            <NuxtImg
               class="-favicon"
               width="16"
               height="16"
@@ -33,7 +33,7 @@
           'chi-dropdown__menu-item'
         ]"
         @click="setTheme('centurylink')"
-        ><nuxt-img
+        ><NuxtImg
           class="-mr--1"
           width="16"
           height="16"
@@ -47,7 +47,7 @@
           'chi-dropdown__menu-item'
         ]"
         @click="setTheme('lumen')"
-        ><nuxt-img
+        ><NuxtImg
           class="-mr--1"
           width="16"
           height="16"
@@ -61,7 +61,7 @@
           'chi-dropdown__menu-item'
         ]"
         @click="setTheme('portal')"
-        ><nuxt-img
+        ><NuxtImg
           class="-mr--1"
           width="16"
           height="16"

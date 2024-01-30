@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   bridge: {
     typescript: true,
     capi: true,
-    nitro: false, // If migration to Nitro is complete, set to true
+    nitro: true,
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -85,7 +85,6 @@ export default defineNuxtConfig({
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -98,6 +97,7 @@ export default defineNuxtConfig({
       },
     ],
     '@nuxtjs/axios',
+    '@nuxt/image',
   ],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
