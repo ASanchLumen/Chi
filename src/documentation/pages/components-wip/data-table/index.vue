@@ -23,16 +23,16 @@ import { standardComponentPageTabs } from '../../../constants/constants';
     Accessibility,
     Examples,
     PageContentTabs,
-    Properties
+    Properties,
   },
   data: () => {
     return {
-      pageTabs: standardComponentPageTabs
+      pageTabs: standardComponentPageTabs,
     };
   },
   layout() {
     return 'wide';
-  }
+  },
 })
 export default class DataTable extends Vue {}
 </script>

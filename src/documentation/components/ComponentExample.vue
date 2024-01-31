@@ -1,26 +1,10 @@
 <template>
   <div class="example-wrapper">
-    <TitleAnchor
-      v-if="title"
-      :id="id"
-      :title="title"
-      :titleSize="titleSize"
-      :showTitle="showTitle"
-    />
+    <TitleAnchor v-if="title" :id="id" :title="title" :titleSize="titleSize" :showTitle="showTitle" />
     <slot name="example-description"></slot>
     <div v-if="headTabs">
-      <ul
-        :id="'head-tabs-' + id"
-        :aria-label="'head-tabs-' + id"
-        class="chi-tabs -animated"
-        role="tablist"
-      >
-        <li
-          :class="[headTab.active ? '-active' : '']"
-          :key="headTab.id"
-          v-for="headTab in headTabs"
-          role="tab"
-        >
+      <ul :id="'head-tabs-' + id" :aria-label="'head-tabs-' + id" class="chi-tabs -animated" role="tablist">
+        <li :class="[headTab.active ? '-active' : '']" :key="headTab.id" v-for="headTab in headTabs" role="tab">
           <a
             :href="'#head-tabs-' + id + '-' + headTab.id"
             :aria-selected="headTab.active ? true : false"
@@ -42,24 +26,15 @@
             <slot name="example"></slot>
           </div>
           <div class="example-tabs -pl--2">
-            <ul
-              :id="'code-snippet-tabs-' + id + '-' + headTab.id"
-              class="chi-tabs -animated"
-              role="tabs"
-            >
+            <ul :id="'code-snippet-tabs-' + id + '-' + headTab.id" class="chi-tabs -animated" role="tabs">
               <li
-                :class="[
-                  tab.active ? '-active' : '',
-                  tab.disabled ? '-disabled' : ''
-                ]"
+                :class="[tab.active ? '-active' : '', tab.disabled ? '-disabled' : '']"
                 :key="tab.id"
                 v-for="tab in tabs"
               >
                 <a
                   :href="'#example-' + id + '-' + headTab.id + '-' + tab.id"
-                  :aria-controls="
-                    '#example-' + id + '-' + headTab.id + '-' + tab.id
-                  "
+                  :aria-controls="'#example-' + id + '-' + headTab.id + '-' + tab.id"
                   :aria-selected="tab.active ? true : false"
                   role="tab"
                 >
@@ -85,25 +60,14 @@
         <slot name="example"></slot>
       </div>
       <div v-if="showSnippetTabs" class="example-tabs -pl--2">
-        <ul
-          class="chi-tabs -animated"
-          :id="'code-snippet-tabs-' + id"
-          role="tabs"
-        >
-          <li
-            :class="[
-              tab.active ? '-active' : '',
-              tab.disabled ? '-disabled' : ''
-            ]"
-            v-for="tab in tabs"
-            :key="tab.id"
-          >
+        <ul class="chi-tabs -animated" :id="'code-snippet-tabs-' + id" role="tabs">
+          <li :class="[tab.active ? '-active' : '', tab.disabled ? '-disabled' : '']" v-for="tab in tabs" :key="tab.id">
             <a
               role="tab"
               :aria-controls="'#example-' + id + '-' + tab.id"
               :aria-selected="tab.active ? true : false"
               :href="'#example-' + id + '-' + tab.id"
-              :tabindex="tab.disabled ? -1 : null"
+              :tabindex="tab.disabled ? -1 : undefined"
             >
               {{ tab.label }}
             </a>
@@ -111,10 +75,7 @@
         </ul>
       </div>
       <div
-        :class="[
-          showSnippetTabs ? 'chi-tabs-panel' : '',
-          tab.active ? '-active' : ''
-        ]"
+        :class="[showSnippetTabs ? 'chi-tabs-panel' : '', tab.active ? '-active' : '']"
         v-for="tab in tabs"
         :key="tab.id"
         :id="'example-' + id + '-' + tab.id"
@@ -122,10 +83,7 @@
         role="tabpanel"
       >
         <div class="clipboard">
-          <button
-            class="clipboard__button chi-button -xs -flat"
-            @click="() => copy(`tab-panel-${tab.id}`)"
-          >
+          <button class="clipboard__button chi-button -xs -flat" @click="() => copy(`tab-panel-${tab.id}`)">
             Copy
           </button>
         </div>
@@ -144,7 +102,7 @@ pre code.hljs {
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { ITabs, IHeadTabs } from '../models/models';
+import { type ITabs, type IHeadTabs } from '../models/models';
 import { COMPONENT_EXAMPLE_EVENTS } from '../constants/constants';
 import { SR_ONLY } from '../../chi-vue/src/constants/classes';
 
@@ -160,35 +118,7 @@ Vue.config.warnHandler = (msg: string, _vm: Vue, trace: string) => {
   }
 };
 
-@Component({
-  methods: {
-    copy(id: string) {
-      const tabElement = (this.$refs[id] as HTMLElement[])[0];
-
-      if (tabElement) {
-        const codeElement = (tabElement as HTMLElement).querySelector('code');
-        const codeSnippet = codeElement?.textContent;
-
-        if (codeSnippet || typeof codeSnippet === 'string') {
-          if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard
-              .writeText(codeSnippet);
-          } else {
-            const textArea = document.createElement("textarea");
-
-            textArea.value = codeSnippet as string;
-            textArea.classList.add(SR_ONLY);
-            tabElement.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            document.execCommand('copy');
-            textArea.remove();
-          }
-        }
-      }
-    }
-  }
-})
+@Component({})
 export default class ComponentExample extends Vue {
   @Prop() id?: string;
   @Prop() title?: string;
@@ -227,5 +157,31 @@ export default class ComponentExample extends Vue {
   emitHeadTabsChange(tab: IHeadTabs) {
     this.$emit(COMPONENT_EXAMPLE_EVENTS.CHI_HEAD_TABS_CHANGE, tab);
   }
+
+  copy(id: string) {
+      const tabElement = (this.$refs[id] as HTMLElement[])[0];
+
+      if (tabElement) {
+        const codeElement = (tabElement as HTMLElement).querySelector('code');
+        const codeSnippet = codeElement?.textContent;
+
+        if (codeSnippet || typeof codeSnippet === 'string') {
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard
+              .writeText(codeSnippet);
+          } else {
+            const textArea = document.createElement("textarea");
+
+            textArea.value = codeSnippet as string;
+            textArea.classList.add(SR_ONLY);
+            tabElement.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            textArea.remove();
+          }
+        }
+      }
+    }
 }
 </script>

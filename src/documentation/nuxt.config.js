@@ -9,7 +9,7 @@ import {
   DEFAULT_DOCS_CSS,
 } from './constants/constants';
 
-import CopyPlugin from 'copy-webpack-plugin';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 const CHI_ASSETS_SOURCE_URL = DOCS_ENV === 'development' ? `${TEMP_DEVELOPMENT_FALLBACK_URL}/` : BASE_URL;
 
@@ -18,7 +18,10 @@ export default defineNuxtConfig({
     typescript: true,
     capi: true,
     nitro: true,
+    vite: true,
   },
+  // Config for vite
+  vite: {},
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: 'Chi - %s',
@@ -77,15 +80,14 @@ export default defineNuxtConfig({
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['./plugins/chi-docs.js', './plugins/chi-vue-components.js'],
+  plugins: [
+    './plugins/chi-docs.js',
+    './plugins/chi-vue-components.js',
+    // { src: '~/plugins/client-only.js', mode: 'client' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/typescript
-  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -103,27 +105,28 @@ export default defineNuxtConfig({
   build: {
     postcss: false,
     plugins: [
-      new CopyPlugin({
-        patterns: [
-          {
-            from: '@centurylink/chi-vue/dist',
-            context: 'node_modules',
-            globOptions: {
-              ignore: ['.DS_Store'],
-            },
-          },
-          // DOCS_ENV === 'development' && {
-          //   from: path.join(__dirname, '..', '..', 'dist', 'js', 'ce', 'docs.json'),
-          //   to: path.join(__dirname, 'assets')
-          // }
-        ],
-      }),
+      // viteStaticCopy({
+      //   targets: [
+      //     {
+      //       src: '@centurylink/chi-vue/dist',
+      //       dest: 'node_modules/@centurylink/chi-vue/dist',
+      //     },
+      //     DOCS_ENV === 'development' && {
+      //       from: path.join(__dirname, '..', '..', 'dist', 'js', 'ce', 'docs.json'),
+      //       to: path.join(__dirname, 'assets')
+      //     }
+      //   ],
+      // }),
     ],
   },
   router: {
+    // changes to app.baseURL
     base: BASE_URL,
     linkExactActiveClass: '-active',
   },
+  // app: {
+  //   baseURL: BASE_URL,
+  // },
   target: 'static',
   env: {
     BASE_URL,

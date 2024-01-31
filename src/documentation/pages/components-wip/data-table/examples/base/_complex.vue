@@ -13,7 +13,7 @@
           template(v-slot:start)
           template(v-slot:end)
             chi-button(@click="printTable" variant="flat" type="icon" aria-label="Print data table complex example")
-              chi-icon(icon="print") 
+              chi-icon(icon="print")
       template(#bulkActions)
         .chi-bulk-actions__buttons
           .chi-bulk-actions__buttons-mobile.-z--40

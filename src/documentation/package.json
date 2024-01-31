@@ -20,7 +20,6 @@
     "@nuxt/image": "^1.3.0",
     "@nuxt/types": "2.15.8",
     "@nuxtjs/axios": "^5.13.6",
-    "copy-webpack-plugin": "6.4.1",
     "core-js": "^3.35.1",
     "highlight.js": "^11.9.0",
     "nuxi": "^3.10.0",
@@ -29,10 +28,12 @@
     "pug": "3.0.2",
     "pug-plain-loader": "^1.1.0",
     "typescript": "^5.3.3",
+    "vite-plugin-static-copy": "^1.0.1",
     "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^9.1.2"
   },
   "overrides": {
-    "vue-property-decorator": "^9.1.2"
+    "vue-property-decorator": "^9.1.2",
+    "consola": "3.2.3"
   }
 }

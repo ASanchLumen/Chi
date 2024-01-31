@@ -18,8 +18,8 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { Themes } from '../models/models';
-import { ITabs } from '../models/models';
+import { type Themes } from '../models/models';
+import { type ITabs } from '../models/models';
 
 declare const chi: any;
 

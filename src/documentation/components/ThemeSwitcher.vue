@@ -74,7 +74,7 @@
 </template>
 
 <script lang="ts">
-import { Themes } from '../models/models';
+import { type Themes } from '../models/models';
 import { THEMES } from '../constants/constants';
 import { Component, Vue } from 'vue-property-decorator';
 import { BASE_URL, TEMP_DEVELOPMENT_FALLBACK_URL } from '../constants/constants';

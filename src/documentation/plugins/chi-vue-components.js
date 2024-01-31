@@ -1,5 +1,6 @@
-import Vue from 'vue';
 import { library } from '@centurylink/chi-vue';
+
+console.log('loading chi-vue-components', library);
 
 const components = {
   ChiPagination: library.components['ChiPagination'],
@@ -16,8 +17,24 @@ const components = {
   ChiExpansionPanel: library.components['ChiExpansionPanel'],
 };
 
-Object.entries(components).forEach(([name, component]) => {
-  Vue.component(name, component);
-});
 
-Vue.use(library);
+export default defineNuxtPlugin(nuxtApp => {
+    // debugger
+    console.log('installing chi-vue plugin')
+    // nuxtApp.vueApp.use(
+    //     ChiVueLibrary.ChiVue,
+    //     {
+    //         chiOptions: {
+    //             theme: 'portal',
+    //             forceVersion: '5.39.0'
+    //         }
+    //     }
+    // )
+    Object.entries(components).forEach(([name, component]) => {
+        console.debug(`Registering ${name}`)
+        nuxtApp.vueApp.component(
+            name,
+            component
+        )
+    })
+})
