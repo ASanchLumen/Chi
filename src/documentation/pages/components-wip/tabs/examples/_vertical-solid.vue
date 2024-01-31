@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { TabsListInterface } from '~/models/models';
+import { type TabsListInterface } from '~/models/models';
 
 @Component({
   data: () => {

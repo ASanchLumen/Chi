@@ -1,7 +1,5 @@
 import { library } from '@centurylink/chi-vue';
 
-console.log('loading chi-vue-components', library);
-
 const components = {
   ChiPagination: library.components['ChiPagination'],
   ChiDataTableToolbar: library.components['ChiDataTableToolbar'],
@@ -20,21 +18,14 @@ const components = {
 
 export default defineNuxtPlugin(nuxtApp => {
     // debugger
-    console.log('installing chi-vue plugin')
-    // nuxtApp.vueApp.use(
-    //     ChiVueLibrary.ChiVue,
-    //     {
-    //         chiOptions: {
-    //             theme: 'portal',
-    //             forceVersion: '5.39.0'
-    //         }
-    //     }
-    // )
-    Object.entries(components).forEach(([name, component]) => {
-        console.debug(`Registering ${name}`)
-        nuxtApp.vueApp.component(
-            name,
-            component
-        )
-    })
+    // console.log('installing chi-vue plugin')
+
+    // Object.entries(components).forEach(([name, component]) => {
+    //   const newName = ['ChiVue', ...name.split('Chi')].join('');
+    //   console.debug(`Registering ${name} as ${newName}`)
+    //   nuxtApp.vueApp.component(
+    //       newName,
+    //       component
+    //   )
+    // })
 })

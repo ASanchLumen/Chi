@@ -76,7 +76,7 @@ export const SECTION_URLS = {
   components: `components`,
   foundations: `foundations`,
   templates: `templates`
-} 
+}
 
 export const NAVIGATION_COMPONENTS_ITEMS = [
   {
@@ -216,7 +216,7 @@ export const NAVIGATION_COMPONENTS_ITEMS = [
     source: 'pug'
   },
   {
-    href: `components/pagination`,
+    to: `components/pagination`,
     label: 'Pagination',
     source: 'pug'
   },

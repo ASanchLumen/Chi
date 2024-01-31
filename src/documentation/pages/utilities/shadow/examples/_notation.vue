@@ -6,7 +6,7 @@
     <TitleAnchor title="{size}" id="size" />
     ul.-text
       li(v-for="size in sizes") <code>{{ size.class }}</code> - use to set <code>box-shadow</code> to <code>{{ size.value }}</code>
-    
+
     <TitleAnchor title="{breakpoint}" id="breakpoint" />
     p.-text
       | Optionally, include -{breakpoint} to apply the utility behaviour to some breakpoints. As a mobile-first library,
@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { INotation } from '~/models/models';
+import { type INotation } from '~/models/models';
 
 @Component({})
 export default class Notation extends Vue {

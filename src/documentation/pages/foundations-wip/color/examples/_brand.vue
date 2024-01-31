@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { IThemes } from '~/models/models';
+import { type IThemes } from '~/models/models';
 import { colors } from '~/fixtures/fixtures';
 
 @Component({})

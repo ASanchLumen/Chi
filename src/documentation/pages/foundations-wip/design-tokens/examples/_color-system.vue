@@ -7,7 +7,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { colorKits, designTokens3Columns } from '~/fixtures/fixtures';
-import { ITableColumn, ITableContent } from '~/models/models';
+import { type ITableColumn, type ITableContent } from '~/models/models';
 
 @Component({
   data: () => {

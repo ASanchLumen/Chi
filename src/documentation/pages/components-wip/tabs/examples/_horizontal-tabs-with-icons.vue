@@ -31,7 +31,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { IHeadTabs } from '~/models/models';
+import { type TabsListInterface } from '~/models/models';
 
 @Component({
   data: () => {

@@ -8,7 +8,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { generateBasicUtilitiesColorContent } from '~/utilities/utilities';
-import { ITableColumn, ITableContent } from '~/models/models';
+import { type ITableColumn, type ITableContent } from '~/models/models';
 import { COLORS } from '~/constants/constants';
 
 @Component({})

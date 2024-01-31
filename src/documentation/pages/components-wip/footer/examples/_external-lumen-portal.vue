@@ -106,7 +106,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { ILanguage, ILink } from '../../.././../models/models';
+import { type ILanguage, type ILink } from '../../.././../models/models';
 import { EXTERNAL_CONTENTS, FOOTER_LANGUAGE_DROPDOWN_ITEMS, FOOTER_LINKS } from '../../../../fixtures/fixtures';
 
 declare const chi: any;
@@ -147,7 +147,7 @@ export default class ExternalLumenPortal extends Vue {
               <a href="${link.href}"${link.target ? ' target="' + link.target + '"' : ''}${link.class ? ' class="' + link.class + '"' : ''}>${link.title}</a>
             </li>`;
     });
-    
+
     this.$data.externalContents.socialLinks.forEach((link: ILink) => {
         socialLinks += `
               <a href="${link.href}" aria-label="${link.ariaLabel}" rel="noopener" target="_blank">

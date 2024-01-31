@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { ITableColumn, ITableContent } from '~/models/models';
+import { type ITableColumn, type ITableContent } from '~/models/models';
 import { defaultColumns } from "~/fixtures/fixtures";
 
 const sizes = ['sm', 'md', 'lg', 'xl']

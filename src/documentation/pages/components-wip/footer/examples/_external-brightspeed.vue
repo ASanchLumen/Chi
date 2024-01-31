@@ -64,7 +64,7 @@
                   a(:href="item.href" :target="item.target" :class="item.class") {{item.title}}
               .chi-footer__copyright
                 | &copy; 2023 Lumen Technologies. All Rights Reserved.
-                | Lumen is a registered trademark in the United States, EU and certain other countries. 
+                | Lumen is a registered trademark in the United States, EU and certain other countries.
     <pre class="language-html" slot="code-webcomponent">
       <code v-highlight="$data.codeSnippets.webcomponent" class="html"></code>
     </pre>
@@ -79,7 +79,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { ILanguage, ILink } from '../../../../models/models';
+import { type ILanguage, type ILink } from '../../../../models/models';
 import { EXTERNAL_CONTENTS, FOOTER_LANGUAGE_DROPDOWN_ITEMS, FOOTER_LINKS } from '../../../../fixtures/fixtures';
 
 declare const chi: any;
@@ -124,7 +124,7 @@ export default class ExternalBrightspeed extends Vue {
               <a href="${link.href}"${link.target ? ' target="' + link.target + '"' : ''}${link.class ? ' class="' + link.class + '"' : ''}>${link.title}</a>
             </li>`;
     });
-    
+
     this.$data.externalContents.socialLinks.forEach((link: ILink) => {
         socialLinks += `
               <a href="${link.href}" aria-label="${link.ariaLabel}" rel="noopener" target="_blank">

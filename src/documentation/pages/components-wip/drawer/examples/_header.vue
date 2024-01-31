@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { IHeadTabs } from '../../../../models/models';
+import { type IHeadTabs } from '../../../../models/models';
 
 @Component({
   data: () => {

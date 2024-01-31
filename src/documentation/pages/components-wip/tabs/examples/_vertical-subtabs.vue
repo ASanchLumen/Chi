@@ -32,7 +32,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { IHeadTabs } from '~/models/models';
 
 @Component({})
 

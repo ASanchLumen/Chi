@@ -12,7 +12,7 @@
         <PageJumperLumenCenturyLink />
         <Compact />
         <AdditionalSizesLumenCenturyLink />
-        
+
       div(v-else)
         <Portal />
     </client-only>
@@ -43,7 +43,7 @@ import Portal from './_portal/index.vue';
     Compact,
     AdditionalSizesLumenCenturyLink,
     Portal
-  }
+  },
 })
 export default class Examples extends Vue {}
 </script>

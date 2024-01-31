@@ -22,7 +22,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { svgLogos } from '~/fixtures/fixtures';
-import { IThemes } from '~/models/models';
+import { type IThemes } from '~/models/models';
 
 @Component({
   data: () => {

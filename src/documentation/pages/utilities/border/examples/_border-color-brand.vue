@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { IBorderUtility } from '~/models/models';
+import { type IBorderUtility } from '~/models/models';
 
 @Component({
   data: () => {

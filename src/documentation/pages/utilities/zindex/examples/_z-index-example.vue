@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { IZIndex } from '~/models/models';
+import { type IZIndex } from '~/models/models';
 import { zIndexValues } from '~/fixtures/fixtures';
 
 @Component({
@@ -46,7 +46,7 @@ export default class ZIndexExample extends Vue {
     const newIndexes = zIndexValues.filter(({color}) => color !== '').map(({ key, color }) => {
       return (`  <div class="-position--absolute -z--${key} ${color}">-z--${key}</div>`)
     }).join('\n');
-    
+
       return (
         `<div class="-position--relative">
 ${newIndexes}

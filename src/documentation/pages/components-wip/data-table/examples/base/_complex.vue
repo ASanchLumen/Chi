@@ -1,6 +1,6 @@
 <template lang="pug">
   <ComponentExample title="Complex" id="complex-data-table" :tabs="exampleTabs">
-    chi-data-table(:config="config", :data="table", ref='dataTableComplex', slot="example")
+    ChiDataTable(:config="config", :data="table", ref='dataTableComplex', slot="example")
       template(#status="payload")
         i(:class="`chi-icon icon-${payload.icon} -icon--${payload.color}`" aria-hidden="true")
         span.-text--truncate(style="padding-left: 0.5rem;") {{ payload.status }}

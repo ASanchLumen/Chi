@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     typescript: true,
     capi: true,
     nitro: true,
-    vite: true,
+    vite: false,
   },
   // Config for vite
   vite: {},
