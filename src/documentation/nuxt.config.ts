@@ -124,6 +124,13 @@ export default defineNuxtConfig({
       ]
     }
   },
+  // imports css https://github.com/nuxt/nuxt/issues/12215
+  // error with chivue
+  // build: {
+  //   transpile: [
+  //     '@centurylink/chi-vue'
+  //   ]
+  // },
   modules: ['@nuxt/image', 'nuxt3-class-component'],
   // dev server config https://nitro.unjs.io/config
   typescript: {

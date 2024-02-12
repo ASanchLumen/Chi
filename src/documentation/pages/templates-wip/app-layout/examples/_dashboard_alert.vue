@@ -1,15 +1,7 @@
 <template lang="pug">
-<ComponentExample title="Dashboard with header background" id="dashboard" :tabs="exampleTabs" padding="0">
+<ComponentExample title="Dashboard with page-level alert" id="dashboard_with_alert" :tabs="exampleTabs" padding="0">
   template(#example)
-    chi-main(title='Page title' format='fixed-width' header-background)
-      template(#help-icon)
-        chi-button#dashboard__help-button(type='icon' size='sm' variant='flat' alternative-text='Help' @click="togglePopover")
-          chi-icon(icon='circle-question-outline')
-      template(#help-icon)
-        chi-popover(ref="popover" position='right-start' variant='text' arrow reference='#dashboard__help-button')
-          | Popover content.
-      template(#header-actions)
-        chi-button(color='primary' size='sm') Button
+    chi-main(title='Page Title' format='fixed-width' header-background)
       .chi-css-grid.-grid-rows--176
         .chi-css-col.-col-lg--6.-col-xl--4.-row--2
           .chi-card.-highlight.-widget.-h--100
@@ -88,15 +80,28 @@
               .chi-card__title Widget
               chi-link(size='md' href='#' cta='cta') View
             .chi-card__content Content here
-    template(#footer)
-      div(v-html="footers.lumen" v-if="['lumen', 'portal'].includes(selectedTheme)")
-      div(v-html="footers.centurylink" v-if="selectedTheme === 'centurylink'")
-      div(v-html="footers.brightspeed" v-if="selectedTheme === 'brightspeed'")
+            template(#page-alert)
+        chi-alert(color='info' icon='circle-info' closable) This is a page level info alert
+      template(#help-icon)
+        chi-button#dashboard-alert__help-button(type='icon' size='sm' variant='flat' alternative-text='Help' @click="togglePopover")
+          chi-icon(icon='circle-question-outline')
+      template(#help-icon)
+        chi-popover(ref="popover" position='right-start' variant='text' arrow reference='#dashboard-alert__help-button')
+          | Popover content.
+      template(#header-actions)
+        chi-button(color='primary' size='sm') Button
+      template(#footer)
+        template(v-if="['lumen', 'portal'].includes(selectedTheme)")
+          div(v-html="footers.lumen")
+        template(v-if="selectedTheme === 'centurylink'")
+          div(v-html="footers.centurylink")
+        template(v-if="selectedTheme === 'brightspeed'")
+          div(v-html="footers.brightspeed")
 
-template(#code-webcomponent)
-  Copy(lang="html" :code="codeSnippets.webcomponent" class="html")
-template(#code-htmlblueprint)
-  Copy(lang="html" :code="codeSnippets.htmlblueprint" class="html")
+  template(#code-webcomponent)
+    Copy(lang="html" :code="codeSnippets.webcomponent" class="html")
+  template(#code-htmlblueprint)
+    Copy(lang="html" :code="codeSnippets.htmlblueprint" class="html")
 </ComponentExample>
 </template>
 
@@ -110,9 +115,9 @@ import {
 declare const chi: any;
 
 @NuxtComponent({})
-export default class Dashboard extends Vue {
+export default class DashboardAlert extends Vue {
   selectedTheme = useSelectedTheme();
-  footers = generateAllExampleFooters('dashboard-language-dropdown-button');
+  footers = generateAllExampleFooters('dashboard-alert-language-dropdown-button');
   exampleTabs = [
     {
       active: true,
@@ -130,7 +135,7 @@ export default class Dashboard extends Vue {
   };
 
   mounted() {
-    const languageDropdown = document.getElementById('dashboard-language-dropdown-button');
+    const languageDropdown = document.getElementById('dashboard-alert-language-dropdown-button');
 
     if (languageDropdown) {
       chi.dropdown(languageDropdown);
@@ -150,7 +155,8 @@ export default class Dashboard extends Vue {
   _setCodeSnippets() {
     const footerTemplate = generateExampleFooter(this.selectedTheme);
 
-    this.codeSnippets.webcomponent = `<chi-main title="Page title" format="fixed-width" header-background>
+    this.codeSnippets.webcomponent = `<chi-main title="Page Title" format="fixed-width" header-background>
+  <chi-alert color="info" icon="circle-info" slot="page-alert" closable>This is a page level info alert</chi-alert>
   <chi-button id="example__help-button" type="icon" size="sm" variant="flat" alternative-text="Help" slot="help-icon">
     <chi-icon icon="circle-question-outline"></chi-icon>
   </chi-button>
@@ -291,11 +297,24 @@ export default class Dashboard extends Vue {
     });
 <\/script>`;
     this.codeSnippets.htmlblueprint = `<div class="chi-main -fixed-width -header-background">
+  <div class="chi-main__alert">
+    <div class="chi-alert -info -close" role="alert">
+      <i class="chi-alert__icon chi-icon icon-circle-info" aria-hidden="true"></i>
+      <div class="chi-alert__content">
+        <p class="chi-alert__text">This is a page level info alert</p>
+      </div>
+      <button class="chi-alert__close-button chi-button -icon -close" aria-label="Close">
+        <div class="chi-button__content">
+          <i class="chi-icon icon-x" aria-hidden="true"></i>
+        </div>
+      </button>
+    </div>
+  </div>
   <div class="chi-main__header">
     <div class="chi-main__header-start">
       <div class="chi-main__title">
         <div class="chi-main__title-heading">
-          Page title
+          Page Title
           <div class="chi-button -icon -flat -sm" id="example__help-button" data-target="#example__help-popover" aria-label="Help" slot="help-icon">
             <div class="chi-button__content">
               <i class="chi-icon icon-circle-question-outline" aria-hidden="true"></i>

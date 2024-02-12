@@ -1,18 +1,19 @@
 <template lang="pug">
-  <ComponentExample title="Base with back link, subtitle and buttons" id="base_with_back_link_subtitle_buttons" :tabs="exampleTabs" padding="0">
+  <ComponentExample title="Base with back link" id="base_with_back_link" :tabs="exampleTabs" padding="0">
     template(#example)
-      chi-main(backlink='Back link' title='Page title' subtitle='Page subtitle')
+      chi-main(backlink='Back link' title='Page title')
         .-d--flex.-align-items--center.-justify-content--center(style='height:10rem;') Page content goes here
-        template(#header-actions)
-          button.chi-button.-primary Primary
         template(#footer)
-          div(v-html="footers.lumen" v-if="['lumen', 'portal'].includes(selectedTheme)")
-          div(v-html="footers.centurylink" v-if="selectedTheme === 'centurylink'")
-          div(v-html="footers.brightspeed" v-if="selectedTheme === 'brightspeed'")
+          template(v-if="['lumen', 'portal'].includes(selectedTheme)")
+            div(v-html="footers.lumen")
+          template(v-if="selectedTheme === 'centurylink'")
+            div(v-html="footers.centurylink")
+          template(v-if="selectedTheme === 'brightspeed'")
+            div(v-html="footers.brightspeed")
 
     template(#code-webcomponent)
       .chi-tab__description
-        | Add buttons in the header of the application layout by defining <code>slot="header-actions"</code> on each <code>chi-button</code>.
+        | Use the <code>backlink=""</code> attribute to display a link above the title of the application layout.
       Copy(lang="html" :code="codeSnippets.webcomponent")
 
     template(#code-htmlblueprint)
@@ -30,9 +31,9 @@ import {
 declare const chi: any;
 
 @NuxtComponent({})
-export default class BackLinkSubtitleButtons extends Vue {
+export default class BackLink extends Vue {
   selectedTheme = useSelectedTheme();
-  footers = generateAllExampleFooters('back-link-subtitle-buttons-language-dropdown-button');
+  footers = generateAllExampleFooters('back-link-language-dropdown-button');
   exampleTabs = [
     {
       active: true,
@@ -50,7 +51,7 @@ export default class BackLinkSubtitleButtons extends Vue {
   };
 
   mounted() {
-    const languageDropdown = document.getElementById('back-link-subtitle-buttons-language-dropdown-button');
+    const languageDropdown = document.getElementById('back-link-language-dropdown-button');
 
     if (languageDropdown) {
       chi.dropdown(languageDropdown);
@@ -66,8 +67,7 @@ export default class BackLinkSubtitleButtons extends Vue {
   _setCodeSnippets() {
     const footerTemplate = generateExampleFooter(this.selectedTheme);
 
-    this.codeSnippets.webcomponent = `<chi-main backlink="Back link" title="Page title" subtitle="Page subtitle">
-  <button class="chi-button -primary" slot="header-actions">Primary</button>
+    this.codeSnippets.webcomponent = `<chi-main backlink="Back link" title="Page title">
   <!-- Page content goes here -->
   ${footerTemplate}
 </chi-main>
@@ -79,6 +79,12 @@ ${this.selectedTheme === 'centurylink'
     this.codeSnippets.htmlblueprint = `<div class="chi-main">
   <div class="chi-main__header">
     <div class="chi-main__header-start">
+      <a class="chi-link" href="#">
+        <div class="chi-link__content">
+          <i class="chi-icon icon-chevron-left -xs"></i>
+          <span class="-text--md">Back link</span>
+        </div>
+      </a>
       <div class="chi-main__title">
         <div class="chi-main__title-heading">Page title</div>
       </div>

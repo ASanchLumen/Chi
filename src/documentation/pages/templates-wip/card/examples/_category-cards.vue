@@ -25,25 +25,20 @@
 <script lang="ts">
 import { Vue } from 'vue-facing-decorator';
 
-@NuxtComponent({
-  data: () => {
-    return {
-      exampleTabs: [
-        {
-          active: true,
-          id: 'webcomponent',
-          label: 'Web Component',
-        },
-        {
-          disabled: true,
-          id: 'htmlblueprint',
-          label: 'HTML Blueprint',
-        },
-      ],
-    };
-  },
-})
+@NuxtComponent({})
 export default class CategoryCards extends Vue {
+  exampleTabs = [
+    {
+      active: true,
+      id: 'webcomponent',
+      label: 'Web Component',
+    },
+    {
+      disabled: true,
+      id: 'htmlblueprint',
+      label: 'HTML Blueprint',
+    },
+  ]
   cards = [
     {
       icon: 'products-services',

@@ -1,21 +1,24 @@
 <template lang="pug">
-  <ComponentExample title="Base" id="base" :tabs="exampleTabs" padding="0">
-    template(#example)
-      chi-main(title='Page title')
+<ComponentExample title="Base" id="base" :tabs="exampleTabs" padding="0">
+  template(#example)
+    chi-main(title='Page title')
       .-d--flex.-align-items--center.-justify-content--center(style='height:10rem;') Page content goes here
       template(#footer)
-        div(v-html="footers.lumen" v-if="['lumen', 'portal'].includes(selectedTheme)")
-        div(v-html="footers.centurylink" v-if="selectedTheme === 'centurylink'")
-        div(v-html="footers.brightspeed" v-if="selectedTheme === 'brightspeed'")
+        template(v-if="['lumen', 'portal'].includes(selectedTheme)")
+          div(v-html="footers.lumen")
+        template(v-if="selectedTheme === 'centurylink'")
+          div(v-html="footers.centurylink")
+        template(v-if="selectedTheme === 'brightspeed'")
+          div(v-html="footers.brightspeed")
 
-    template(#code-webcomponent)
-      .chi-tab__description
-        | Use the <code>title=""</code> attribute to display a title above the application layout.
-      Copy(lang="html" :code="codeSnippets.webcomponent")
+  template(#code-webcomponent)
+    .chi-tab__description
+      | Use the <code>title=""</code> attribute to display a title above the application layout.
+    Copy(lang="html" :code="codeSnippets.webcomponent")
 
-    template(#code-htmlblueprint)
-      Copy(lang="html" :code="codeSnippets.htmlblueprint" class="html")
-  </ComponentExample>
+  template(#code-htmlblueprint)
+    Copy(lang="html" :code="codeSnippets.htmlblueprint" class="html")
+</ComponentExample>
 </template>
 
 <script lang="ts">
@@ -41,9 +44,9 @@ export default class Base extends Vue {
       label: 'HTML Blueprint',
     },
   ];
-  codeSnippets: {
-    webcomponent: '';
-    htmlblueprint: '';
+  codeSnippets = {
+    webcomponent: '',
+    htmlblueprint: '',
   };
 
   mounted() {

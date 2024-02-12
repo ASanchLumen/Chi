@@ -49,18 +49,7 @@
       <li :class="{ '-active': $route.fullPath.includes(SECTION_URLS.templates) }">
         <div class="chi-collection__title">Templates</div>
         <ul class="chi-tabs__subtabs">
-          <li :key="index" v-for="(navigationTemplateItem, index) in NAVIGATION_TEMPLATE_ITEMS" :class="{
-            '-active': $route.path.includes(navigationTemplateItem.to),
-          }">
-            <NuxtLink v-if="navigationTemplateItem.to && navigationTemplateItem.source === 'vue'"
-              :to="`/${navigationTemplateItem.to}`">
-              {{ navigationTemplateItem.label }}
-            </NuxtLink>
-            <a v-if="navigationTemplateItem.href && navigationTemplateItem.source === 'pug'"
-              :href="`${baseUrl}${navigationTemplateItem.href}`">
-              {{ navigationTemplateItem.label }}
-            </a>
-          </li>
+          <DocumentationLinkList :links="NAVIGATION_TEMPLATE_ITEMS"/>
         </ul>
       </li>
     </ul>

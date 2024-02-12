@@ -9,10 +9,13 @@
         chi-popover(ref="popover" position='right-start' variant='text' arrow reference='#help-icon__help-button')
           | Popover content.
       .-d--flex.-align-items--center.-justify-content--center(style='height:10rem;') Page content goes here
-    template
-      div(v-html="footers.lumen" v-if="['lumen', 'portal'].includes(selectedTheme)")
-      div(v-html="footers.centurylink" v-if="selectedTheme === 'centurylink'")
-      div(v-html="footers.brightspeed" v-if="selectedTheme === 'brightspeed'")
+    template(#footer)
+      template(v-if="['lumen', 'portal'].includes(selectedTheme)")
+        div(v-html="footers.lumen")
+      template(v-if="selectedTheme === 'centurylink'")
+        div(v-html="footers.centurylink")
+      template(v-if="selectedTheme === 'brightspeed'")
+        div(v-html="footers.brightspeed")
 
   template(#code-webcomponent)
     Copy(lang="html" :code="codeSnippets.webcomponent" class="html")
