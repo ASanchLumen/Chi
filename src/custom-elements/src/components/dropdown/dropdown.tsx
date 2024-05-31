@@ -414,7 +414,7 @@ export class Dropdown {
   };
 
   handlerSelectedMenuItem = (ev) => {
-    this._updateValue(ev.target.text);
+    this._updateValue(ev.target);
 
     if (this.retainSelection) {
       this.hide();
@@ -426,7 +426,10 @@ export class Dropdown {
    * Either adds or removes a selected item from the value list.
    * Multiple values are only allowed if selectMode is multi.
    */
-  _updateValue(value: string) {
+  _updateValue(target: HTMLElement) {
+    target = (target.closest(`.${DROPDOWN_CLASSES.MENU_ITEM}`) || target) as HTMLElement;
+    const value = target.innerText;
+
     if (this.selectMode !== 'multi') {
       this._value = [value];
       this.eventItemSelected.emit(value);
