@@ -1,4 +1,4 @@
-import fs from 'fs';
+timport fs from 'fs';
 import path from 'path';
 import gulp from 'gulp';
 import sass from 'gulp-sass';
