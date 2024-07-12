@@ -380,6 +380,7 @@ html.cyclops .b-color-100 {
 html.cyclops .b-color-200,
 html.cyclops .b-color-300 {
     border-color: #949293;
+}
 html.cyclops .b-color-400,
 html.cyclops .b-color-500,
 html.cyclops .b-color-600 {
@@ -392,6 +393,7 @@ html.cyclops .b-color-900 {
 }
 html.cyclops .b-color-success {
     border-color: #007E44;
+}
 html.cyclops .b-color-info {
     border-color: #0075c9;
 }
@@ -8601,7 +8603,7 @@ html.cyclops .main-nav-menu .cyclops-icon {
 }
 html.cyclops .main-nav-menu .cyclops-icon use {
     transition: fill 0.2s;
-    fill: #e66400;
+    fill: #ffffff;
 }
 html.cyclops .main-nav-menu .btn:active .cyclops-icon use,
 html.cyclops .main-nav-menu .btn:focus .cyclops-icon use,
@@ -8609,7 +8611,7 @@ html.cyclops .main-nav-menu .btn:hover .cyclops-icon use,
 html.cyclops .main-nav-menu-items li.open .btn .cyclops-icon use,
 html.cyclops .main-nav-menu-items li.open a .cyclops-icon use,
 html.cyclops .main-nav-menu-items li.selected .btn .cyclops-icon use {
-    fill: #e66400;
+    fill: #ffffff !important;
 }
 html.cyclops .main-nav-menu .btn {
     margin: 0;
@@ -8732,10 +8734,10 @@ html.cyclops .main-nav-flyout-menu .header .close {
     margin-right: 7px;
 }
 html.cyclops .main-nav-flyout-menu .header .close .cyclops-icon use {
-    fill: #e66400;
+    fill: #ffffff;
 }
 html.cyclops .main-nav-flyout-menu .header .close:hover .cyclops-icon use {
-    fill: #e66400;
+    fill: #ffffff;
 }
 html.cyclops .main-nav-flyout-menu .header .cyclops-icon {
     height: 20px;
@@ -8836,7 +8838,7 @@ html.cyclops .main-nav-flyout-menu-items li p {
     }
     html.cyclops .main-nav-menu .main-nav-label {
         display: inline;
-        color: #262425;
+        color: #ffffff;
     }
     html.cyclops .main-nav-menu-items li {
         width: 100px;
