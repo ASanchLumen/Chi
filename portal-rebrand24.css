@@ -8624,7 +8624,7 @@ html.cyclops .main-nav-menu .btn {
 }
 html.cyclops .main-nav-menu .btn:focus,
 html.cyclops .main-nav-menu .btn:hover {
-    background-color: #a22110;
+    background-color: #f2f0f1;
     color: #343333;
     outline: 0;
 }
@@ -8835,7 +8835,7 @@ html.cyclops .main-nav-flyout-menu-items li p {
     }
     html.cyclops .main-nav-menu .main-nav-label {
         display: inline;
-        color: #343333;
+        color: #b35009;
     }
     html.cyclops .main-nav-menu-items li {
         width: 100px;
