@@ -1977,8 +1977,9 @@ html.cyclops body {
     line-height: 20px;
     text-rendering: optimizeLegibility;
 }
-html.cyclops a {
-    color: #00555c;
+html.cyclops a,
+html.cyclops .link-clickable {
+    color: #00555c !important;
 }
 html.cyclops p {
     margin: 0 0 20px;
@@ -2196,7 +2197,7 @@ html.cyclops .btn-primary.btn-icon:disabled:hover .cyclops-icon {
     fill: #6a6869;
 }
 html.cyclops .btn-primary .cyclops-icon {
-    fill: #e0311a; 
+    fill: #ffffff; 
 }
 html.cyclops .btn-primary:hover {
     background: #a22110;
