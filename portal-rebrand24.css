@@ -2067,7 +2067,8 @@ html.cyclops .btn-outline {
     font-weight: 600;
 }
 
-html.cyclops .btn-outline[disabled] {
+html.cyclops .btn-outline[disabled],
+html.cyclops .btn-default[disabled] {
   border: .0625rem solid #d6d3d4;
   color: #262524;
   background-color: #f6f4f5;
@@ -2105,9 +2106,9 @@ html.cyclops .btn-outline.disabled:hover,
 html.cyclops .btn-outline:disabled.focus,
 html.cyclops .btn-outline:disabled:focus,
 html.cyclops .btn-outline:disabled:hover {
-    background-color: #ffffff;
-    border-color: #d0d4d9;
-    color: #6a6869;
+  border: .0625rem solid #d6d3d4;
+  color: #262524;
+  background-color: #f6f4f5;
 }
 html.cyclops .btn-default.btn-icon,
 html.cyclops .btn-outline.btn-icon {
@@ -2115,6 +2116,7 @@ html.cyclops .btn-outline.btn-icon {
     border-color: transparent;
 }
 html.cyclops .btn-default.btn-icon .cyclops-icon,
+html.cyclops .btn-outline .cyclops-icon use,
 html.cyclops .btn-outline.btn-icon .cyclops-icon {
     fill: #e0311a;
 }
@@ -2133,6 +2135,8 @@ html.cyclops .btn-outline.btn-icon:hover .cyclops-icon {
 html.cyclops .btn-default:hover,
 html.cyclops .btn-outline:hover {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border: .125rem solid #e0311a;
 }
 html.cyclops .btn-default:active,
 html.cyclops .btn-outline:active {
@@ -2152,10 +2156,12 @@ html.cyclops .btn-primary:active {
     border-color: transparent;
 }
 html.cyclops .btn-primary.disabled:hover,
+html.cyclops .btn-primary[disabled],
+html.cyclops .btn-primary[disabled]:hover,
 html.cyclops .btn-primary:disabled:hover {
     background-color: #f6f4f5;
     border-color: #d6d3d4;
-    color: #6a6869;
+    color: #262524;
 }
 html.cyclops .btn-primary.btn-icon {
     background-color: transparent;
@@ -2425,7 +2431,8 @@ html.cyclops .btn-link:active {
 }
 html.cyclops .btn-link.disabled,
 html.cyclops .btn-link[disabled] {
-    color: #6a6869;
+    color: #007981;
+    opacity: .4;
 }
 html.cyclops .btn-large,
 html.cyclops .btn-lg {
