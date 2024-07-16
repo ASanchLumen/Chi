@@ -8630,11 +8630,15 @@ html.cyclops .main-nav-menu .btn:hover {
 }
 html.cyclops .main-nav-menu .btn:active {
     outline: 0;
-    background-color: #e66400;
     color: #343333;
     -ms-transform: scale(0.985, 0.985);
     transform: scale(0.985, 0.985);
 }
+
+html.cyclops .main-nav-menu .btn:active .cyclops-icon use {
+  fill: #e66400;
+}
+
 html.cyclops .main-nav-menu .scroll-down,
 html.cyclops .main-nav-menu .scroll-up {
     display: none;
@@ -8835,7 +8839,7 @@ html.cyclops .main-nav-flyout-menu-items li p {
     }
     html.cyclops .main-nav-menu .main-nav-label {
         display: inline;
-        color: #b35009;
+        color: #343333;
     }
     html.cyclops .main-nav-menu-items li {
         width: 100px;
