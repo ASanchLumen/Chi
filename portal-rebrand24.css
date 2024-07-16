@@ -2023,7 +2023,7 @@ html.cyclops .large-type-feature .lead {
 }
 html.cyclops .btn {
     background: 0 0;
-    border: 1px solid transparent;
+    border: 0.125rem solid transparent;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
     color: #262425;
     font-size: 13px;
@@ -2063,7 +2063,19 @@ html.cyclops .btn-outline {
     color: #e0311a;
     background-color: #fff;
     border-color: #e0311a;
+    font-size: 0.875rem;
+    font-weight: 600;
 }
+
+html.cyclops .btn-outline[disabled] {
+  border: .0625rem solid #d6d3d4;
+  color: #262524;
+  background-color: #f6f4f5;
+}
+html.cyclops .btn-outline[disabled] .cyclops-icon use {
+  fill: #262524;
+}
+
 .open > html.cyclops .btn-default.dropdown-toggle,
 .open > html.cyclops .btn-outline.dropdown-toggle,
 html.cyclops .btn-default.active,
@@ -2074,6 +2086,13 @@ html.cyclops .btn-outline:active {
     background-color: #fff;
     border-color: #e0311a;
 }
+
+html.cyclops .btn-outline:hover {
+  background-color: #fff;
+  border: .125rem solid #a22110;
+  color: #a22110;
+}
+
 html.cyclops .btn-default.disabled.focus,
 html.cyclops .btn-default.disabled:focus,
 html.cyclops .btn-default.disabled:hover,
@@ -2390,7 +2409,7 @@ html.cyclops .btn-no-style:active {
     box-shadow: none;
 }
 html.cyclops .btn-link {
-    color: #00555c;
+    color: #007981;
     text-decoration: underline;
     background-color: transparent;
     box-shadow: none;
@@ -2608,7 +2627,7 @@ html.cyclops .dropdown .dropdown-menu {
     list-style: none;
     font-size: 14px;
     text-align: left;
-    background-color: #d6d3d4;
+    background-color: #ffffff;
     background-clip: padding-box;
     box-shadow: 0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12),0 5px 5px -3px rgba(0,0,0,.2);
 }
@@ -2644,6 +2663,7 @@ html.cyclops .dropdown .dropdown-menu > li > button {
     font-weight: 400;
     white-space: nowrap;
     text-decoration: none;
+    color: #262425;
 }
 html.cyclops .dropdown .dropdown-menu > li > button {
     background-color: transparent;
@@ -7392,7 +7412,7 @@ html.cyclops .cyclops-icon.success {
 }
 html.cyclops .cyclops-icon.danger,
 html.cyclops .cyclops-icon.error {
-    fill: #ed3e27;
+    fill: #ee3026;
 }
 html.cyclops .cyclops-icon.warning {
     fill: #b96b00;
@@ -8627,6 +8647,7 @@ html.cyclops .main-nav-menu .btn:hover {
     background-color: #f2f0f1;
     color: #343333;
     outline: 0;
+    box-shadow: none;
 }
 html.cyclops .main-nav-menu .btn:active {
     outline: 0;
@@ -8708,7 +8729,7 @@ html.cyclops .main-nav-menu-items li.open a {
 }
 html.cyclops .main-nav-menu-items li.selected .btn {
     background-color: #fef6f0;
-    box-shadow: inset 3px 0 0 #fef6f0;
+    box-shadow: inset .125rem 0 0 #e66400 !important;
     color: #b35009;
 }
 html.cyclops .main-nav-flyout-menu {
@@ -8726,7 +8747,7 @@ html.cyclops .main-nav-flyout-menu.open {
     margin-left: 46px;
 }
 html.cyclops .main-nav-flyout-menu .header {
-    background-color: #f2f0f1;
+    background-color: #007981;
     text-align: right;
     height: 40px;
 }
