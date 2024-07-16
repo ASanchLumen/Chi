@@ -1978,8 +1978,9 @@ html.cyclops body {
     text-rendering: optimizeLegibility;
 }
 html.cyclops a,
-html.cyclops .link-clickable {
-    color: #00555c !important;
+html.cyclops .link-clickable,
+html.cyclops .dropdown.link-clickable a {
+    color: #00555c;
 }
 html.cyclops p {
     margin: 0 0 20px;
@@ -2197,7 +2198,7 @@ html.cyclops .btn-primary.btn-icon:disabled:hover .cyclops-icon {
     fill: #6a6869;
 }
 html.cyclops .btn-primary .cyclops-icon {
-    fill: #ffffff; 
+    fill: #e0311a; 
 }
 html.cyclops .btn-primary:hover {
     background: #a22110;
@@ -8659,7 +8660,7 @@ html.cyclops .main-nav-menu .cyclops-icon {
 }
 html.cyclops .main-nav-menu .cyclops-icon use {
     transition: fill 0.2s;
-    fill: #585657;
+    fill: #585657 !important;
 }
 
 html.cyclops .main-nav-menu-items li.selected .btn .cyclops-icon use {
@@ -8680,7 +8681,7 @@ html.cyclops .main-nav-menu .btn {
 }
 html.cyclops .main-nav-menu .btn:focus,
 html.cyclops .main-nav-menu .btn:hover {
-    background-color: #f2f0f1;
+    background-color: #fafafa;
     color: #343333;
     outline: 0;
     box-shadow: none;
