@@ -8603,22 +8603,19 @@ html.cyclops .main-nav-menu .cyclops-icon {
 }
 html.cyclops .main-nav-menu .cyclops-icon use {
     transition: fill 0.2s;
-    fill: #ffffff;
+    fill: #585657;
 }
-html.cyclops .main-nav-menu .btn:active .cyclops-icon use,
-html.cyclops .main-nav-menu .btn:focus .cyclops-icon use,
-html.cyclops .main-nav-menu .btn:hover .cyclops-icon use,
-html.cyclops .main-nav-menu-items li.open .btn .cyclops-icon use,
-html.cyclops .main-nav-menu-items li.open a .cyclops-icon use,
+
 html.cyclops .main-nav-menu-items li.selected .btn .cyclops-icon use {
-    fill: #ffffff !important;
+    fill: #e66400 !important;
 }
+
 html.cyclops .main-nav-menu .btn {
     margin: 0;
     padding: 10px 0;
     width: 100%;
-    background-color: #e0311a;
-    color: #ffffff;
+    background-color: #fafafa;
+    color: #343333;
     font-size: 12px;
     overflow: hidden;
     text-transform: capitalize;
@@ -8628,13 +8625,13 @@ html.cyclops .main-nav-menu .btn {
 html.cyclops .main-nav-menu .btn:focus,
 html.cyclops .main-nav-menu .btn:hover {
     background-color: #a22110;
-    color: #ffffff;
+    color: #343333;
     outline: 0;
 }
 html.cyclops .main-nav-menu .btn:active {
     outline: 0;
     background-color: #e66400;
-    color: #ffffff;
+    color: #343333;
     -ms-transform: scale(0.985, 0.985);
     transform: scale(0.985, 0.985);
 }
@@ -8706,9 +8703,9 @@ html.cyclops .main-nav-menu-items li.open a {
     color: #00555c;
 }
 html.cyclops .main-nav-menu-items li.selected .btn {
-    background-color: #e66400;
-    box-shadow: inset 3px 0 0 #e66400;
-    color: #ffffff;
+    background-color: #fef6f0;
+    box-shadow: inset 3px 0 0 #fef6f0;
+    color: #b35009;
 }
 html.cyclops .main-nav-flyout-menu {
     position: absolute;
@@ -8838,7 +8835,7 @@ html.cyclops .main-nav-flyout-menu-items li p {
     }
     html.cyclops .main-nav-menu .main-nav-label {
         display: inline;
-        color: #ffffff;
+        color: #343333;
     }
     html.cyclops .main-nav-menu-items li {
         width: 100px;
