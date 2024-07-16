@@ -181,6 +181,11 @@ html.cyclops input[type="radio"] {
     box-sizing: border-box;
     padding: 0;
 }
+
+html.cyclops input[type="checkbox"]:checked {
+  accent-color: #00555c;
+}
+
 html.cyclops input[type="number"]::-webkit-inner-spin-button,
 html.cyclops input[type="number"]::-webkit-outer-spin-button {
     height: auto;
@@ -2136,8 +2141,15 @@ html.cyclops .btn-default:hover,
 html.cyclops .btn-outline:hover {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
-    border: .125rem solid #e0311a;
+    border: .125rem solid #a22110;
+    color: #a22110;
 }
+
+html.cyclops .btn-default:hover .cyclops-icon use,
+html.cyclops .btn-outline:hover .cyclops-icon use {
+  fill: #a22110;
+}
+
 html.cyclops .btn-default:active,
 html.cyclops .btn-outline:active {
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -2176,9 +2188,9 @@ html.cyclops .btn-primary.btn-icon:active {
     border-color: transparent;
     box-shadow: none;
 }
-html.cyclops .btn-primary.btn-icon:hover .cyclops-icon {
+/* html.cyclops .btn-primary.btn-icon:hover .cyclops-icon {
     fill: #a22110;
-}
+} */
 html.cyclops .btn-primary.btn-icon.disabled:hover .cyclops-icon,
 html.cyclops .btn-primary.btn-icon:disabled:hover .cyclops-icon {
     fill: #6a6869;
@@ -2689,6 +2701,22 @@ html.cyclops .dropdown-dismiss {
     top: 0;
     z-index: 990;
 }
+
+html.cyclops .dropdown .btn ,
+html.cyclops .dropdown.open .btn.btn-outline {
+  color: #262425 !important;
+  border: 0.0625rem solid #d6d3d4 !important;
+}
+
+html.cyclops .dropdown .btn .cyclops-icon use {
+  fill: #e66400;
+}
+
+html.cyclops .dropdown:hover .btn,
+html.cyclops .dropdown.open .btn {
+  background-color: #f2f0f1 !important;
+}
+
 html.cyclops fieldset {
     padding: 0;
     margin: 0;
@@ -6591,7 +6619,7 @@ html.cyclops .navbar-account .support {
 }
 html.cyclops .navbar-account .cyclops-icon {
     transition: all linear 150ms;
-    fill: #949293;
+    fill: #ffffff;
 }
 html.cyclops .navbar-account a:hover .cyclops-icon,
 html.cyclops .navbar-account button:hover .cyclops-icon,
