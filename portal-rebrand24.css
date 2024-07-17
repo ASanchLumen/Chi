@@ -1991,11 +1991,18 @@ html.cyclops body {
 html.cyclops a,
 html.cyclops .link-clickable,
 html.cyclops .dropdown.link-clickable a {
-    color: #00555c;
+  color: #007981;
+  border-bottom-color: #007981 !important;
 }
+
 html.cyclops p {
     margin: 0 0 20px;
 }
+
+html.cyclops a.dropdown-item {
+  color: #262425;
+}
+
 html.cyclops .lead {
     margin-bottom: 20px;
     font-size: 16px;
@@ -2449,9 +2456,11 @@ html.cyclops .btn-link {
     background-color: transparent;
     box-shadow: none;
 }
+
+html.cyclops .link-clickable:hover,
 html.cyclops .btn-link:hover {
-    color: #00555c;
-    text-decoration: underline;
+    color: #0f3133;
+    text-decoration: none;
     border-color: transparent;
     box-shadow: none;
 }
@@ -4541,6 +4550,16 @@ html.cyclops .empty-list-view-item {
     text-align: center;
     background-color: #fff;
 }
+
+html.cyclops .empty-list-view-item span span {
+  text-decoration: underline;
+  color: #007981;
+}
+html.cyclops .empty-list-view-item span span:hover {
+  text-decoration: none !important;
+  color: #0f3133;
+}
+
 html.cyclops .empty-list-view-item .btn-link {
     padding-right: 0;
     padding-left: 0;
@@ -5881,6 +5900,16 @@ html.cyclops .search-input input:focus {
     border-color: #039198;
     box-shadow: 0 0 0 1px #00a59b;
 }
+
+html.cyclops .rbt .rbt-input.focus {
+  border-color: #007981 !important;
+  box-shadow: 0 0 0 1px #007981 !important;
+}
+
+html.cyclops .rbt .dropdown-menu-justify {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2); 
+}
+
 html.cyclops .search-input input::-ms-clear {
     display: none;
 }
@@ -7446,6 +7475,9 @@ html.cyclops .cyclops-icon {
     height: 14px;
     fill: #e66400;
     vertical-align: sub;
+}
+html.cyclops .cyclops-spin {
+  fill: #e66400;
 }
 html.cyclops .cyclops-icon.md {
     width: 28px;
