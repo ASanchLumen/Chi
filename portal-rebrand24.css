@@ -3615,9 +3615,9 @@ html.cyclops .toggle input {
 }
 html.cyclops .toggle input:checked + .bug-fix .text {
     margin-left: 0;
-    background-color: #039198;
-    border: 1px solid #039198;
-    color: #262425;
+    background-color: #00555c;
+    border: 1px solid #00555c;
+    color: #ffffff;
 }
 html.cyclops .toggle input:checked + .bug-fix .handle {
     right: 0;
@@ -3633,9 +3633,9 @@ html.cyclops .toggle .text {
     width: 70px;
     height: 34px;
     padding-top: 5px;
-    background-color: #939393;
-    border: 1px solid #939393;
-    color: #262425;
+    background-color: #929493;
+    border: 1px solid #929493;
+    color: #ffffff;
     border-radius: 4px;
     transition: background 0.3s ease-in, border 0.3s ease-in;
 }
@@ -4549,15 +4549,6 @@ html.cyclops .empty-list-view-item {
     padding: 10px 15px;
     text-align: center;
     background-color: #fff;
-}
-
-html.cyclops .empty-list-view-item span span {
-  text-decoration: underline;
-  color: #007981;
-}
-html.cyclops .empty-list-view-item span span:hover {
-  text-decoration: none !important;
-  color: #0f3133;
 }
 
 html.cyclops .empty-list-view-item .btn-link {
@@ -9356,5 +9347,9 @@ html.cyclops .tag-danger[href]:focus,
 html.cyclops .tag-danger[href]:hover {
     background-color: #d62c15;
     border: 1px solid #ed3e27;
+}
+
+html.cylcops .dt-gnm-menu-panel svg path {
+  fill: #e66400;
 }
 /*# sourceMappingURL=cyclops-2.0.0.css.map */
