@@ -155,6 +155,17 @@ html.cyclops button,
 html.cyclops select {
     text-transform: none;
 }
+
+html.cyclops select.form-control {
+  text-transform: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.097 10.66l6.005-6.216.58-.6 1.162 1.201-.58.601-6.568 6.798-.58.601-.648-.67-.069-.067L.601 5.741 0 5.161 1.202 4l.6.58 6.295 6.08z' fill='%23E66400' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-position: right 1rem center;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  padding: 0 2.25rem 0 .75rem;
+  appearance: none;
+}
+
 html.cyclops button,
 html.cyclops html input[type="button"],
 html.cyclops input[type="reset"],
@@ -2147,6 +2158,14 @@ html.cyclops .btn-outline:hover {
     color: #a22110;
 }
 
+html.cyclops .btn-default:hover:disabled .cyclops-icon use,
+html.cyclops .btn-outline:hover:disabled .cyclops-icon use,
+html.cyclops .btn-default:disabled .cyclops-icon use,
+html.cyclops .btn-outline:disabled .cyclops-icon use {
+  fill: #6a6869;
+  opacity: 1;
+}
+
 html.cyclops .btn-default:hover .cyclops-icon use,
 html.cyclops .btn-outline:hover .cyclops-icon use {
   fill: #a22110;
@@ -2190,16 +2209,12 @@ html.cyclops .btn-primary.btn-icon:active {
     border-color: transparent;
     box-shadow: none;
 }
-/* html.cyclops .btn-primary.btn-icon:hover .cyclops-icon {
-    fill: #a22110;
-} */
+
 html.cyclops .btn-primary.btn-icon.disabled:hover .cyclops-icon,
 html.cyclops .btn-primary.btn-icon:disabled:hover .cyclops-icon {
     fill: #6a6869;
 }
-html.cyclops .btn-primary .cyclops-icon {
-    fill: #e0311a; 
-}
+
 html.cyclops .btn-primary:hover {
     background: #a22110;
     border-color: transparent;
@@ -2790,7 +2805,8 @@ html.cyclops .form-control[disabled] {
     cursor: not-allowed;
 }
 html.cyclops .form-control:focus {
-    border-color: #dfddde;
+    border-color: #007981;
+    box-shadow: 0 0 0 1px #007981;
 }
 html.cyclops textarea.form-control {
     height: auto;
@@ -4271,7 +4287,7 @@ html.cyclops .tooltip.bottom-right .tooltip-arrow {
     border-bottom-color: rgba(33,37,41,.95);
 }
 html.cyclops .new-list-view-header {
-    background-color: #f2f0f1;
+    background-color: #fafafa;
     box-sizing: border-box;
     padding: 6px 0;
     text-transform: uppercase;
@@ -4420,8 +4436,8 @@ html.cyclops .new-list-view > li .list-view-item:hover {
     background-color: inherit;
 }
 html.cyclops .new-list-view > li .list-view-editable-item:hover,
-html.cyclops .new-list-view > li .list-view-link-item:hover {
-    background: #f2f0f1;
+html.cyclops .new-list-view > li .flist-view-link-item:hover {
+    background: #fef6f0;
 }
 html.cyclops .new-list-view > li .list-view-editable-item {
     cursor: pointer;
@@ -8681,7 +8697,7 @@ html.cyclops .main-nav-menu .btn {
 }
 html.cyclops .main-nav-menu .btn:focus,
 html.cyclops .main-nav-menu .btn:hover {
-    background-color: #fafafa;
+    background-color: #f2f0f1;
     color: #343333;
     outline: 0;
     box-shadow: none;
