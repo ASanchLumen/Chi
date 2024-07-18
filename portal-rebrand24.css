@@ -6064,7 +6064,7 @@ html.cyclops .alert-warning .alert-link {
 }
 html.cyclops .alert-danger {
     background-color: #fff5f5;
-    border: .0625rem solid #fff5f5;
+    border: .0625rem solid #ffc5bd;
     color: #262425;
 }
 html.cyclops .alert-danger .alert-icon .cyclops-icon,
