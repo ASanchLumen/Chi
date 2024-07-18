@@ -6048,7 +6048,7 @@ html.cyclops .alert-info .alert-link {
     color: #00555c;
 }
 html.cyclops .alert-warning {
-    background-color: #fff8b3;
+    background-color: #fff5f5;
     border-color: #fde162;
     color: #262425;
 }
@@ -6069,7 +6069,7 @@ html.cyclops .alert-danger {
 }
 html.cyclops .alert-danger .alert-icon .cyclops-icon,
 html.cyclops .alert-danger > .cyclops-icon {
-    fill: #e66400;
+    fill: #ed3e27;
 }
 html.cyclops .alert-danger hr {
     border-top-color: #ffc5bd;
@@ -7476,7 +7476,7 @@ html.cyclops .cyclops-icon {
     vertical-align: sub;
 }
 html.cyclops .cyclops-spin {
-  fill: #e66400;
+  fill: #e66400 !important;
 }
 html.cyclops .cyclops-icon.md {
     width: 28px;
@@ -9370,7 +9370,11 @@ html.cyclops .rdtNext {
   color: #e66400;
 }
 
-html.cyclops .rdtToday {
+html.cyclops td.rdtToday::before {
   border-bottom-color: #e66400;
+}
+
+html.cyclops td.rdtActive {
+  background-color: #e66400;
 }
 /*# sourceMappingURL=cyclops-2.0.0.css.map */
