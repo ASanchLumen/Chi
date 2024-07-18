@@ -2059,6 +2059,7 @@ html.cyclops .btn {
     cursor: pointer;
     text-shadow: none;
     text-decoration: none;
+    border-radius: 2rem;
 }
 html.cyclops .btn-link-text,
 html.cyclops .btn-no-style {
@@ -2076,7 +2077,7 @@ html.cyclops fieldset[disabled] .btn {
     opacity: 0.65;
 }
 html.cyclops .btn:hover {
-    border: 1px solid rgba(0, 0, 0, 0.35);
+    border: 2px solid rgba(0, 0, 0, 0.35);
 }
 html.cyclops .btn.disabled:hover,
 html.cyclops .btn[disabled]:hover {
@@ -2188,7 +2189,13 @@ html.cyclops .btn-primary {
     color: #fff;
     background-color: #e0311a;
     border-color: transparent;
+    border-radius: 0 2rem 2rem 2rem;
 }
+
+html.cyclops .btn-primary .cyclops-icon use {
+  fill: #ffffff;
+}
+
 .open > html.cyclops .btn-primary.dropdown-toggle,
 html.cyclops .btn-primary.active,
 html.cyclops .btn-primary:active {
@@ -6001,7 +6008,7 @@ html.cyclops .alert-instruction {
 }
 html.cyclops .alert-instruction .alert-icon .cyclops-icon,
 html.cyclops .alert-instruction > .cyclops-icon {
-    fill: #6a6869;
+    fill: #00555c;
 }
 html.cyclops .alert-instruction hr {
     border-top-color: #d0d4da;
@@ -6026,12 +6033,13 @@ html.cyclops .alert-success .alert-link {
 }
 html.cyclops .alert-info {
     background-color: #f5f9fc;
-    border-color: #aedeff;
+    border: .0625rem solid #aedeff;
     color: #262425;
+    border-radius: .5rem;
 }
 html.cyclops .alert-info .alert-icon .cyclops-icon,
 html.cyclops .alert-info > .cyclops-icon {
-    fill: #0075c9;
+    fill: #00555c;
 }
 html.cyclops .alert-info hr {
     border-top-color: #0075c9;
@@ -6055,8 +6063,8 @@ html.cyclops .alert-warning .alert-link {
     color: #00555c;
 }
 html.cyclops .alert-danger {
-    background-color: #ffe8e5;
-    border-color: #ffc5bd;
+    background-color: #fff5f5;
+    border: .0625rem solid #fff5f5;
     color: #262425;
 }
 html.cyclops .alert-danger .alert-icon .cyclops-icon,
@@ -8823,7 +8831,8 @@ html.cyclops .main-nav-flyout-menu.open {
     margin-left: 46px;
 }
 html.cyclops .main-nav-flyout-menu .header {
-    background-color: #007981;
+    background-color: #fafafa;
+    color: #262425;
     text-align: right;
     height: 40px;
 }
@@ -8832,10 +8841,10 @@ html.cyclops .main-nav-flyout-menu .header .close {
     margin-right: 7px;
 }
 html.cyclops .main-nav-flyout-menu .header .close .cyclops-icon use {
-    fill: #ffffff;
+    fill: #e66400;
 }
 html.cyclops .main-nav-flyout-menu .header .close:hover .cyclops-icon use {
-    fill: #ffffff;
+    fill: #e66400;
 }
 html.cyclops .main-nav-flyout-menu .header .cyclops-icon {
     height: 20px;
@@ -8937,6 +8946,9 @@ html.cyclops .main-nav-flyout-menu-items li p {
     html.cyclops .main-nav-menu .main-nav-label {
         display: inline;
         color: #343333;
+    }
+    html.cyclops .main-nav-menu .selected .main-nav-label {
+        color: #b35009;
     }
     html.cyclops .main-nav-menu-items li {
         width: 100px;
