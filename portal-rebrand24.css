@@ -7475,8 +7475,9 @@ html.cyclops .cyclops-icon {
     fill: #e66400;
     vertical-align: sub;
 }
-html.cyclops .cyclops-spin {
-  fill: #e66400 !important;
+html.cyclops .cyclops-spin,
+html.cyclops #submit-request-button .cyclops-spin use {
+  fill: #e66400;
 }
 html.cyclops .cyclops-icon.md {
     width: 28px;
