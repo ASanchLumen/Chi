@@ -6359,7 +6359,7 @@ html.cyclops .navbar-brand {
 html.cyclops .navbar-brand > img {
     display: block;
     max-width: 144px;
-    max-height: 30px;
+    max-height: fit-content;
     width: 100%;
 }
 @media (min-width: 992px) {
