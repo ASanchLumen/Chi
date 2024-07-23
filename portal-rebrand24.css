@@ -6460,6 +6460,9 @@ html.cyclops .navbar-inverse {
 html.cyclops .navbar-inverse .navbar-brand {
     border-right: 1px solid rgba(0,0,0,.12);
     color: #fff;
+    background-image: none;
+    display: flex;
+    align-items: center;
 }
 html.cyclops .navbar-inverse .navbar-brand:focus,
 html.cyclops .navbar-inverse .navbar-brand:hover {
