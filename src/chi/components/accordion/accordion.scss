@@ -92,6 +92,16 @@ $sizes: (
       }
     }
 
+    .chi-accordion__trigger-link .chi-link {
+      span {
+        margin-right: 1rem;
+      }
+
+      .chi-icon {
+        transition-duration: $animation-duration;
+      }
+    }
+
     .chi-accordion__content {
       display: none;
       overflow: hidden;
@@ -119,7 +129,8 @@ $sizes: (
         display: block;
       }
 
-      & > .chi-accordion__trigger {
+      & > .chi-accordion__trigger,
+      & > .chi-accordion__trigger-link {
         .icon-chevron-down {
           transform: rotate(180deg);
           transition: transform $animation-duration ease-in-out;
@@ -280,6 +291,20 @@ $sizes: (
         .chi-accordion__title {
           font-size: $font-size-base;
           font-weight: $font-weight-semi-bold;
+        }
+      }
+    }
+  }
+
+  &.chi-accordion__link {
+    .chi-accordion__item {
+      background-color: $color-background-white;
+
+      .chi-link .chi-icon {
+        color: $link-color;
+
+        &:hover {
+          color: $link-color;
         }
       }
     }
