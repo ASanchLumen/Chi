@@ -250,6 +250,12 @@ $pill-sizes: (
     }
   }
 
+  .chi-picker__content:has(.chi-picker__radio) ~ .chi-picker__content--custom,
+  .chi-picker__content:has(.chi-picker__checkbox) + .chi-picker__content--custom  {
+    margin: $picker-md-item-description-margin;
+    padding: $picker-md-item-description-padding;
+  }
+
   @each $type in map-keys($sizes) {
     &.-#{$type} {
       .chi-picker__input {
@@ -280,6 +286,12 @@ $pill-sizes: (
           font-size: map-get(map-get($sizes, $type), item-font-size);
           font-weight: $font-weight-semi-bold;
         }
+      }
+
+      .chi-picker__content:has(.chi-picker__radio) ~ .chi-picker__content--custom,
+      .chi-picker__content:has(.chi-picker__checkbox) + .chi-picker__content--custom  {
+        margin: map-get(map-get($sizes, $type), item-description-margin);
+        padding: map-get(map-get($sizes, $type), item-description-padding);
       }
     }
   }
