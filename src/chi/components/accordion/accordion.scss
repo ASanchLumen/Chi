@@ -176,7 +176,8 @@ $sizes: (
   }
 
   &.-truncated {
-    .chi-accordion__title {
+    .chi-accordion__title, 
+    .chi-accordion__trigger .chi-link {
       display: block;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -292,17 +293,25 @@ $sizes: (
       
       .chi-accordion__trigger {
         padding: 0;
+        width: fit-content;
 
+        .chi-link {
+          padding-right: 1rem;
+          text-align: left;
+        }
 
         .chi-icon {
           color: $accordion-link-color;
-          margin-left: 1rem;
         }
         
         &:hover {
           .chi-icon::before {
             color: $accordion-link-hover-color;
           }
+        }
+
+        &:has(.chi-icon:hover) .chi-link {
+          color: $accordion-link-hover-color;
         }
       }
 
