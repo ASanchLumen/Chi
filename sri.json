@@ -1,4 +1,10 @@
 {
+  "dist/chi.css": "sha256-x+mwSAkN+WIeswfMYzczk3xgXgS1Kfo3Fl90UIsKfvk=",
+  "dist/chi-centurylink.css": "sha256-1sYcz3OpfggPdMKtPL4PQHFOwxvkkyHC8hh9FexZ/8U=",
+  "dist/chi-portal.css": "sha256-r6i1Ee44wFrat7GqUXsOv7dIfP0v7BbiopFR9d1fIO4=",
+  "dist/chi-brightspeed.css": "sha256-19fb74BEIGlsJmKhPxbAzAJxJoAPEbATkM21QFvff0s=",
+  "dist/chi-colt.css": "sha256-ZIGnEWLNEwr5IKfW/9M9xW+Dql2cGpmSnDpeQFUwkT8=",
+  "dist/chi-test.css": "sha256-YquKDXHyDeb87HivnXVu+zYUev6zj2Mqh6BYeCyVqK0=",
   "dist/js/chi.js": "sha256-89RV9TsicYJxmMcwVFlJLNrUNH+ZFx6H1GMGrYtCifk=",
   "dist/assets/themes/lumen/images/favicon.svg": "sha256-+0ITKaXKx702ZWOzublRl83MJVOIbUMTQG8JvN+76B0=",
   "dist/assets/themes/lumen/images/favicon.ico": "sha256-EkKmbH+i/VIQAtUl7NF4bPVaaJZCeBc5xWx8LTcMJp0=",
