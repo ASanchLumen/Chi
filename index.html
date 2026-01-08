@@ -11,543 +11,733 @@
     <title>Chi CSS & JS</title>
   </head>
   <body style="height: 100vh">
-    <div class="-p--2">
-      <h2>Chi Playground</h2>
-
-      <p>In order to change the theme, you can use the following routes:</p>
-      <ul>
-        <li><b>Chi (default)</b>: <a href="http://localhost:5173">http://localhost:5173</a></li>
-        <li>
-          <b>Portal</b>: <a href="http://localhost:5173/?theme=chi-portal">http://localhost:5173/?theme=chi-portal</a>
-        </li>
-        <li>
-          <b>Connect</b>:
-          <a href="http://localhost:5173/?theme=chi-connect">http://localhost:5173/?theme=chi-connect</a>
-        </li>
-        <li>
-          <b>Centurylink</b>:
-          <a href="http://localhost:5173/?theme=chi-centurylink">http://localhost:5173/?theme=chi-centurylink</a>
-        </li>
-        <li><b>Colt</b>: <a href="http://localhost:5173/?theme=chi-colt">http://localhost:5173/?theme=chi-colt</a></li>
-        <li>
-          <b>Brightspeed</b>:
-          <a href="http://localhost:5173/?theme=chi-brightspeed">http://localhost:5173/?theme=chi-brightspeed</a>
-        </li>
-        <li>
-          <b>Test</b>:
-          <a href="http://localhost:5173/?theme=chi-test">http://localhost:5173/?theme=chi-test</a>
-        </li>
-      </ul>
-
-      <style type="text/css">
-        .-mxh--300 {
-          max-height: 18.75rem;
+    <style type="text/css">
+      #global-nav .chi-sidenav__content {
+        overflow: scroll;
+      }
+      .narnia-app-layout--dashboard {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 100vh;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .narnia-app-layout--dashboard .chi-header.-lg {
+        z-index: 40;
+        heigt: 4.5rem;
+      }
+      .narnia-app-layout--dashboard .app-layout-wrapper {
+        min-height: calc(100vh - 4.5rem);
+      }
+      .narnia-app-layout--dashboard .chi-main__wrapper {
+        min-height: calc(100vh - 4.5rem);
+        overflow: scroll;
+      }
+      .narnia-app-layout--dashboard .chi-main {
+        background-color: #fafafa;
+      }
+      .narnia-app-layout--dashboard .chi-mobile-nav.-global .chi-backdrop.-animated,
+      .narnia-app-layout--dashboard .chi-mobile-nav.-global .chi-drawer.-left {
+        top: 72px;
+      }
+      @media (min-width: 1024px) {
+        .narnia-app-layout--dashboard #mobile-nav,
+        .narnia-app-layout--dashboard #mobile-nav-trigger {
+          display: none;
         }
-
-        .custom-app-class {
-          display: flex;
-          flex-direction: column;
+      }
+      @media (max-width: 1023px) {
+        .narnia-app-layout--dashboard #global-nav,
+        .narnia-app-layout--dashboard #toggle-nav {
+          display: none;
         }
-
-        .custom-app-class chi-main .chi-main__content .kpi-wrapper chi-card[type='kpi'] .chi-card,
-        .custom-app-class chi-main .chi-main__content .kpi-wrapper chi-card[type='kpi'] .chi-card .chi-card__content {
-          height: 100%;
-        }
-
-        .alert__inner-card .alert__inner-content {
-          display: flex;
-          justify-content: space-between;
-          padding: 0 1.25rem 1.25rem 1.25rem;
+      }
+      .narnia-app-layout--dashboard chi-main .chi-main__content #coreCapabilitiesGrid {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+      }
+      .narnia-app-layout--dashboard chi-main .chi-main__content #coreCapabilitiesGrid #services-and-accordion-cards {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+      }
+      .narnia-app-layout--dashboard
+        chi-main
+        .chi-main__content
+        #coreCapabilitiesGrid
+        #services-and-accordion-cards
+        > * {
+        width: 100%;
+      }
+      .narnia-app-layout--dashboard
+        chi-main
+        .chi-main__content
+        #coreCapabilitiesGrid
+        .snapshots-dasboard-wrapper
+        chi-card[type='kpi']
+        .chi-card,
+      .narnia-app-layout--dashboard
+        chi-main
+        .chi-main__content
+        #coreCapabilitiesGrid
+        .snapshots-dasboard-wrapper
+        chi-card[type='kpi']
+        .chi-card__content {
+        height: 100%;
+        width: 100%;
+      }
+      @media (max-width: 767px) {
+        .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid
+          .snapshots-dasboard-wrapper
+          chi-card[type='kpi'] {
           width: 100%;
         }
-
-        .alert__inner-card :not(:last-child) {
-          margin-bottom: 0.5rem;
+      }
+      @media (min-width: 767px) and (max-width: 1024px) {
+        .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid
+          .snapshots-dasboard-wrapper
+          chi-card[type='kpi'] {
+          width: calc(50% - 0.5rem);
         }
-
-        .chi-skeleton {
-          height: 800px !important;
+      }
+      @media (min-width: 1024px) and (max-width: 1439px) {
+        body:has(#global-nav.-collapsed)
+          .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid
+          #services-and-accordion-cards,
+        body:has(#global-nav.-expanded.-open-on-hover)
+          .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid
+          #services-and-accordion-cards {
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+          flex-direction: row;
         }
-      </style>
+        body:has(#global-nav.-collapsed)
+          .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid
+          #services-and-accordion-cards
+          > *,
+        body:has(#global-nav.-expanded.-open-on-hover)
+          .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid
+          #services-and-accordion-cards
+          > * {
+          width: calc(50% - 1rem);
+        }
+        .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid
+          .snapshots-dasboard-wrapper
+          chi-card[type='kpi'] {
+          width: calc(50% - 0.5rem);
+        }
+        body:has(#global-nav.-collapsed)
+          .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid
+          .snapshots-dasboard-wrapper
+          chi-card[type='kpi'],
+        body:has(#global-nav.-expanded.-open-on-hover)
+          .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid
+          .snapshots-dasboard-wrapper
+          chi-card[type='kpi'] {
+          width: calc(33% - 1rem);
+        }
+      }
+      @media (min-width: 1440px) {
+        .narnia-app-layout--dashboard chi-main .chi-main__content #coreCapabilitiesGrid {
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+          flex-direction: row;
+        }
+        .narnia-app-layout--dashboard chi-main .chi-main__content #coreCapabilitiesGrid #services-and-accordion-cards {
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 33%;
+          flex: 0 0 33%;
+        }
+        .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid
+          div:has(> .snapshots-dasboard-wrapper) {
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 67%;
+          flex: 0 0 67%;
+        }
+        .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid
+          .snapshots-dasboard-wrapper
+          chi-card[type='kpi'] {
+          width: calc(25% - 0.75rem);
+        }
+        .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid
+          .snapshots-dasboard-wrapper
+          chi-card[type='kpi']:has(.chi-card.-lg) {
+          width: calc(50% - 0.5rem);
+        }
+      }
+      @media (min-width: 1440px) and (max-width: 1919px) {
+        body:has(#global-nav.-expanded:not(.-open-on-hover))
+          .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: reverse;
+          -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+        }
+        body:has(#global-nav.-expanded:not(.-open-on-hover))
+          .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid
+          #services-and-accordion-cards {
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+          flex-direction: row;
+        }
+        body:has(#global-nav.-expanded:not(.-open-on-hover))
+          .narnia-app-layout--dashboard
+          chi-main
+          .chi-main__content
+          #coreCapabilitiesGrid
+          #services-and-accordion-cards
+          > * {
+          width: calc(50% - 1rem);
+        }
+      }
+      .narnia-app-layout--dashboard .alert__inner-card .alert__inner-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 0 1.25rem 1.25rem;
+      }
+      .narnia-app-layout--dashboard .chi-skeleton {
+        height: 700px !important;
+      }
+    </style>
 
-      <h3>App Layout Examples</h3>
+    <div class="narnia-app-layout--dashboard">
+      <!-- Header -->
+      <header class="chi-header -lg">
+        <div class="chi-header__brandbar"></div>
+        <nav class="chi-header__content">
+          <div class="chi-header__brand">
+            <chi-link href="/" alternative-text="Lumen">
+              <chi-brand logo="lumen" />
+            </chi-link>
+            <span class="chi-header__title -d--none -d-sm--flex">[Portal Name]</span>
+          </div>
+          <div class="chi-header__start">
+            <chi-button id="toggle-nav" variant="flat" size="lg" type="icon" color="dark">
+              <chi-icon icon="menu" size="sm--3"></chi-icon>
+            </chi-button>
 
-      <h3>Dashboard - Chi Grid</h3>
-      <div class="narnia-app-layout--dashboard custom-app-class -h--100 -mb--5">
-        <!-- Header -->
-        <header class="chi-header -lg -z--40">
-          <div class="chi-header__brandbar"></div>
-          <nav class="chi-header__content">
-            <div class="chi-header__brand">
-              <chi-link href="/" alternative-text="Lumen">
-                <chi-brand logo="lumen" />
-              </chi-link>
-              <span class="chi-header__title -d--none -d-sm--flex">[Portal Name]</span>
-            </div>
-            <div class="chi-header__start -d--none -d-xl--block">
-              <chi-button id="toggle-nav" variant="flat" size="lg" type="icon" color="dark">
-                <chi-icon icon="menu" size="sm--3"></chi-icon>
-              </chi-button>
-            </div>
-            <div class="chi-header__start -d-md--none">
-              <chi-button id="mobile-nav-trigger" variant="flat" type="icon" color="dark" size="lg">
-                <chi-icon icon="menu" size="sm--3"></chi-icon>
-              </chi-button>
-            </div>
-            <div class="chi-header__end -d--none -d-lg--flex">
-              <chi-dropdown
-                class="enterprise-id-switcher"
-                position="bottom-end"
-                button="Enterprise ID: 1234567"
-                size="sm"
-                select-mode
-              >
-                <div class="chi-grid" slot="menu-header">
-                  <div class="chi-col -w--4">Enterprise ID</div>
-                  <div class="chi-col -w--7">Enterprise Name</div>
+            <chi-button id="mobile-nav-trigger" variant="flat" type="icon" color="dark" size="lg">
+              <chi-icon icon="menu" size="sm--3"></chi-icon>
+            </chi-button>
+          </div>
+          <div class="chi-header__end -d--none -d-lg--flex">
+            <chi-dropdown
+              class="enterprise-id-switcher"
+              position="bottom-end"
+              button="Enterprise ID: 1234567"
+              size="sm"
+              select-mode
+              prevent-item-selected
+            >
+              <div class="chi-grid" slot="menu-header">
+                <div class="chi-col -w--4">Enterprise ID</div>
+                <div class="chi-col -w--7">Enterprise Name</div>
+              </div>
+              <a class="chi-dropdown__menu-item -active" slot="menu">
+                <div class="chi-grid">
+                  <div class="chi-col -w--4">1234567</div>
+                  <div class="chi-col -w--4">Acme Incorporated</div>
                 </div>
-                <a class="chi-dropdown__menu-item -active" slot="menu">
-                  <div class="chi-grid">
-                    <div class="chi-col -w--4">1234567</div>
-                    <div class="chi-col -w--4">Acme Incorporated</div>
-                  </div>
-                </a>
-                <a class="chi-dropdown__menu-item" slot="menu">
-                  <div class="chi-grid">
-                    <div class="chi-col -w--4">1234568</div>
-                    <div class="chi-col -w--7">Acme Incorporated</div>
-                  </div>
-                </a>
-                <a class="chi-dropdown__menu-item" slot="menu">
-                  <div class="chi-grid">
-                    <div class="chi-col -w--4">1234569</div>
-                    <div class="chi-col -w--7">Acme Incorporated</div>
-                    <div class="chi-col -w--1">
-                      <chi-spinner></chi-spinner>
-                    </div>
-                  </div>
-                </a>
-                <a class="chi-dropdown__menu-item" slot="menu">
-                  <div class="chi-grid">
-                    <div class="chi-col -w--4">1234560</div>
-                    <div class="chi-col -w--7">Acme Incorporated</div>
-                  </div>
-                </a>
-                <chi-link slot="menu-footer">Manage My Enterprises</chi-link>
-              </chi-dropdown>
-              <div class="chi-divider -vertical"></div>
-              <chi-dropdown position="bottom" size="sm" button="Menu" variant="flat">
-                <a class="chi-dropdown__menu-item" href="#" slot="menu">
-                  <chi-icon icon="user"></chi-icon>
-                  Item 1
-                </a>
-                <a class="chi-dropdown__menu-item" href="#" slot="menu">
-                  <chi-icon icon="login"></chi-icon>
-                  Item 2
-                </a>
-              </chi-dropdown>
-            </div>
-          </nav>
-        </header>
-
-        <!-- App layout wrapper -->
-        <div class="app-layout-wrapper -d--flex">
-          <!-- Side navigation -->
-          <aside id="global-nav" class="chi-sidenav -global -h--auto -d--none -d-md--block">
-            <div class="chi-sidenav__content">
-              <nav>
-                <ul class="chi-sidenav__list">
-                  <li class="chi-sidenav__item">
-                    <div class="chi-sidenav__item-wrapper">
-                      <chi-link>
-                        <chi-icon icon="dashboard"></chi-icon>
-                        <span>Dashboard</span>
-                      </chi-link>
-                    </div>
-                  </li>
-                  <li class="chi-sidenav__item">
-                    <div class="chi-sidenav__item-wrapper">
-                      <chi-link>
-                        <chi-icon icon="bell"></chi-icon>
-                        <chi-badge size="xs" text-weight="bold" type="notification">21</chi-badge>
-                        <span>Alerts & Notifications</span>
-                      </chi-link>
-                    </div>
-                  </li>
-                  <li class="chi-sidenav__item">
-                    <div class="chi-sidenav__item-wrapper">
-                      <chi-accordion id="services" type="link">
-                        <div slot="services-template">
-                          <div class="chi-sidenav__item-guide">
-                            <chi-link>Manage Services</chi-link>
-                            <chi-link>Add Services</chi-link>
-                            <chi-link>Order Status</chi-link>
-                            <chi-accordion id="services-tools" type="link">
-                              <div slot="services-tools-template">
-                                <div class="chi-sidenav__item-guide">
-                                  <chi-link>ELS & LI Managements</chi-link>
-                                  <chi-link>Network Storage</chi-link>
-                                  <chi-link class="-active">Edge Bare Metal</chi-link>
-                                  <chi-link>SASE Management</chi-link>
-                                  <chi-link>Voice Complete Features</chi-link>
-                                  <chi-link>+1 Switched Toll Free</chi-link>
-                                  <chi-link>Cross Connect</chi-link>
-                                  <chi-link>Enhanced Routing</chi-link>
-                                  <chi-link>Manage Voicemail</chi-link>
-                                  <chi-link>Security Certificate Management</chi-link>
-                                  <chi-link>Toll Free Management</chi-link>
-                                </div>
-                              </div>
-                            </chi-accordion>
-                            <chi-accordion id="services-requests" type="link">
-                              <div slot="services-requests-template">
-                                <div class="chi-sidenav__item-guide">
-                                  <chi-link>Requests Page 1</chi-link>
-                                  <chi-link>Requests Page 2</chi-link>
-                                  <chi-link>Requests Page 3</chi-link>
-                                </div>
-                              </div>
-                            </chi-accordion>
-                            <chi-accordion id="services-quotes" type="link">
-                              <div slot="services-quotes-template">
-                                <div class="chi-sidenav__item-guide">
-                                  <chi-link>Quotes Page 1</chi-link>
-                                  <chi-link>Quotes Page 2</chi-link>
-                                  <chi-link>Quotes Page 3</chi-link>
-                                </div>
-                              </div>
-                            </chi-accordion>
-                            <chi-accordion id="services-portals" type="link">
-                              <div slot="services-portals-template">
-                                <div class="chi-sidenav__item-guide">
-                                  <chi-link>Portals Page 1</chi-link>
-                                  <chi-link>Portals Page 2</chi-link>
-                                  <chi-link>Portals Page 3</chi-link>
-                                </div>
-                              </div>
-                            </chi-accordion>
-                          </div>
-                        </div>
-                      </chi-accordion>
-                    </div>
-                  </li>
-                  <li class="chi-sidenav__item">
-                    <div class="chi-sidenav__item-wrapper">
-                      <chi-accordion id="apis" type="link">
-                        <div slot="apis-template">
-                          <div class="chi-sidenav__item-guide">
-                            <chi-link>APIs page 1</chi-link>
-                            <chi-link>APIs page 2</chi-link>
-                            <chi-link>APIs page 3</chi-link>
-                          </div>
-                        </div>
-                      </chi-accordion>
-                    </div>
-                  </li>
-                  <li class="chi-sidenav__item">
-                    <div class="chi-sidenav__item-wrapper">
-                      <chi-accordion id="monitoring-and-reports" type="link">
-                        <div slot="monitoring-and-reports-template">
-                          <div class="chi-sidenav__item-guide">
-                            <chi-link>Monitoring & Reports page 1</chi-link>
-                            <chi-link>Monitoring & Reports page 2</chi-link>
-                            <chi-link>Monitoring & Reports page 3</chi-link>
-                          </div>
-                        </div>
-                      </chi-accordion>
-                    </div>
-                  </li>
-                  <li class="chi-sidenav__item">
-                    <div class="chi-sidenav__item-wrapper">
-                      <chi-accordion id="billing" type="link">
-                        <div slot="billing-template">
-                          <div class="chi-sidenav__item-guide">
-                            <chi-link>Billing page 1</chi-link>
-                            <chi-link>Billing page 2</chi-link>
-                            <chi-link>Billing page 3</chi-link>
-                          </div>
-                        </div>
-                      </chi-accordion>
-                    </div>
-                  </li>
-                  <li class="chi-sidenav__item">
-                    <div class="chi-sidenav__item-wrapper">
-                      <chi-accordion id="admin" type="link">
-                        <div slot="admin-template">
-                          <div class="chi-sidenav__item-guide">
-                            <chi-link>Admin page 1</chi-link>
-                            <chi-link>Admin page 2</chi-link>
-                            <chi-link>Admin page 3</chi-link>
-                          </div>
-                        </div>
-                      </chi-accordion>
-                    </div>
-                  </li>
-                  <li class="chi-sidenav__item">
-                    <div class="chi-sidenav__item-wrapper">
-                      <chi-accordion id="support" type="link">
-                        <div slot="support-template">
-                          <div class="chi-sidenav__item-guide">
-                            <chi-link>Support page 1</chi-link>
-                            <chi-link>Support page 2</chi-link>
-                            <chi-link>Support page 3</chi-link>
-                          </div>
-                        </div>
-                      </chi-accordion>
-                    </div>
-                  </li>
-                  <div class="chi-divider"></div>
-                  <li class="chi-sidenav__item">
-                    <div class="chi-sidenav__item-wrapper">
-                      <chi-link>
-                        <chi-icon icon="circle-question"></chi-icon>
-                        <span>[Portal Name] Help</span>
-                      </chi-link>
-                    </div>
-                  </li>
-                  <li class="chi-sidenav__item">
-                    <div class="chi-sidenav__item-wrapper">
-                      <chi-link>
-                        <chi-icon icon="compose"></chi-icon>
-                        <span>Contact Lumen</span>
-                      </chi-link>
-                    </div>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </aside>
-
-          <div class="chi-mobile-nav -global" id="mobile-nav">
-            <chi-drawer id="mobile-nav-drawer">
-              <div id="main-menu">
-                <div class="chi-mobile-nav__header">
-                  <chi-dropdown
-                    id="enterprise-dropdown"
-                    class="enterprise-id-switcher"
-                    position="bottom"
-                    button="Enterprise ID: 1234567"
-                    size="sm"
-                    select-mode
-                  >
-                    <div class="chi-grid" slot="menu-header">
-                      <div class="chi-col -w--4">Enterprise ID</div>
-                      <div class="chi-col -w--7">Enterprise Name</div>
-                    </div>
-                    <a class="chi-dropdown__menu-item -active" slot="menu">
-                      <div class="chi-grid">
-                        <div class="chi-col -w--4">1234567</div>
-                        <div class="chi-col -w--7">Acme Incorporated</div>
-                      </div>
-                    </a>
-                    <a class="chi-dropdown__menu-item" slot="menu">
-                      <div class="chi-grid">
-                        <div class="chi-col -w--4">1234568</div>
-                        <div class="chi-col -w--7">Acme Incorporated</div>
-                      </div>
-                    </a>
-                    <a class="chi-dropdown__menu-item" slot="menu">
-                      <div class="chi-grid">
-                        <div class="chi-col -w--4">1234569</div>
-                        <div class="chi-col -w--7">Acme Incorporated</div>
-                        <div class="chi-col -w--1">
-                          <chi-spinner></chi-spinner>
-                        </div>
-                      </div>
-                    </a>
-                    <a class="chi-dropdown__menu-item" slot="menu">
-                      <div class="chi-grid">
-                        <div class="chi-col -w--4">1234560</div>
-                        <div class="chi-col -w--7">Acme Incorporated</div>
-                      </div>
-                    </a>
-                    <div class="chi-divider" slot="menu-footer"></div>
-                    <chi-link slot="menu-footer">Manage My Enterprises</chi-link>
-                  </chi-dropdown>
+              </a>
+              <a class="chi-dropdown__menu-item" slot="menu">
+                <div class="chi-grid">
+                  <div class="chi-col -w--4">1234568</div>
+                  <div class="chi-col -w--7">Acme Incorporated</div>
                 </div>
-                <div class="chi-divider -my--0"></div>
-                <ul class="chi-mobile-nav__list">
-                  <li class="chi-mobile-nav__item">
+              </a>
+              <a class="chi-dropdown__menu-item" slot="menu">
+                <div class="chi-grid">
+                  <div class="chi-col -w--4">1234569</div>
+                  <div class="chi-col -w--7">Acme Incorporated</div>
+                  <div class="chi-col -w--1">
+                    <chi-spinner></chi-spinner>
+                  </div>
+                </div>
+              </a>
+              <a class="chi-dropdown__menu-item" slot="menu">
+                <div class="chi-grid">
+                  <div class="chi-col -w--4">1234560</div>
+                  <div class="chi-col -w--7">Acme Incorporated</div>
+                </div>
+              </a>
+              <chi-link slot="menu-footer">Manage My Enterprises</chi-link>
+            </chi-dropdown>
+            <div class="chi-divider -vertical"></div>
+            <chi-dropdown position="bottom" size="sm" button="Menu" variant="flat">
+              <a class="chi-dropdown__menu-item" href="#" slot="menu">
+                <chi-icon icon="user"></chi-icon>
+                Item 1 with very long text
+              </a>
+              <a class="chi-dropdown__menu-item" href="#" slot="menu">
+                <chi-icon icon="login"></chi-icon>
+                Item 2
+              </a>
+            </chi-dropdown>
+          </div>
+        </nav>
+      </header>
+
+      <!-- App layout wrapper -->
+      <div class="app-layout-wrapper -d--flex -flex--grow1">
+        <!-- Side navigation -->
+        <aside id="global-nav" class="chi-sidenav -global -h--auto -d--none -d-md--block">
+          <div class="chi-sidenav__content">
+            <nav>
+              <ul class="chi-sidenav__list">
+                <li class="chi-sidenav__item">
+                  <div class="chi-sidenav__item-wrapper">
                     <chi-link>
                       <chi-icon icon="dashboard"></chi-icon>
                       <span>Dashboard</span>
                     </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
+                  </div>
+                </li>
+                <li class="chi-sidenav__item">
+                  <div class="chi-sidenav__item-wrapper">
                     <chi-link>
                       <chi-icon icon="bell"></chi-icon>
+                      <chi-badge size="xs" text-weight="bold" type="notification">21</chi-badge>
                       <span>Alerts & Notifications</span>
                     </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link class="-active" href="#services-menu">
-                      <chi-icon icon="list-alt"></chi-icon>
-                      <span>Services</span>
-                      <chi-icon icon="chevron-right"></chi-icon>
-                    </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link href="#apis-menu">
-                      <chi-icon icon="api"></chi-icon>
-                      <span>APIs</span>
-                      <chi-icon icon="chevron-right"></chi-icon>
-                    </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link>
-                      <chi-icon icon="chart-bar"></chi-icon>
-                      <span>Monitoring & Reports</span>
-                      <chi-icon icon="chevron-right"></chi-icon>
-                    </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link>
-                      <chi-icon icon="mail-open-dollar"></chi-icon>
-                      <span>Billing</span>
-                      <chi-icon icon="chevron-right"></chi-icon>
-                    </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link>
-                      <chi-icon icon="users"></chi-icon>
-                      <span>Admin</span>
-                      <chi-icon icon="chevron-right"></chi-icon>
-                    </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link>
-                      <chi-icon icon="life-ring"></chi-icon>
-                      <span>Support</span>
-                      <chi-icon icon="chevron-right"></chi-icon>
-                    </chi-link>
-                  </li>
-                </ul>
-                <div class="chi-divider -my--0"></div>
-                <ul class="chi-mobile-nav__list">
-                  <li class="chi-mobile-nav__item">
+                  </div>
+                </li>
+                <li class="chi-sidenav__item">
+                  <div class="chi-sidenav__item-wrapper">
+                    <chi-accordion id="services" type="link">
+                      <div slot="services-template">
+                        <div class="chi-sidenav__item-guide">
+                          <chi-link>Manage Services</chi-link>
+                          <chi-link>Add Services</chi-link>
+                          <chi-link>Order Status</chi-link>
+                          <chi-accordion id="services-tools" type="link">
+                            <div slot="services-tools-template">
+                              <div class="chi-sidenav__item-guide">
+                                <chi-link>ELS & LI Managements</chi-link>
+                                <chi-link>Network Storage</chi-link>
+                                <chi-link class="-active">Edge Bare Metal</chi-link>
+                                <chi-link>SASE Management</chi-link>
+                                <chi-link>Voice Complete Features</chi-link>
+                                <chi-link>+1 Switched Toll Free</chi-link>
+                                <chi-link>Cross Connect</chi-link>
+                                <chi-link>Enhanced Routing</chi-link>
+                                <chi-link>Manage Voicemail</chi-link>
+                                <chi-link>Security Certificate Management</chi-link>
+                                <chi-link>Toll Free Management</chi-link>
+                              </div>
+                            </div>
+                          </chi-accordion>
+                          <chi-accordion id="services-requests" type="link">
+                            <div slot="services-requests-template">
+                              <div class="chi-sidenav__item-guide">
+                                <chi-link>Requests Page 1</chi-link>
+                                <chi-link>Requests Page 2</chi-link>
+                                <chi-link>Requests Page 3</chi-link>
+                              </div>
+                            </div>
+                          </chi-accordion>
+                          <chi-accordion id="services-quotes" type="link">
+                            <div slot="services-quotes-template">
+                              <div class="chi-sidenav__item-guide">
+                                <chi-link>Quotes Page 1</chi-link>
+                                <chi-link>Quotes Page 2</chi-link>
+                                <chi-link>Quotes Page 3</chi-link>
+                              </div>
+                            </div>
+                          </chi-accordion>
+                          <chi-accordion id="services-portals" type="link">
+                            <div slot="services-portals-template">
+                              <div class="chi-sidenav__item-guide">
+                                <chi-link>Portals Page 1</chi-link>
+                                <chi-link>Portals Page 2</chi-link>
+                                <chi-link>Portals Page 3</chi-link>
+                              </div>
+                            </div>
+                          </chi-accordion>
+                        </div>
+                      </div>
+                    </chi-accordion>
+                  </div>
+                </li>
+                <li class="chi-sidenav__item">
+                  <div class="chi-sidenav__item-wrapper">
+                    <chi-accordion id="apis" type="link">
+                      <div slot="apis-template">
+                        <div class="chi-sidenav__item-guide">
+                          <chi-link>APIs page 1</chi-link>
+                          <chi-link>APIs page 2</chi-link>
+                          <chi-link>APIs page 3</chi-link>
+                        </div>
+                      </div>
+                    </chi-accordion>
+                  </div>
+                </li>
+                <li class="chi-sidenav__item">
+                  <div class="chi-sidenav__item-wrapper">
+                    <chi-accordion id="monitoring-and-reports" type="link">
+                      <div slot="monitoring-and-reports-template">
+                        <div class="chi-sidenav__item-guide">
+                          <chi-link>Monitoring & Reports page 1</chi-link>
+                          <chi-link>Monitoring & Reports page 2</chi-link>
+                          <chi-link>Monitoring & Reports page 3</chi-link>
+                        </div>
+                      </div>
+                    </chi-accordion>
+                  </div>
+                </li>
+                <li class="chi-sidenav__item">
+                  <div class="chi-sidenav__item-wrapper">
+                    <chi-accordion id="billing" type="link">
+                      <div slot="billing-template">
+                        <div class="chi-sidenav__item-guide">
+                          <chi-link>Billing page 1</chi-link>
+                          <chi-link>Billing page 2</chi-link>
+                          <chi-link>Billing page 3</chi-link>
+                        </div>
+                      </div>
+                    </chi-accordion>
+                  </div>
+                </li>
+                <li class="chi-sidenav__item">
+                  <div class="chi-sidenav__item-wrapper">
+                    <chi-accordion id="admin" type="link">
+                      <div slot="admin-template">
+                        <div class="chi-sidenav__item-guide">
+                          <chi-link>Admin page 1</chi-link>
+                          <chi-link>Admin page 2</chi-link>
+                          <chi-link>Admin page 3</chi-link>
+                        </div>
+                      </div>
+                    </chi-accordion>
+                  </div>
+                </li>
+                <li class="chi-sidenav__item">
+                  <div class="chi-sidenav__item-wrapper">
+                    <chi-accordion id="support" type="link">
+                      <div slot="support-template">
+                        <div class="chi-sidenav__item-guide">
+                          <chi-link>Support page 1</chi-link>
+                          <chi-link>Support page 2</chi-link>
+                          <chi-link>Support page 3</chi-link>
+                        </div>
+                      </div>
+                    </chi-accordion>
+                  </div>
+                </li>
+                <div class="chi-divider"></div>
+                <li class="chi-sidenav__item">
+                  <div class="chi-sidenav__item-wrapper">
                     <chi-link>
                       <chi-icon icon="circle-question"></chi-icon>
                       <span>[Portal Name] Help</span>
                     </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
+                  </div>
+                </li>
+                <li class="chi-sidenav__item">
+                  <div class="chi-sidenav__item-wrapper">
                     <chi-link>
                       <chi-icon icon="compose"></chi-icon>
                       <span>Contact Lumen</span>
                     </chi-link>
-                  </li>
-                </ul>
-                <div class="chi-divider -my--0"></div>
-                <ul class="chi-mobile-nav__list">
-                  <li class="chi-mobile-nav__item">
-                    <span class="chi-mobile-nav__email">jamie.johnson@company.com</span>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link>
-                      <chi-icon icon="user"></chi-icon>
-                      <span>My Profile</span>
-                    </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link>
-                      <chi-icon icon="logout"></chi-icon>
-                      <span>Sign out</span>
-                    </chi-link>
-                  </li>
-                </ul>
-              </div>
-              <div id="services-menu">
-                <ul class="chi-mobile-nav__list">
-                  <li class="chi-mobile-nav__item">
-                    <chi-link href="https://lib.lumen.com/"> Manage Services </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link> Add Services </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link> Order Status </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link>
-                      <span>Service Tools</span>
-                      <chi-icon icon="chevron-right"></chi-icon>
-                    </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link>
-                      <span>Service Requests</span>
-                      <chi-icon icon="chevron-right"></chi-icon>
-                    </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link class="-active" href="#quotes-menu">
-                      <span>Quotes</span>
-                      <chi-icon icon="chevron-right"></chi-icon>
-                    </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link href="#service-portals-menu">
-                      <span>Service Portals</span>
-                      <chi-icon icon="chevron-right"></chi-icon>
-                    </chi-link>
-                  </li>
-                </ul>
-              </div>
-              <div id="apis-menu">
-                <ul class="chi-mobile-nav__list">
-                  <li class="chi-mobile-nav__item">
-                    <chi-link href="#view-apis-menu">
-                      <span>View APIs</span>
-                      <chi-icon icon="chevron-right"></chi-icon>
-                    </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link> Edit APIs </chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link> API Settings </chi-link>
-                  </li>
-                </ul>
-              </div>
-              <div id="quotes-menu">
-                <ul class="chi-mobile-nav__list">
-                  <li class="chi-mobile-nav__item">
-                    <chi-link class="-active">View Quotes</chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link>Create Quotes</chi-link>
-                  </li>
-                </ul>
-              </div>
-              <div id="service-portals-menu">
-                <ul class="chi-mobile-nav__list">
-                  <li class="chi-mobile-nav__item">
-                    <chi-link>Service Portal 1</chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link>Service Portal 2</chi-link>
-                  </li>
-                </ul>
-              </div>
-              <div id="view-apis-menu">
-                <ul class="chi-mobile-nav__list">
-                  <li class="chi-mobile-nav__item">
-                    <chi-link>API 1</chi-link>
-                  </li>
-                  <li class="chi-mobile-nav__item">
-                    <chi-link>API 2</chi-link>
-                  </li>
-                </ul>
-              </div>
-            </chi-drawer>
+                  </div>
+                </li>
+              </ul>
+            </nav>
           </div>
+        </aside>
 
-          <!-- App layout -->
+        <div class="chi-mobile-nav -global" id="mobile-nav">
+          <chi-drawer id="mobile-nav-drawer">
+            <div id="main-menu">
+              <div class="chi-mobile-nav__header">
+                <chi-dropdown
+                  id="enterprise-dropdown"
+                  class="enterprise-id-switcher"
+                  position="bottom"
+                  button="Enterprise ID: 1234567"
+                  size="sm"
+                  select-mode
+                  prevent-item-selected
+                >
+                  <div class="chi-grid" slot="menu-header">
+                    <div class="chi-col -w--4">Enterprise ID</div>
+                    <div class="chi-col -w--7">Enterprise Name</div>
+                  </div>
+                  <a class="chi-dropdown__menu-item -active" slot="menu">
+                    <div class="chi-grid">
+                      <div class="chi-col -w--4">1234567</div>
+                      <div class="chi-col -w--7">Acme Incorporated</div>
+                    </div>
+                  </a>
+                  <a class="chi-dropdown__menu-item" slot="menu">
+                    <div class="chi-grid">
+                      <div class="chi-col -w--4">1234568</div>
+                      <div class="chi-col -w--7">Acme Incorporated</div>
+                    </div>
+                  </a>
+                  <a class="chi-dropdown__menu-item" slot="menu">
+                    <div class="chi-grid">
+                      <div class="chi-col -w--4">1234569</div>
+                      <div class="chi-col -w--7">Acme Incorporated</div>
+                      <div class="chi-col -w--1">
+                        <chi-spinner></chi-spinner>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="chi-dropdown__menu-item" slot="menu">
+                    <div class="chi-grid">
+                      <div class="chi-col -w--4">1234560</div>
+                      <div class="chi-col -w--7">Acme Incorporated</div>
+                    </div>
+                  </a>
+                  <div class="chi-divider" slot="menu-footer"></div>
+                  <chi-link slot="menu-footer">Manage My Enterprises</chi-link>
+                </chi-dropdown>
+              </div>
+              <div class="chi-divider -my--0"></div>
+              <ul class="chi-mobile-nav__list">
+                <li class="chi-mobile-nav__item">
+                  <chi-link>
+                    <chi-icon icon="dashboard"></chi-icon>
+                    <span>Dashboard</span>
+                  </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link href="www.google.com" target="_blank">
+                    <chi-icon icon="bell"></chi-icon>
+                    <chi-badge size="xs" text-weight="bold" type="notification">21</chi-badge>
+                    <span>Alerts & Notifications</span>
+                  </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link class="-active" href="#services-menu">
+                    <chi-icon icon="list-alt"></chi-icon>
+                    <span>Services</span>
+                    <chi-icon icon="chevron-right"></chi-icon>
+                  </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link href="#apis-menu">
+                    <chi-icon icon="api"></chi-icon>
+                    <span>APIs</span>
+                    <chi-icon icon="chevron-right"></chi-icon>
+                  </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link>
+                    <chi-icon icon="chart-bar"></chi-icon>
+                    <span>Monitoring & Reports</span>
+                    <chi-icon icon="chevron-right"></chi-icon>
+                  </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link>
+                    <chi-icon icon="mail-open-dollar"></chi-icon>
+                    <span>Billing</span>
+                    <chi-icon icon="chevron-right"></chi-icon>
+                  </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link>
+                    <chi-icon icon="users"></chi-icon>
+                    <span>Admin</span>
+                    <chi-icon icon="chevron-right"></chi-icon>
+                  </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link>
+                    <chi-icon icon="life-ring"></chi-icon>
+                    <span>Support</span>
+                    <chi-icon icon="chevron-right"></chi-icon>
+                  </chi-link>
+                </li>
+              </ul>
+              <div class="chi-divider -my--0"></div>
+              <ul class="chi-mobile-nav__list">
+                <li class="chi-mobile-nav__item">
+                  <chi-link>
+                    <chi-icon icon="circle-question"></chi-icon>
+                    <span>[Portal Name] Help</span>
+                  </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link>
+                    <chi-icon icon="compose"></chi-icon>
+                    <span>Contact Lumen</span>
+                  </chi-link>
+                </li>
+              </ul>
+              <div class="chi-divider -my--0"></div>
+              <ul class="chi-mobile-nav__list">
+                <li class="chi-mobile-nav__item">
+                  <span class="chi-mobile-nav__email">jamie.johnson@company.com</span>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link>
+                    <chi-icon icon="user"></chi-icon>
+                    <span>My Profile</span>
+                  </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link>
+                    <chi-icon icon="logout"></chi-icon>
+                    <span>Sign out</span>
+                  </chi-link>
+                </li>
+              </ul>
+            </div>
+            <div id="services-menu">
+              <ul class="chi-mobile-nav__list">
+                <li class="chi-mobile-nav__item">
+                  <chi-link href="https://lib.lumen.com/"> Manage Services </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link> Add Services </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link> Order Status </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link>
+                    <span>Service Tools</span>
+                    <chi-icon icon="chevron-right"></chi-icon>
+                  </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link>
+                    <span>Service Requests</span>
+                    <chi-icon icon="chevron-right"></chi-icon>
+                  </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link class="-active" href="#quotes-menu">
+                    <span>Quotes</span>
+                    <chi-icon icon="chevron-right"></chi-icon>
+                  </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link href="#service-portals-menu">
+                    <span>Service Portals</span>
+                    <chi-icon icon="chevron-right"></chi-icon>
+                  </chi-link>
+                </li>
+              </ul>
+            </div>
+            <div id="apis-menu">
+              <ul class="chi-mobile-nav__list">
+                <li class="chi-mobile-nav__item">
+                  <chi-link href="#view-apis-menu">
+                    <span>View APIs</span>
+                    <chi-icon icon="chevron-right"></chi-icon>
+                  </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link> Edit APIs </chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link> API Settings </chi-link>
+                </li>
+              </ul>
+            </div>
+            <div id="quotes-menu">
+              <ul class="chi-mobile-nav__list">
+                <li class="chi-mobile-nav__item">
+                  <chi-link class="-active">View Quotes</chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link>Create Quotes</chi-link>
+                </li>
+              </ul>
+            </div>
+            <div id="service-portals-menu">
+              <ul class="chi-mobile-nav__list">
+                <li class="chi-mobile-nav__item">
+                  <chi-link>Service Portal 1</chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link>Service Portal 2</chi-link>
+                </li>
+              </ul>
+            </div>
+            <div id="view-apis-menu">
+              <ul class="chi-mobile-nav__list">
+                <li class="chi-mobile-nav__item">
+                  <chi-link>API 1</chi-link>
+                </li>
+                <li class="chi-mobile-nav__item">
+                  <chi-link>API 2</chi-link>
+                </li>
+              </ul>
+            </div>
+          </chi-drawer>
+        </div>
+
+        <!-- App layout -->
+        <div class="chi-main__wrapper">
           <chi-main title="Dashboard" header-background help-position="right" narnia>
             <chi-button extra-class="-bg--white" slot="help-icon" id="help-button">
               <chi-icon icon="circle-question-outline" size="sm"></chi-icon>
               <span>Help</span>
             </chi-button>
+
+            <chi-alert slot="page-alert" icon="circle-info" title="[Page pilot banner title]" toast closable
+              >[Page pilot banner message content]</chi-alert
+            >
 
             <div class="chi-main__accordion">
               <chi-accordion id="main-accordion" portal>
@@ -556,8 +746,9 @@
                     Access tools to locate services, monitor open orders, review requests and tickets, and manage
                     invoices effortlessly.
                   </p>
-                  <div class="chi-grid">
-                    <div class="chi-col -d--flex -flex--column -w--4 -g--2">
+                  <div id="coreCapabilitiesGrid" class="chi-grid">
+                    <!-- Services and alerts -->
+                    <div id="services-and-accordion-cards" class="chi-col -d--flex -g--2">
                       <chi-card title="Services" widget type="compact-title" variant="outline">
                         <div slot="compact-title">
                           <chi-link no-underline size="md">Manage services</chi-link>
@@ -567,184 +758,204 @@
                           <chi-search-input placeholder="Service ID, Nickname, or Location"></chi-search-input>
                         </div>
                         <div class="chi-form__item -mt--3">
-                          <chi-label>Find by Product or Service Tool</chi-label>
+                          <chi-label info-icon info-icon-message="Helpful info here"
+                            >Find by Product or Service Tool</chi-label
+                          >
                           <chi-dropdown-select
                             id="services-dropdown"
                             button="Select a product or service tool"
                           ></chi-dropdown-select>
                         </div>
                       </chi-card>
-                      <chi-card title="Alerts" variant="outline" type="alert" notifications="22">
-                        <chi-card
-                          title="[Alert title]"
-                          class="alert__inner-card"
-                          variant="outline"
-                          eyebrow="[Product/Service Name]"
-                          type="compact-title"
-                        >
-                          <div slot="compact-title">
-                            <chi-dropdown icon="more-vert" variant="flat">
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 1</a>
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 2</a>
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 3</a>
-                            </chi-dropdown>
+                      <div class="accordion-cards -d--flex -flex--column -g--2">
+                        <chi-card title="Alerts" variant="outline" type="alert" notifications="22">
+                          <chi-card
+                            title="[Alert title]"
+                            class="alert__inner-card"
+                            variant="outline"
+                            eyebrow="[Product/Service Name]"
+                            type="compact-title"
+                          >
+                            <div slot="compact-title">
+                              <chi-dropdown icon="more-vert" variant="flat">
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 1</a>
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 2</a>
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 3</a>
+                              </chi-dropdown>
+                            </div>
+                            <div class="alert__inner-content">
+                              <chi-link>ID 123456567</chi-link>
+                              <chi-badge color="muted">Email Sent</chi-badge>
+                            </div>
+                          </chi-card>
+                          <chi-card
+                            title="[Alert title]"
+                            class="alert__inner-card"
+                            variant="outline"
+                            eyebrow="[Product/Service Name]"
+                            type="compact-title"
+                          >
+                            <div slot="compact-title">
+                              <chi-dropdown icon="more-vert" variant="flat">
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 1</a>
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 2</a>
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 3</a>
+                              </chi-dropdown>
+                            </div>
+                            <div class="alert__inner-content">
+                              <chi-link>ID 123456567</chi-link>
+                              <chi-badge color="muted">Email Sent</chi-badge>
+                            </div>
+                          </chi-card>
+                          <chi-card
+                            title="[Alert title]"
+                            class="alert__inner-card"
+                            variant="outline"
+                            eyebrow="[Product/Service Name]"
+                            type="compact-title"
+                          >
+                            <div slot="compact-title">
+                              <chi-dropdown icon="more-vert" variant="flat">
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 1</a>
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 2</a>
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 3</a>
+                              </chi-dropdown>
+                            </div>
+                            <div class="alert__inner-content">
+                              <chi-link>ID 123456567</chi-link>
+                              <chi-badge color="muted">Email Sent</chi-badge>
+                            </div>
+                          </chi-card>
+                          <chi-card
+                            title="[Alert title]"
+                            class="alert__inner-card"
+                            variant="outline"
+                            eyebrow="[Product/Service Name]"
+                            type="compact-title"
+                          >
+                            <div slot="compact-title">
+                              <chi-dropdown icon="more-vert" variant="flat">
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 1</a>
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 2</a>
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 3</a>
+                              </chi-dropdown>
+                            </div>
+                            <div class="alert__inner-content">
+                              <chi-link>ID 123456567</chi-link>
+                              <chi-badge color="muted">Email Sent</chi-badge>
+                            </div>
+                          </chi-card>
+                          <chi-card
+                            title="[Alert title]"
+                            class="alert__inner-card"
+                            variant="outline"
+                            eyebrow="[Product/Service Name]"
+                            type="compact-title"
+                          >
+                            <div slot="compact-title">
+                              <chi-dropdown icon="more-vert" variant="flat">
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 1</a>
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 2</a>
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 3</a>
+                              </chi-dropdown>
+                            </div>
+                            <div class="alert__inner-content">
+                              <chi-link>ID 123456567</chi-link>
+                              <chi-badge color="muted">Email Sent</chi-badge>
+                            </div>
+                          </chi-card>
+                          <chi-card
+                            title="[Alert title]"
+                            class="alert__inner-card"
+                            variant="outline"
+                            eyebrow="[Product/Service Name]"
+                            type="compact-title"
+                          >
+                            <div slot="compact-title">
+                              <chi-dropdown icon="more-vert" variant="flat">
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 1</a>
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 2</a>
+                                <a class="chi-dropdown__menu-item" slot="menu">Item 3</a>
+                              </chi-dropdown>
+                            </div>
+                            <div class="alert__inner-content">
+                              <chi-link>ID 123456567</chi-link>
+                              <chi-badge color="muted">Email Sent</chi-badge>
+                            </div>
+                          </chi-card>
+                        </chi-card>
+                        <chi-card title="Scheduled Maintenance" type="accordion" variant="outline">
+                          <div class="-w--100 -text--left" slot="card-accordion-header">
+                            <chi-link size="md">View all</chi-link>
                           </div>
-                          <div class="alert__inner-content">
-                            <chi-link>ID 123456567</chi-link>
-                            <chi-badge color="muted">Email Sent</chi-badge>
+                          <chi-date></chi-date>
+                        </chi-card>
+                        <chi-card title="Favourite Pages" type="accordion" variant="outline">
+                          <p class="-text -my--2">
+                            These are the top pages you visit most often — up to 8 of your most frequently accessed.
+                          </p>
+                          <div class="chi-grid">
+                            <div class="chi-col -w--6 -mt--1">
+                              <chi-link no-underline>Favourite Page 1</chi-link>
+                            </div>
+                            <div class="chi-col -w--6 -mt--1">
+                              <chi-link no-underline>Favourite Page 2</chi-link>
+                            </div>
+                            <div class="chi-col -w--6 -mt--1">
+                              <chi-link no-underline>Favourite Page 3</chi-link>
+                            </div>
+                            <div class="chi-col -w--6 -mt--1">
+                              <chi-link no-underline>Favorite Page 4 With a Longer Title</chi-link>
+                            </div>
+                            <div class="chi-col -w--6 -mt--1">
+                              <chi-link no-underline>Favourite Page 5</chi-link>
+                            </div>
+                            <div class="chi-col -w--6 -mt--1">
+                              <chi-link no-underline>Favourite Page 6</chi-link>
+                            </div>
+                            <div class="chi-col -w--6 -mt--1">
+                              <chi-link no-underline>Favourite Page 7</chi-link>
+                            </div>
+                            <div class="chi-col -w--6 -mt--1">
+                              <chi-link no-underline>Favourite Page 8</chi-link>
+                            </div>
                           </div>
                         </chi-card>
-                        <chi-card
-                          title="[Alert title]"
-                          class="alert__inner-card"
-                          variant="outline"
-                          eyebrow="[Product/Service Name]"
-                          type="compact-title"
-                        >
-                          <div slot="compact-title">
-                            <chi-dropdown icon="more-vert" variant="flat">
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 1</a>
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 2</a>
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 3</a>
-                            </chi-dropdown>
-                          </div>
-                          <div class="alert__inner-content">
-                            <chi-link>ID 123456567</chi-link>
-                            <chi-badge color="muted">Email Sent</chi-badge>
-                          </div>
-                        </chi-card>
-                        <chi-card
-                          title="[Alert title]"
-                          class="alert__inner-card"
-                          variant="outline"
-                          eyebrow="[Product/Service Name]"
-                          type="compact-title"
-                        >
-                          <div slot="compact-title">
-                            <chi-dropdown icon="more-vert" variant="flat">
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 1</a>
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 2</a>
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 3</a>
-                            </chi-dropdown>
-                          </div>
-                          <div class="alert__inner-content">
-                            <chi-link>ID 123456567</chi-link>
-                            <chi-badge color="muted">Email Sent</chi-badge>
-                          </div>
-                        </chi-card>
-                        <chi-card
-                          title="[Alert title]"
-                          class="alert__inner-card"
-                          variant="outline"
-                          eyebrow="[Product/Service Name]"
-                          type="compact-title"
-                        >
-                          <div slot="compact-title">
-                            <chi-dropdown icon="more-vert" variant="flat">
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 1</a>
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 2</a>
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 3</a>
-                            </chi-dropdown>
-                          </div>
-                          <div class="alert__inner-content">
-                            <chi-link>ID 123456567</chi-link>
-                            <chi-badge color="muted">Email Sent</chi-badge>
-                          </div>
-                        </chi-card>
-                        <chi-card
-                          title="[Alert title]"
-                          class="alert__inner-card"
-                          variant="outline"
-                          eyebrow="[Product/Service Name]"
-                          type="compact-title"
-                        >
-                          <div slot="compact-title">
-                            <chi-dropdown icon="more-vert" variant="flat">
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 1</a>
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 2</a>
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 3</a>
-                            </chi-dropdown>
-                          </div>
-                          <div class="alert__inner-content">
-                            <chi-link>ID 123456567</chi-link>
-                            <chi-badge color="muted">Email Sent</chi-badge>
-                          </div>
-                        </chi-card>
-                        <chi-card
-                          title="[Alert title]"
-                          class="alert__inner-card"
-                          variant="outline"
-                          eyebrow="[Product/Service Name]"
-                          type="compact-title"
-                        >
-                          <div slot="compact-title">
-                            <chi-dropdown icon="more-vert" variant="flat">
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 1</a>
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 2</a>
-                              <a class="chi-dropdown__menu-item" slot="menu">Item 3</a>
-                            </chi-dropdown>
-                          </div>
-                          <div class="alert__inner-content">
-                            <chi-link>ID 123456567</chi-link>
-                            <chi-badge color="muted">Email Sent</chi-badge>
-                          </div>
-                        </chi-card>
-                      </chi-card>
-                      <chi-card title="Scheduled Maintenance" type="accordion" variant="outline">
-                        <div class="-w--100 -text--left" slot="card-accordion-header">
-                          <chi-link size="md">View all</chi-link>
-                        </div>
-                        <chi-date></chi-date>
-                      </chi-card>
-                      <chi-card title="Favourite Pages" type="accordion" variant="outline">
-                        <p class="-text -my--2">
-                          These are the top pages you visit most often — up to 8 of your most frequently accessed.
-                        </p>
-                        <div class="chi-grid">
-                          <div class="chi-col -w--6 -mt--1">
-                            <chi-link no-underline>Favourite Page 1</chi-link>
-                          </div>
-                          <div class="chi-col -w--6 -mt--1">
-                            <chi-link no-underline>Favourite Page 2</chi-link>
-                          </div>
-                          <div class="chi-col -w--6 -mt--1">
-                            <chi-link no-underline>Favourite Page 3</chi-link>
-                          </div>
-                          <div class="chi-col -w--6 -mt--1">
-                            <chi-link no-underline>Favorite Page 4 With a Longer Title</chi-link>
-                          </div>
-                          <div class="chi-col -w--6 -mt--1">
-                            <chi-link no-underline>Favourite Page 5</chi-link>
-                          </div>
-                          <div class="chi-col -w--6 -mt--1">
-                            <chi-link no-underline>Favourite Page 6</chi-link>
-                          </div>
-                          <div class="chi-col -w--6 -mt--1">
-                            <chi-link no-underline>Favourite Page 7</chi-link>
-                          </div>
-                          <div class="chi-col -w--6 -mt--1">
-                            <chi-link no-underline>Favourite Page 8</chi-link>
-                          </div>
-                        </div>
-                      </chi-card>
+                      </div>
                     </div>
-                    <div class="chi-col -w--8">
+                    <div class="chi-divider -my--3"></div>
+                    <!-- SNAPSHOTS -->
+                    <div class="chi-col -mt--2 -mt-lg--0">
                       <div class="-d--flex -mb--2">
                         <span class="-text--bold">Snapshots</span>
 
                         <chi-customize-panel id="customize-snapshots-panel" class="-ml--2">
-                          <chi-link no-underline size="md" slot="trigger">Customize</chi-link>
+                          <chi-link size="md" slot="trigger">Customize</chi-link>
                         </chi-customize-panel>
                       </div>
-                      <div class="-d--flex -flex--wrap -g--2 kpi-wrapper">
-                        <chi-card title="Pay Balance Due" type="kpi" metric="$3,130.87" fixed-width></chi-card>
+                      <div class="-d--flex -flex--wrap -g--2 snapshots-dasboard-wrapper">
+                        <chi-card
+                          title="Pay Balance Due"
+                          type="kpi"
+                          metric="$3,000,130.87"
+                          fixed-width
+                          id="payBalanceDue"
+                        ></chi-card>
                         <chi-card title="Active Repair Tickets" type="kpi" metric="23" fixed-width>
                           Past 90 days
                         </chi-card>
                         <chi-card title="Disconnect Requests" type="kpi" metric="26" fixed-width>
                           Past 30 days
                         </chi-card>
-                        <chi-card title="Open esOrders" type="kpi" metric="31" fixed-width> Past 90 days </chi-card>
+                        <chi-card type="kpi" title="Open Orders" fixed-width>
+                          <div class="-text--muted -d--flex -flex--column -h--100 -justify-content--between">
+                            <span>Past 90 days.</span>
+                            <div class="-d--flex -align-items--center -g--1">
+                              <chi-icon icon="circle-alert-outline" color="muted"></chi-icon>
+                              <span class="-text--xs">Data can't be retrieved.</span>
+                            </div>
+                          </div>
+                        </chi-card>
                         <chi-card title="Change Requests" type="kpi" metric="6" fixed-width> Past 30 days </chi-card>
                         <chi-card
                           title="Network Visibility: Status"
@@ -752,6 +963,7 @@
                           fixed-width
                           id="network-visibility"
                           info-icon-message="Helpful info here"
+                          id="network-visibility"
                         ></chi-card>
                       </div>
                     </div>
@@ -781,6 +993,7 @@
             </div>
             <chi-skeleton></chi-skeleton>
 
+            <!-- Base Footer -->
             <footer class="chi-footer -row" slot="footer">
               <div class="chi-footer__content">
                 <div class="chi-footer__internal">
@@ -792,6 +1005,7 @@
                     <div class="chi-footer__links">
                       <chi-link href="https://www.lumen.com/en-us/about.html">About Us</chi-link>
                       <chi-link href="https://www.lumen.com/en-us/about/accessibility.html">Accessibility</chi-link>
+                      <chi-link href="#">Business Referral Program</chi-link>
                       <chi-link
                         href="https://www.lumen.com/en-us/about/legal/commission-for-complaints-for-telecom-television-services-ccts.html"
                         >Canadian Ombudsman</chi-link
@@ -837,10 +1051,7 @@
   <script>
     window.chiReady
       ?.then(() => {
-        // Use Chi logic here
-
-        //#region Dashboard
-        //#region Accordions
+        // Sidenav accordions
         const servicesAccordion = document.getElementById('services');
         const servicesToolsAccordion = document.getElementById('services-tools');
         const servicesRequestsAccordion = document.getElementById('services-requests');
@@ -933,20 +1144,57 @@
         //#region Sidenav
         const sidenavElement = document.getElementById('global-nav');
         const globalNav = chi.globalNav(sidenavElement);
-        // const globalNav = chi.globalNav(sidenavElement, { autoCollapse: false });
         const toggleNavButton = document.getElementById('toggle-nav');
 
-        toggleNavButton.addEventListener('click', () => (globalNav.expanded = !globalNav.expanded));
+        toggleNavButton.addEventListener('click', () => {
+          const isOpening = !globalNav.expanded;
+          globalNav.expanded = isOpening;
+
+          const toggleNavIcon = toggleNavButton.querySelector('chi-icon');
+
+          toggleNavIcon.icon = isOpening ? 'x' : 'menu';
+        });
         //#endregion
 
-        //#region Mobile Navigation
+        //#region Enterprise ID Switcher
+        const switchers = document.querySelectorAll('.enterprise-id-switcher');
+        switchers.forEach((switcher) => {
+          const items = switcher.querySelectorAll('.chi-dropdown__menu-item');
+
+          items.forEach((item) => {
+            item.addEventListener('click', (e) => {
+              // HERE ADD YOUR CUSTOM LOGIC
+              // This is a simple logic that changes the closes the dropdown and changes it's text
+
+              // remove active class in old item
+              items.forEach((i) => i.classList.remove('-active'));
+
+              // add active class in new item
+              item.classList.add('-active');
+
+              // close dropdown
+              switcher.hide();
+
+              // change text to dropdown
+              switcher.button = `Enterprise ID: ${e.currentTarget.innerText.split('\n')[0]}`;
+            });
+          });
+        });
+
         const enterpriseDropdown = document.getElementById('enterprise-dropdown');
         const mobileNav = document.getElementById('mobile-nav');
         const mobileNavTrigger = document.getElementById('mobile-nav-trigger');
         const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
 
         chi.globalMobileNav(mobileNav, mobileNavTrigger, mobileNavDrawer, enterpriseDropdown);
-        //#endregion
+
+        // Change icon dynamically in header for mobile-nav
+        mobileNavDrawer.addEventListener('chiDrawerShow', () => {
+          mobileNavTrigger.querySelector('chi-icon').icon = 'x';
+        });
+        mobileNavDrawer.addEventListener('chiDrawerHide', () => {
+          mobileNavTrigger.querySelector('chi-icon').icon = 'menu';
+        });
 
         //#region Main accordion
         const coreCapabilitiesAccordion = document.getElementById('main-accordion');
@@ -971,6 +1219,7 @@
           { label: 'Down', value: '97' },
           { label: 'Up', value: '143' },
         ];
+        networkVisibilityCard.addEventListener('chiCardClick', (ev) => console.log('chiCardClick'));
         //#endregion
 
         //#region Customize Snapshots
@@ -990,6 +1239,11 @@
             label: 'Open orders',
             description: 'Lorem ipsum dolor amet Lorem ipsum dolor amet Lorem ipsum dolor amet Lorem ipsum dolor amet',
             selected: true,
+            infoIcon: {
+              message: 'Permissions are required to view data from this snapshot. Please contact a system admin.',
+              color: 'danger',
+              icon: 'circle-alert-outline',
+            },
           },
           {
             label: 'Change requests',
@@ -1009,7 +1263,11 @@
           {
             label: 'Disconnect requests',
             description: 'Lorem ipsum dolor amet',
-            infoIconMessage: 'Helpful information here',
+            infoIcon: {
+              message: 'Permissions are required to view data from this snapshot. Please contact a system admin.',
+              color: 'danger',
+              icon: 'circle-alert-outline',
+            },
             selected: false,
           },
           {
@@ -1024,50 +1282,17 @@
           },
         ];
         const panelConfig = {
-          itemsName: 'Snapshodts',
+          itemsName: 'Snapshots',
+          sortPanel: {
+            noResults: {
+              icon: 'dashboard',
+            },
+          },
         };
 
         customizeSnapshotsPanel.items = snapshots;
         customizeSnapshotsPanel.config = panelConfig;
         customizeSnapshotsPanel.addEventListener('chiReset', (ev) => console.log('Customize panel was reseted'));
-        //#endregion
-
-        //#endregion
-
-        //#region Drag and Drop
-        const drag = document.getElementById('drag-example');
-
-        drag.items = [
-          { title: 'Title item 1', description: 'Item description 1', closable: false, locked: true },
-          { description: 'Item description 2' },
-          { title: 'Title item 3', icon: 'atom' },
-          { title: 'Title item 4', description: 'Item description 4' },
-          { title: 'Title item 5', description: 'Item description 5' },
-        ];
-        //#endregion
-
-        //#region Enterprise ID Switcher
-        const switchers = document.querySelectorAll('.enterprise-id-switcher');
-
-        switchers.forEach((switcher) => {
-          switcher.addEventListener('chiDropdownItemSelected', (e) => {
-            const enterpriseId = e.detail.split('\n')[0] ?? '';
-            const dropdownText = 'Enterprise ID: ' + enterpriseId;
-
-            switcher.setAttribute('retain-selection', dropdownText);
-
-            setTimeout(() => {
-              const items = switcher.querySelectorAll('.chi-dropdown__menu-item');
-              items.forEach((item) => item.classList.toggle('-active', item.textContent.includes(enterpriseId)));
-            }, 0);
-          });
-        });
-        //#endregion
-
-        //#region App Layout
-        const appLayout = document.getElementById('app-layout');
-
-        chi.appLayout(appLayout);
         //#endregion
       })
       .catch((err) => {
