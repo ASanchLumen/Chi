@@ -4,6 +4,23 @@ server {
   index index.html index.htm;
   server_name _;
 
+  location = /chi {
+    return 301 /chi/;
+  }
+
+  location = /chi/ {
+    return 302 /chi/latest/;
+  }
+
+  location = /chi/latest {
+    return 301 /chi/latest/;
+  }
+
+  location /chi/latest/ {
+    alias /var/www/html/;
+    try_files $uri $uri/ /index.html;
+  }
+
   location /chi/6.89.0 {
     alias /var/www/html/;
     try_files $uri $uri/ /index.html;
