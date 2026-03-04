@@ -98,7 +98,7 @@
 | grid | chi-grid | -no-gutter, -align--top, -align--center, -align--bottom, -w-, -w--, -o--, -o-, ... | chi-grid__container |  |
 | header | chi-header | -dark, -vertical, -collapsed, -impersonation, -navbar, -xs, -md, -inverse, ... | chi-header__content, chi-header__brand, chi-header__start, chi-header__end, ... |  |
 | icons | chi-icon | -xs, -sm, -sm--2, -sm--3, -md, -lg, -xl, -xxl |  | `<chi-icon>` |
-| inner-nav | chi-inner-nav | -active |  |  |
+| inner-nav | chi-inner-sidenav | -active |  |  |
 | input-file | chi-input | -hover, -active, -focus, -xs, -width, -font-size, -line-height, -sm, ... |  | `<chi-text-input>` |
 | input-number | chi-number-input | -expanded, -xs, -line-height, -font-size, -padding, -btn-height, -right, -top, ... |  | `<chi-number-input>` |
 | input-text | chi-search | -flat, -close, -disabled, -icon--right, -xs, -sm, -lg, -xl, ... | chi-search__input | `<chi-search-input>` |
