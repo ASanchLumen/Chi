@@ -55,8 +55,18 @@ npm run build
   │     ├─ extractors/     (SCSS parsing + enrichment)
   │     ├─ data/           (tools, schemas, anti-patterns, skills)
   │     └─ validate.ts     (post-build validation)
-  └─ 3. Copy to dist/     ← metadata.json → dist/metadata/chi/
+  └─ 3. Copy to dist/     ← metadata.json → dist/metadata/chi.json
+                    ← (if present) @centurylink/chi-custom-elements/src/mcp/metadata.json → dist/metadata/custom-elements.json
+                    ← (if present) @centurylink/chi-vue/src/mcp/metadata.json → dist/metadata/vue.json
 ```
+
+The build exposes these files under `dist/metadata/` for MCP consumption. Each package provides metadata at `src/mcp/metadata.json`; the build copies it and names the file from the package name (e.g. chi-custom-elements → `custom-elements.json`, chi-vue → `vue.json`).
+
+| File | Source | Description |
+|------|--------|-------------|
+| `chi.json` | Chi (this repo) `src/mcp/metadata.json` | Tokens, utilities, components, schemas, tools, skills. |
+| `custom-elements.json` | `@centurylink/chi-custom-elements/src/mcp/metadata.json` | Custom Elements metadata (copied only if present). |
+| `vue.json` | `@centurylink/chi-vue/src/mcp/metadata.json` | Vue component metadata (copied only if present). |
 
 ## Commands
 
