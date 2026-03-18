@@ -54,14 +54,14 @@ node ./scripts/build/utils/buildMcp.js
 
 # Copy MCP metadata to dist/metadata
 mkdir -p dist/metadata
-cp src/mcp/metadata.json dist/metadata/chi.json # Chi
+bash ./scripts/build/utils/copyFile.sh src/mcp/metadata.json dist/metadata/chi.json # Chi
 
 if [ -f "$CHI_CE/src/mcp/metadata.json" ]; then
-  cp "$CHI_CE/src/mcp/metadata.json" dist/metadata/custom-elements.json # Chi Custom Elements
+  bash ./scripts/build/utils/copyFile.sh "$CHI_CE/src/mcp/metadata.json" dist/metadata/custom-elements.json # Chi Custom Elements
 fi
 
 if [ -f "$CHI_VUE/src/mcp/metadata.json" ]; then
-  cp "$CHI_VUE/src/mcp/metadata.json" dist/metadata/vue.json # Chi Vue
+  bash ./scripts/build/utils/copyFile.sh "$CHI_VUE/src/mcp/metadata.json" dist/metadata/vue.json # Chi Vue
 fi
 
 # Build SRI
