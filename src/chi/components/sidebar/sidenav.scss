@@ -359,7 +359,7 @@ $sidenav-lg-width: 12.5rem;
         &.chi-sidenav__drawer-list {
           li {
             a {
-              line-height: $line-height;
+              line-height: $line-height-base;
               padding-right: 1.5rem;
 
               &.chi-drawer__subitem-list-trigger {
@@ -369,7 +369,7 @@ $sidenav-lg-width: 12.5rem;
                 .chi-sidenav__title {
                   &::after {
                     color: $sidenav-item-trigger-icon-color;
-                    content: '\e91e';
+                    content: 'keyboard_arrow_down';
                     display: block;
                     font-family: $font-family-icon;
                     font-size: $font-size-xs;
@@ -769,7 +769,6 @@ $sidenav-lg-width: 12.5rem;
               &.-expanded {
                 > .chi-accordion__trigger {
                   .icon-chevron-down {
-
                     &::before {
                       transform: $accordion-item-trigger-icon-transform;
                     }
@@ -793,7 +792,6 @@ $sidenav-lg-width: 12.5rem;
                       &.-expanded {
                         .chi-accordion__trigger {
                           .icon-chevron-down {
-
                             &::before {
                               transform: $accordion-item-trigger-icon-transform;
                             }
@@ -1154,40 +1152,6 @@ $sidenav-lg-width: 12.5rem;
                 }
               }
             }
-          }
-        }
-      }
-    }
-  }
-}
-
-/* IE11 CSS hack */
-// sass-lint:disable-block no-vendor-prefixes
-@media only screen and (-ms-high-contrast: none) {
-  .chi-sidenav {
-    .chi-sidenav__list {
-      li {
-        a {
-          height: 3rem;
-        }
-      }
-    }
-
-    &.-md {
-      .chi-sidenav__list {
-        li {
-          a {
-            height: 4rem;
-          }
-        }
-      }
-    }
-
-    &.-lg {
-      .chi-sidenav__list {
-        li {
-          a {
-            height: 3rem;
           }
         }
       }

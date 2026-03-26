@@ -250,7 +250,7 @@
     }
   }
 
-  &.-narnia {
+  &.-connect {
     padding-top: 0;
     width: 100%;
 
@@ -358,10 +358,20 @@
       .chi-main__header-link .chi-link .chi-icon {
         color: $app-layout-header-background-subtitle-color;
       }
+
+      .chi-main__header-end {
+        chi-button[slot='help-icon'] {
+          .chi-button {
+            &:hover {
+              background-color: $app-layout-header-help-icon-background-color;
+            }
+          }
+        }
+      }
     }
   }
 
-  &:not(.-narnia) {
+  &:not(.-connect) {
     &.-header-background {
       .chi-main__background {
         z-index: 0;

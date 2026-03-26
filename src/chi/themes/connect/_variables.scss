@@ -1,27 +1,31 @@
 $cap-height: 0.75;
 $base-unit: 8px;
 
-$state-colors: (
-  success: green,
-  warning: yellow,
-  danger: red,
-);
-
 // Font family
 $font-family-base: 'Gotham', Arial, Helvetica, Verdana, sans-serif;
 $font-family-mono: Menlo, Consolas, 'Liberation Mono', Courier, monospace;
 
 // Font size - text
-$font-size-3xl: 1.75rem; // 28px
-$font-size-xl: 1.125rem; // 18px
-$font-size-lg: 1rem; // 16px
-$font-size-md: 0.875rem; // 14px
-$font-size-sm: 0.8125rem; // 13px
-$font-size-xs: 0.75rem; // 12px
+$font-size-base: 0.875rem; // 14px
 $font-size-2xs: 0.6875rem; // 11px
-$font-size-base: $font-size-md;
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.8125rem; // 13px
+$font-size-md: 0.875rem; // 14px
+$font-size-lg: 1rem; // 16px
+$font-size-xl: 1.125rem; // 18px
+$font-size-2xl: 1.5rem; // 24px
+$font-size-3xl: 1.75rem; // 28px
+
+// Font size - headings
+$font-size-h6: 0.875rem; // 14px
+$font-size-h5: 1rem; // 16px
+$font-size-h4: 1.125rem; // 18px
+$font-size-h3: 1.5rem; // 24px
+$font-size-h2: 2rem; // 32px
+$font-size-h1: 2.25rem; // 36px
 
 // Font weight
+$font-weight-base: 400;
 $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-medium: 500;
@@ -29,14 +33,29 @@ $font-weight-semi-bold: 600;
 $font-weight-bold: 700;
 $font-weight-extra-bold: 800;
 $font-weight-black: 900;
-$font-weight-base: $font-weight-normal;
+
+// Font weights - headings
+$font-weight-h6: $font-weight-bold;
+$font-weight-h5: $font-weight-bold;
+$font-weight-h4: $font-weight-bold;
+$font-weight-h3: $font-weight-bold;
+$font-weight-h2: $font-weight-bold;
+$font-weight-h1: $font-weight-bold;
 
 // Line height
-$line-height: 1.25rem; // 20px
-$line-height-xl: 1.75rem; // 28px
-$line-height-lg: 1.5rem; // 24px
-$line-height-md: 1.25rem; // 20px
+$line-height-base: 1.25rem; // 20px
 $line-height-sm: 1rem; // 16px
+$line-height-md: 1.25rem; // 20px
+$line-height-lg: 1.5rem; // 24px
+$line-height-xl: 1.75rem; // 28px
+
+// Line heights - headings
+$line-height-h6: 1.5rem; // 22px
+$line-height-h5: 1.5rem; // 24px
+$line-height-h4: 2rem; // 26px
+$line-height-h3: 2rem; // 32px
+$line-height-h2: 3rem; // 40px
+$line-height-h1: 3rem; // 44px
 
 // System color
 // sass-lint:disable no-color-hex
@@ -174,10 +193,10 @@ $color-white: #ffffff;
 
 // Text color
 $color-text-base: $color-grey-100;
-$color-text-primary-darker: $color-orange-100;
-$color-text-primary-dark: $color-orange-90;
-$color-text-primary: $color-orange-70;
-$color-text-primary-alt: $color-orange-70;
+$color-text-primary: $color-teal-70;
+$color-text-primary-alt: $color-teal-70;
+$color-text-primary-darker: $color-teal-100;
+$color-text-primary-dark: $color-teal-90;
 $color-text-secondary: $color-teal-40;
 $color-text-secondary-dark: $color-teal-50;
 $color-text-secondary-darker: $color-teal-60;
@@ -187,8 +206,8 @@ $color-text-danger: $color-red-70;
 $color-text-danger-dark: $color-red-80;
 $color-text-danger-darker: $color-red-90;
 $color-text-info: $color-blue-70;
-$color-text-muted-light: $color-grey-60;
 $color-text-muted: $color-grey-70;
+$color-text-muted-light: $color-grey-60;
 $color-text-white: $color-white;
 $color-text-black: $color-black;
 $color-text-code: $color-teal-70;
@@ -205,8 +224,8 @@ $color-icon-warning: $color-yellow-60;
 $color-icon-danger: $color-red-70;
 $color-icon-danger-dark: $color-red-80;
 $color-icon-info: $color-cyan-50;
-$color-icon-muted-light: $color-grey-50;
 $color-icon-muted: $color-grey-50;
+$color-icon-muted-light: $color-grey-50;
 $color-icon-muted-dark: $color-grey-60;
 $color-icon-dark: $color-grey-90;
 $color-icon-light: $color-white;
@@ -216,29 +235,29 @@ $color-icon-white: $color-white;
 $color-icon-black: $color-black;
 
 // Border color
-$color-border-base-light: $color-grey-20;
 $color-border-base: $color-grey-25;
+$color-border-base-light: $color-grey-20;
 $color-border-base-dark: $color-grey-30;
 $color-border-primary: $color-orange-60;
 $color-border-primary-light: $color-orange-30;
 $color-border-primary-dark: $color-orange-70;
 $color-border-primary-darker: $color-orange-90;
-$color-border-secondary-light: $color-teal-30;
 $color-border-secondary: $color-teal-40;
+$color-border-secondary-light: $color-teal-30;
 $color-border-secondary-dark: $color-teal-50;
 $color-border-secondary-darker: $color-teal-70;
-$color-border-success-light: $color-green-30;
 $color-border-success: $color-green-60;
-$color-border-warning-light: $color-yellow-30;
+$color-border-success-light: $color-green-30;
 $color-border-warning: $color-yellow-60;
-$color-border-danger-light: $color-red-30;
+$color-border-warning-light: $color-yellow-30;
 $color-border-danger: $color-red-60;
+$color-border-danger-light: $color-red-30;
 $color-border-danger-dark: $color-red-80;
 $color-border-danger-darker: $color-red-90;
-$color-border-info-light: $color-blue-30;
 $color-border-info: $color-blue-60;
-$color-border-muted-light: $color-grey-30;
+$color-border-info-light: $color-blue-30;
 $color-border-muted: $color-grey-60;
+$color-border-muted-light: $color-grey-30;
 $color-border-white: $color-white;
 $color-border-black: $color-black;
 $color-border-dark: $color-grey-100;
@@ -249,32 +268,32 @@ $color-background-base-light: $color-grey-10;
 $color-background-base-dark: $color-grey-15;
 $color-background-base-darker: $color-grey-20;
 $color-background-base-darkest: $color-grey-25;
+$color-background-primary: $color-orange-60;
 $color-background-primary-lighter: $color-orange-05;
 $color-background-primary-light: $color-orange-10;
-$color-background-primary: $color-orange-60;
 $color-background-primary-dark: $color-orange-70;
 $color-background-primary-darker: $color-orange-90;
-$color-background-secondary-light: $color-teal-15;
 $color-background-secondary: $color-teal-25;
+$color-background-secondary-light: $color-teal-15;
 $color-background-secondary-dark: $color-teal-40;
 $color-background-secondary-darker: $color-teal-60;
+$color-background-success: $color-green-70;
 $color-background-success-lighter: $color-green-10;
 $color-background-success-light: $color-green-20;
-$color-background-success: $color-green-70;
+$color-background-warning: $color-yellow-70;
 $color-background-warning-lighter: $color-yellow-10;
 $color-background-warning-light: $color-yellow-20;
-$color-background-warning: $color-yellow-70;
+$color-background-danger: $color-red-70;
 $color-background-danger-lighter: $color-red-10;
 $color-background-danger-light: $color-red-20;
-$color-background-danger: $color-red-70;
 $color-background-danger-dark: $color-red-80;
 $color-background-danger-darker: $color-red-90;
+$color-background-info: $color-blue-70;
 $color-background-info-lighter: $color-blue-10;
 $color-background-info-light: $color-blue-20;
-$color-background-info: $color-blue-70;
+$color-background-muted: $color-grey-30;
 $color-background-muted-lighter: $color-grey-10;
 $color-background-muted-light: $color-grey-20;
-$color-background-muted: $color-grey-30;
 $color-background-dark: $color-grey-100;
 $color-background-white: $color-white;
 $color-background-black: $color-black;
@@ -318,9 +337,9 @@ $color-background-gradient-accent-4: linear-gradient(
 
 // Icons
 $icon-color: $color-icon-base;
-$icon-size-base: 1rem;
-$icon-size-xs: 0.75rem;
-$icon-size-sm: 1rem;
+$icon-size-base: 1.25rem;
+$icon-size-xs: 1rem;
+$icon-size-sm: 1.25rem;
 $icon-size-sm2: 1.25rem;
 $icon-size-sm3: 1.5rem;
 $icon-size-md: 2rem;
@@ -378,24 +397,24 @@ $accordion-link-color: $link-color;
 $accordion-link-hover-color: $link-hover-color;
 $accordion-link-margin-left: 0.25rem;
 $accordion-sm-item-font-size: $font-size-md;
-$accordion-sm-item-line-height: 1.25rem;
+$accordion-sm-item-line-height: 1rem;
 $accordion-sm-item-padding: 0.625rem 1rem;
-$accordion-sm-item-icon-size: 1rem;
+$accordion-sm-item-icon-size: 1.25rem;
 $accordion-sm-item-content-padding: 1rem;
 $accordion-md-item-font-size: $font-size-xl;
 $accordion-md-item-line-height: 1.5rem;
 $accordion-md-item-padding: 1.5rem;
-$accordion-md-item-icon-size: 1rem;
+$accordion-md-item-icon-size: 1.5rem;
 $accordion-md-item-content-padding: 0 1.5rem 1.5rem;
 $accordion-lg-item-font-size: $font-size-xl;
 $accordion-lg-item-line-height: 1.5rem;
 $accordion-lg-item-padding: 1.5rem;
-$accordion-lg-item-icon-size: 1rem;
+$accordion-lg-item-icon-size: 1.5rem;
 $accordion-lg-item-content-padding: 0 1.5rem 1.5rem;
 $accordion-xl-item-font-size: $font-size-xl;
-$accordion-xl-item-line-height: 1.5rem;
+$accordion-xl-item-line-height: 1.75rem;
 $accordion-xl-item-padding: 1.5rem;
-$accordion-xl-item-icon-size: 1rem;
+$accordion-xl-item-icon-size: 1.5rem;
 $accordion-xl-item-content-padding: 0 1.5rem 1.5rem;
 
 // Alert
@@ -441,19 +460,19 @@ $alert-muted-banner-background-color: $color-background-muted-light;
 $alert-muted-bubble-background-color: $color-background-muted-lighter;
 $alert-md-padding: 1.0625rem 1.5rem;
 $alert-md-banner-padding: 1.125rem 1.5rem;
-$alert-md-icon-size: 1.25rem;
-$alert-md-icon-margin-y: 0.125rem;
+$alert-md-icon-size: 1.5rem;
+$alert-md-icon-margin-y: 0;
 $alert-md-icon-margin-right: 1rem;
 $alert-md-text-padding-top: 0.125rem;
 $alert-md-text-font-size: $font-size-base;
-$alert-md-text-line-height: $line-height;
+$alert-md-text-line-height: $line-height-base;
 $alert-md-title-font-size: $font-size-lg;
 $alert-md-title-font-weight: $font-weight-bold;
 $alert-md-title-line-height: $line-height-lg;
 $alert-md-title-margin-bottom: 0;
 $alert-lg-padding: 1.0625rem 1.5rem;
 $alert-lg-banner-padding: 1.125rem 1.5rem;
-$alert-lg-icon-size: 1.25rem;
+$alert-lg-icon-size: 1.5rem;
 $alert-lg-text-padding-top: 0.125rem;
 $alert-lg-title-font-size: $font-size-lg;
 $alert-lg-title-font-weight: $font-weight-bold;
@@ -461,11 +480,11 @@ $alert-lg-title-line-height: $line-height-lg;
 $alert-lg-title-margin-bottom: 0;
 $alert-sm-padding: 0.8125rem 1.5rem;
 $alert-sm-banner-padding: 0.875rem 1.5rem;
-$alert-sm-icon-size: 1rem;
+$alert-sm-icon-size: 1.25rem;
 $alert-sm-text-padding-top: 0.125rem;
 $alert-sm-title-font-size: $font-size-base;
 $alert-sm-text-font-size: $font-size-base;
-$alert-sm-text-line-height: $line-height;
+$alert-sm-text-line-height: $line-height-base;
 
 // App layout
 $app-layout-actions-border: 0.0625rem solid $color-grey-25;
@@ -478,6 +497,7 @@ $app-layout-header-background-color: linear-gradient(90deg, rgba(249, 94, 74, 1)
 $app-layout-legacy-header-background-color: transparent;
 $app-layout-header-title-color: $color-text-base;
 $app-layout-sub-header-title-color: $color-text-base;
+$app-layout-header-help-icon-background-color: $color-background-base;
 $app-layout-header-line-height: 2.5rem;
 $app-layout-sub-header-font-size: $font-size-xl;
 $app-layout-sub-header-font-weight: $font-weight-semi-bold;
@@ -687,14 +707,19 @@ $badge-notification-text-color: $color-text-white;
 $badge-notification-icon-color: $color-icon-white;
 
 // Bulk actions
-$bulk-actions-background-color: $color-background-secondary;
+$bulk-actions-background-color: $color-teal-10;
+$bulk-actions-border: 0.0625rem solid $color-teal-60;
+$bulk-actions-border-radius: 0.5rem 0.5rem 0 0;
+$bulk-actions-button-icon-color: $color-grey-80;
+$bulk-actions-divider-border-right-color: $color-grey-50;
+$bulk-actions-divider-height: 1.25rem;
+$bulk-actions-divider-margin: 0 1rem;
+$bulk-actions-label-font-weight: $font-weight-semi-bold;
+$bulk-actions-label-margin-right: 1.5rem;
 $bulk-actions-link-color: $color-text-base;
 $bulk-actions-link-font-weight: $font-weight-semi-bold;
+$bulk-actions-padding: 1rem;
 $bulk-actions-results-font-size: $font-size-md;
-$bulk-actions-label-font-weight: $font-weight-semi-bold;
-$bulk-actions-divider-height: 1.25rem;
-$bulk-actions-divider-border-right-color: $color-grey-50;
-$bulk-actions-button-icon-color: $color-grey-80;
 
 // Button
 $button-border-radius: 2rem;
@@ -919,51 +944,51 @@ $button-xs-font-size: $font-size-xs;
 $button-xs-line-height: $line-height-sm;
 $button-xs-padding: 0.1875rem 1rem;
 $button-xs-text-transform: none;
-$button-icon-xs-font-size: 0.75rem;
-$button-icon-xs-line-height: 0.75rem;
-$button-icon-xs-padding: 0.3125rem;
-$button-icon-xs-height: 0.75rem;
-$button-icon-xs-width: 0.75rem;
+$button-icon-xs-font-size: 1rem;
+$button-icon-xs-line-height: 1rem;
+$button-icon-xs-padding: 0.1875rem;
+$button-icon-xs-height: 1rem;
+$button-icon-xs-width: 1rem;
 
 $button-sm-font-size: $font-size-base;
-$button-sm-line-height: $line-height-sm;
-$button-sm-padding: 0.4375rem 1.5rem;
+$button-sm-line-height: 1.25rem;
+$button-sm-padding: 0.3125rem 1.5rem;
 $button-sm-text-transform: none;
-$button-icon-sm-font-size: 1rem;
-$button-icon-sm-line-height: 1rem;
-$button-icon-sm-padding: 0.4375rem;
-$button-icon-sm-height: 1rem;
-$button-icon-sm-width: 1rem;
+$button-icon-sm-font-size: 1.25rem;
+$button-icon-sm-line-height: 1.25rem;
+$button-icon-sm-padding: 0.3125rem;
+$button-icon-sm-height: 1.25rem;
+$button-icon-sm-width: 1.25rem;
 
 $button-md-font-size: $font-size-lg;
-$button-md-line-height: $line-height-lg;
+$button-md-line-height: 1.5rem;
 $button-md-padding: 0.4375rem 1.75rem;
 $button-md-text-transform: none;
-$button-icon-md-font-size: 1.25rem;
-$button-icon-md-line-height: 1.25rem;
-$button-icon-md-padding: 0.5625rem;
-$button-icon-md-height: 1.25rem;
-$button-icon-md-width: 1.25rem;
+$button-icon-md-font-size: 1.5rem;
+$button-icon-md-line-height: 1.5rem;
+$button-icon-md-padding: 0.4375rem;
+$button-icon-md-height: 1.5rem;
+$button-icon-md-width: 1.5rem;
 
 $button-lg-font-size: $font-size-xl;
-$button-lg-line-height: $line-height-lg;
+$button-lg-line-height: 1.5rem;
 $button-lg-padding: 0.6875rem 2rem;
 $button-lg-text-transform: none;
-$button-icon-lg-font-size: 1.25rem;
-$button-icon-lg-line-height: 1.25rem;
-$button-icon-lg-padding: 0.8125rem;
-$button-icon-lg-height: 1.25rem;
-$button-icon-lg-width: 1.25rem;
+$button-icon-lg-font-size: 1.5rem;
+$button-icon-lg-line-height: 1.5rem;
+$button-icon-lg-padding: 0.6875rem;
+$button-icon-lg-height: 1.5rem;
+$button-icon-lg-width: 1.5rem;
 
 $button-xl-font-size: $font-size-xl;
 $button-xl-line-height: $line-height-lg;
 $button-xl-padding: 0.9375rem 3rem;
 $button-xl-text-transform: none;
-$button-icon-xl-font-size: 1.25rem;
-$button-icon-xl-line-height: 1.25rem;
-$button-icon-xl-padding: 1.0625rem;
-$button-icon-xl-height: 1.25rem;
-$button-icon-xl-width: 1.25rem;
+$button-icon-xl-font-size: 1.5rem;
+$button-icon-xl-line-height: 1.5rem;
+$button-icon-xl-padding: 0.9375rem;
+$button-icon-xl-height: 1.5rem;
+$button-icon-xl-width: 1.5rem;
 
 $button-labeled-icon-padding: 1rem;
 
@@ -1124,9 +1149,6 @@ $card-kpi-metric-color: $color-teal-70;
 $card-kpi-metric-font-size: $font-size-3xl;
 $card-kpi-metric-margin-top: 0.75rem;
 $card-kpi-metric-label-margin-top: 0.3125rem;
-$card-kpi-metric-font-size: $font-size-3xl;
-$card-kpi-metric-margin-top: 0.75rem;
-$card-kpi-metric-label-margin-top: 0.3125rem;
 $card-kpi-hover-metric-color: $color-teal-80;
 $card-kpi-active-metric-color: $color-teal-80;
 $card-kpi-disabled-metric-color: $color-text-muted;
@@ -1137,7 +1159,7 @@ $carousel-dot-border-color: $color-border-primary;
 $carousel-dot-hover-background-color: $color-background-primary;
 $carousel-dot-active-background-color: $color-background-primary;
 $carousel-dot-size: $icon-size-xs;
-$carousel-pagination-line-height: $line-height;
+$carousel-pagination-line-height: $line-height-base;
 $carousel-controller-height-dots: calc(100% - #{$carousel-dot-size});
 $carousel-controller-height-pagination: calc(100% - #{$carousel-pagination-line-height});
 
@@ -1263,7 +1285,6 @@ $data-table-row-expandable-icon: $color-orange-70;
 $data-table-row-border: 0.0625rem solid $color-border-base;
 $data-table-row-expanded-border: none;
 
-
 $data-table-cell-expandable-flex-basis: 3.375rem;
 $data-table-head-expandable-min-width: 3.375rem;
 $data-table-head-expandable-border-right: 0.0625rem solid $color-border-base;
@@ -1309,6 +1330,13 @@ $drag-item-description-text-align: left;
 $drag-item-dragging-close-background-color: $color-background-white;
 $drag-item-drop-indicator-background-color: $focus-color;
 $drag-item-focus-color: $focus-color;
+$drag-item-active-border-color: $focus-color;
+$drag-item-active-border: 0.0625rem solid $drag-item-active-border-color;
+$drag-item-actions-dropdown-button-padding: 1.25rem 1rem;
+$drag-item-actions-dropdown-icon-color: $color-grey-70;
+$drag-item-actions-dropdown-active-text-color: $color-grey-100;
+$drag-item-actions-dropdown-active-icon-color: $color-orange-60;
+$drag-item-actions-dropdown-item-padding-left: 2.5rem;
 $drag-item-padding: 1.25rem 1.25rem 1.25rem 0;
 $drag-item-title-font-size: $font-size-md;
 $drag-item-title-font-weight: $font-weight-semi-bold;
@@ -1411,33 +1439,42 @@ $dropdown-select-hover-border-color: $color-teal-70;
 
 $dropdown-select-xs-height: 1.5rem;
 $dropdown-select-xs-font-size: $font-size-xs;
-$dropdown-select-xs-line-height: 0.75rem;
-$dropdown-select-xs-arrow-background-size: 0.75rem;
+$dropdown-select-xs-line-height: 1rem;
+$dropdown-select-xs-arrow-background-size: 1rem;
 $dropdown-select-xs-padding: 0.3125rem 0.5rem;
 
 $dropdown-select-sm-height: 2rem;
 $dropdown-select-sm-font-size: $font-size-base;
 $dropdown-select-sm-line-height: $line-height-sm;
-$dropdown-select-sm-arrow-background-size: 0.75rem;
+$dropdown-select-sm-arrow-background-size: 1.25rem;
 $dropdown-select-sm-padding: 0.4375rem 0.75rem;
 
 $dropdown-select-md-height: 2.5rem;
 $dropdown-select-md-font-size: $font-size-base;
 $dropdown-select-md-line-height: 1.25rem;
-$dropdown-select-md-arrow-background-size: 1rem;
+$dropdown-select-md-arrow-background-size: 1.25rem;
 $dropdown-select-md-padding: 0.5625rem 1rem 0.5625rem 0.75rem;
 
 $dropdown-select-lg-height: 3rem;
 $dropdown-select-lg-font-size: $font-size-base;
 $dropdown-select-lg-line-height: $line-height-lg;
-$dropdown-select-lg-arrow-background-size: 1rem;
+$dropdown-select-lg-arrow-background-size: 1.25rem;
 $dropdown-select-lg-padding: 0.6875rem 1rem 0.6875rem 0.75rem;
 
 $dropdown-select-xl-height: 3.5rem;
 $dropdown-select-xl-font-size: $font-size-base;
 $dropdown-select-xl-line-height: 2rem;
-$dropdown-select-xl-arrow-background-size: 1rem;
+$dropdown-select-xl-arrow-background-size: 1.25rem;
 $dropdown-select-xl-padding: 0.6875rem 1rem 0.6875rem 1rem;
+
+// Dynamic form group
+$dynamic-form-group-field-add-button-margin: 0 0 0 auto;
+$dynamic-form-group-field-display: flex;
+$dynamic-form-group-field-divider-margin: 1rem 0;
+$dynamic-form-group-field-flex-direction: column;
+$dynamic-form-group-gap: 1rem;
+$dynamic-form-group-row-display: grid;
+$dynamic-form-group-row-flex-wrap: wrap;
 
 // Expansion panel
 $expansion-panel-active-title-text-color: $color-text-base;
@@ -1450,8 +1487,8 @@ $expansion-panel-content-margin-right: 1.5rem;
 $expansion-panel-disabled-title-opacity: $opacity-60;
 $expansion-panel-disabled-title-text-color: $color-text-muted;
 $expansion-panel-footer-border-color: rgba($color-black, 0.12);
-$expansion-panel-footer-justify-content: flex-start;
 $expansion-panel-footer-flex-direction: column-reverse;
+$expansion-panel-footer-justify-content: flex-start;
 $expansion-panel-footer-md-button-margin-left: 0;
 $expansion-panel-footer-md-button-margin-right: 1rem;
 $expansion-panel-footer-md-flex-direction: row-reverse;
@@ -1510,6 +1547,7 @@ $file-input-button-focus-border-color: $button-solid-focus-border-color;
 $file-input-button-focus: $button-solid-focus-outline;
 
 //Filters
+$filters-badge-padding: 0.4375rem 0.5rem;
 $filters-content-item-margin-bottom: 1.5rem;
 $filters-content-link-margin-top: 0.5rem;
 $filters-drawer-header-border: 0.0625rem solid $color-grey-30;
@@ -1542,7 +1580,6 @@ $footer-internal-row-content-padding-lg: 1.25rem 4rem;
 $footer-internal-row-content-padding: 1.25rem 2rem;
 $footer-internal-row-content-xxl-gap: 10%;
 $footer-internal-row-links-gap: 2.25rem;
-$footer-internal-select-text-color: $color-text-white;
 $footer-internal-text-color: $color-text-white;
 
 // Form Item
@@ -1613,7 +1650,7 @@ $header-lg-start-order: 1;
 $header-xl-height: 6rem;
 $header-xl-content-padding: 0 2rem;
 $header-xl-navbar-tab-link-font-size: $font-size-lg;
-$header-xl-navbar-tab-link-line-height: $line-height;
+$header-xl-navbar-tab-link-line-height: $line-height-base;
 
 // Label
 $label-status-text-color: $color-text-muted;
@@ -1633,7 +1670,7 @@ $label-help-hover-icon-color: $color-teal-100;
 $link-text-decoration: underline;
 $link-hover-text-decoration: underline;
 
-$link-cta-icon: '\e904';
+$link-cta-icon: 'east';
 $link-cta-icon-color: $color-orange-60;
 $link-cta-icon-size: 1rem;
 $link-cta-text-transform: none;
@@ -1656,6 +1693,32 @@ $marketing-icon-size-sm: 5rem;
 $marketing-icon-size-md: 6rem;
 $marketing-icon-size-lg: 8rem;
 $marketing-icon-outline-fill: $marketing-icon-primary-color;
+
+// Inner navigation
+$anchor-nav-accordion-content-border-left: 0.125rem solid $color-grey-60;
+$anchor-nav-accordion-content-item-title-font-size: $font-size-md;
+$anchor-nav-accordion-content-margin-top: 0.625rem;
+$anchor-nav-accordion-content-padding: 0 0 0 1.125rem;
+$anchor-nav-accordion-icon-color: $color-icon-dark;
+$anchor-nav-accordion-icon-font-size: $icon-size-xs;
+$anchor-nav-accordion-link-color: $color-text-base;
+$anchor-nav-accordion-link-font-size: $font-size-md;
+$anchor-nav-accordion-link-font-weight: $font-weight-semi-bold;
+$anchor-nav-accordion-link-margin-right: 0.625rem;
+$anchor-nav-item-active-color: $color-orange-80;
+$anchor-nav-item-active-font-weight: $font-weight-semi-bold;
+$anchor-nav-item-hover-background-color: $color-grey-20;
+$anchor-nav-item-margin-bottom: 0.5rem;
+$anchor-nav-item-title-font-size: $font-size-md;
+$anchor-nav-item-title-font-weight: $font-weight-semi-bold;
+$anchor-nav-item-title-padding: 0.5rem;
+$anchor-nav-padding: 0 0.5rem;
+$anchor-nav-title-color: $color-text-muted;
+$anchor-nav-title-font-size: $font-size-xs;
+$anchor-nav-title-font-weight: $font-weight-semi-bold;
+$anchor-nav-title-margin-bottom: 0.625rem;
+$anchor-nav-title-text-transform: uppercase;
+$anchor-nav-width: 100%;
 
 // Mobile navigation
 $mobile-nav-background-color: $color-background-white;
@@ -1815,8 +1878,8 @@ $number-input-expanded-xs-width: 6rem;
 $number-input-expanded-xs-button-font-size: $button-xs-font-size;
 $number-input-expanded-xs-button-line-height: $button-xs-line-height;
 $number-input-expanded-xs-button-height: $number-input-xs-height;
-$number-input-expanded-xs-button-padding: 0.3125rem;
-$number-input-expanded-xs-button-icon-size: 0.75rem;
+$number-input-expanded-xs-button-padding: 0.1875rem;
+$number-input-expanded-xs-button-icon-size: 1rem;
 
 $number-input-expanded-sm-width: 8rem;
 $number-input-expanded-sm-button-font-size: $button-sm-font-size;
@@ -1829,22 +1892,22 @@ $number-input-expanded-md-width: 10rem;
 $number-input-expanded-md-button-font-size: $button-md-font-size;
 $number-input-expanded-md-button-line-height: $button-md-line-height;
 $number-input-expanded-md-button-height: $number-input-md-height;
-$number-input-expanded-md-button-padding: 0.6875rem;
-$number-input-expanded-md-button-icon-size: 1rem;
+$number-input-expanded-md-button-padding: 0.5625rem;
+$number-input-expanded-md-button-icon-size: 1.25rem;
 
 $number-input-expanded-lg-width: 12rem;
 $number-input-expanded-lg-button-font-size: $button-lg-font-size;
 $number-input-expanded-lg-button-line-height: $button-lg-line-height;
 $number-input-expanded-lg-button-height: $number-input-lg-height;
 $number-input-expanded-lg-button-padding: 0.9375rem;
-$number-input-expanded-lg-button-icon-size: 1rem;
+$number-input-expanded-lg-button-icon-size: 1.25rem;
 
 $number-input-expanded-xl-width: 12rem;
 $number-input-expanded-xl-button-font-size: $button-xl-font-size;
 $number-input-expanded-xl-button-line-height: $button-xl-line-height;
 $number-input-expanded-xl-button-height: $number-input-xl-height;
 $number-input-expanded-xl-button-padding: 0.9375rem;
-$number-input-expanded-xl-button-icon-size: 1rem;
+$number-input-expanded-xl-button-icon-size: 1.5rem;
 
 $number-input-expanded-button-disabled-background-color: $color-grey-10;
 $number-input-expanded-button-disabled-border-color: $color-border-base;
@@ -2378,14 +2441,39 @@ $tabs-vertical-lg-font-size: $font-size-lg;
 $tabs-vertical-xl-font-size: $font-size-lg;
 $tabs-vertical-lg-description-font-size: $font-size-base;
 
+$tabs-solid-active-background-color: $color-background-primary-light;
+$tabs-solid-active-background-color-disabled: $color-grey-40;
+$tabs-solid-active-background-color-hover: $color-orange-20;
+$tabs-solid-active-border-color: $color-orange-60;
+$tabs-solid-active-border-disabled: 0.0625rem solid $color-grey-50;
+$tabs-solid-background-color: transparent;
+$tabs-solid-background-color-hover: $color-grey-20;
+$tabs-solid-border-active: 0.0625rem solid $color-orange-60;
+$tabs-solid-border-bottom-focus: 0.0625rem solid $color-orange-60;
+$tabs-solid-border-bottom-hover: 2px solid $color-orange-60;
+$tabs-solid-border-bottom-transparent: 2px solid transparent;
+$tabs-solid-border-bottom-width: 2px;
+$tabs-solid-border-focus: 0.0625rem solid $color-grey-80;
+$tabs-solid-border-top-radius: 0.5rem;
+$tabs-solid-border-transparent: 0.0625rem solid transparent;
+$tabs-solid-box-shadow: none !important;
+$tabs-solid-deprecated-border-display: none;
+$tabs-solid-gap: 0.5rem;
+$tabs-solid-horizontal-box-shadow: inset 0 -.0625rem 0 0 $color-orange-60 !important;
+$tabs-solid-horizontal-lg-active-border-width: 0.0625rem;
+$tabs-solid-horizontal-md-active-border-width: 0.0625rem;
+$tabs-solid-horizontal-padding: 0.5rem 1rem;
+$tabs-solid-opacity-disabled: 1;
+$tabs-solid-outline-focus-visible: none;
+$tabs-solid-text-color: $color-grey-100;
+$tabs-solid-text-color-active: $color-orange-80;
+$tabs-solid-text-color-disabled: $color-grey-60;
+$tabs-solid-text-color-hover: $color-grey-100;
+$tabs-solid-vertical-box-shadow: inset 0.0625rem 0 0 0 $color-orange-60 !important;
+$tabs-solid-vertical-padding: 0.5rem 1rem;
+$tabs-solid-vertical-xl-active-border-width: 0.0625rem;
 $tabs-solid-xl-font-size: $font-size-lg;
 $tabs-solid-xl-font-weight: $font-weight-bold;
-$tabs-solid-vertical-xl-active-border-width: 0.25rem;
-$tabs-solid-horizontal-lg-active-border-width: 0.25rem;
-$tabs-solid-horizontal-md-active-border-width: 0.125rem;
-$tabs-solid-background-color: $color-grey-10;
-$tabs-solid-active-border-color: $color-orange-60;
-$tabs-solid-active-background-color: $color-background-white;
 
 // Text input
 $text-input-border-color: $color-grey-50;
@@ -2414,10 +2502,11 @@ $text-input-xs-iconleft-padding-left: 1.6875rem;
 $text-input-xs-iconright-padding-right: 1.6875rem;
 $text-input-xs-iconleft-left: 0.5rem;
 $text-input-xs-iconright-right: 0.5rem;
-$text-input-xs-icon-height: 0.75rem;
+$text-input-xs-icon-font-size:  1rem;
+$text-input-xs-icon-height: 1rem;
 $text-input-xs-icon-padding: 0.375rem;
-$text-input-xs-icon-width: 0.75rem;
-$text-input-xs-icon-top: 0.375rem;
+$text-input-xs-icon-width: 1rem;
+$text-input-xs-icon-top: 0.25rem;
 $text-input-xs-spinner-right: 0.5rem;
 
 $text-input-sm-height: 2rem;
@@ -2428,6 +2517,7 @@ $text-input-sm-iconleft-padding-left: 1.9375rem;
 $text-input-sm-iconright-padding-right: 1.9375rem;
 $text-input-sm-iconleft-left: 0.5rem;
 $text-input-sm-iconright-right: 0.5rem;
+$text-input-sm-icon-font-size:  1rem;
 $text-input-sm-icon-height: 1rem;
 $text-input-sm-icon-padding: 0.5rem;
 $text-input-sm-icon-width: 1rem;
@@ -2442,6 +2532,7 @@ $text-input-md-iconleft-padding-left: 2.5rem;
 $text-input-md-iconright-padding-right: 2.5rem;
 $text-input-md-iconleft-left: 0.75rem;
 $text-input-md-iconright-right: 0.75rem;
+$text-input-md-icon-font-size:  1.25rem;
 $text-input-md-icon-height: 1.25rem;
 $text-input-md-icon-padding: 0.75rem;
 $text-input-md-icon-width: 1.25rem;
@@ -2456,6 +2547,7 @@ $text-input-lg-iconleft-padding-left: 2.5rem;
 $text-input-lg-iconright-padding-right: 2.5rem;
 $text-input-lg-iconleft-left: 0.75rem;
 $text-input-lg-iconright-right: 0.75rem;
+$text-input-lg-icon-font-size:  1.25rem;
 $text-input-lg-icon-height: 1.25rem;
 $text-input-lg-icon-padding: 1rem;
 $text-input-lg-icon-width: 1.25rem;
@@ -2470,10 +2562,11 @@ $text-input-xl-iconleft-padding-left: 3rem;
 $text-input-xl-iconright-padding-right: 3rem;
 $text-input-xl-iconleft-left: 1rem;
 $text-input-xl-iconright-right: 1rem;
-$text-input-xl-icon-height: 1.25rem;
+$text-input-xl-icon-font-size:  1.5rem;
+$text-input-xl-icon-height: 1.5rem;
 $text-input-xl-icon-padding: 1rem;
-$text-input-xl-icon-width: 1.25rem;
-$text-input-xl-icon-top: 1.0625rem;
+$text-input-xl-icon-width: 1.5rem;
+$text-input-xl-icon-top: 1rem;
 $text-input-xl-spinner-right: 1rem;
 
 $text-input-md-floating-label-bottom: 0.5rem;
@@ -2627,9 +2720,26 @@ $tooltip-font-weight: $font-weight-normal;
 $tooltip-max-width: 20rem;
 
 // Transfer list
-$transfer-list-title-color: $color-text-base;
 $transfer-list-checkbox-icon-color: $color-icon-primary;
+$transfer-list-column-content-padding: 0.5rem;
+$transfer-list-column-header-border: 0.0625rem solid $color-border-base; // 1px
+$transfer-list-column-header-padding: 1rem;
+$transfer-list-column-search-margin-bottom: 1.25rem; // 20px
+$transfer-list-column-title-gap: 0.5rem;
+$transfer-list-column-title-margin-bottom: 0.75rem;
+$transfer-list-drag-icon-color: $color-icon-orange;
+$transfer-list-group-margin-bottom: 1.5rem;
+$transfer-list-group-title-color: $color-text-muted;
+$transfer-list-group-title-font-size: $font-size-md; // 0.875rem
+$transfer-list-group-title-margin-bottom: 0.5rem; // 8px
+$transfer-list-item-active-background-color: $color-background-primary-light;
+$transfer-list-item-hover-background-color: $color-background-base-dark;
+$transfer-list-item-padding: 0.125rem;
 $transfer-list-reset-button-color: $color-text-code;
+$transfer-list-search-input-height: 2.5rem; // 40px
+$transfer-list-title-color: $color-text-base;
+$transfer-list-transfer-buttons-gap: 0.5rem;
+$transfer-list-transfer-buttons-padding-x: 1rem;
 
 // Tags
 $tags-border-color: $color-grey-50;

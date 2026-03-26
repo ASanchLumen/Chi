@@ -4,11 +4,24 @@ import { resolve } from 'path';
 
 const __dirname = resolve(); 
 
+const validThemes = ['lumen', 'portal', 'connect', 'test', 'colt', 'brightspeed', 'centurylink'];
+const localDefaultThemes = ['lumen', 'connect', 'centurylink'];
+const prodDefaultThemes = ['lumen', 'portal', 'connect', 'colt', 'brightspeed', 'centurylink'];
+
+const selectedThemes = process.env.BUILD_TARGET === 'prod'
+  ? prodDefaultThemes
+  : (process.env.THEMES_TO_BUILD?.split(',') || localDefaultThemes);
+
+const cssFilesToHash = selectedThemes.map((theme) => {
+  if (!validThemes.includes(theme)) {
+    throw new Error(`[CHI]: Invalid theme for SRI: ${theme}`);
+  }
+
+  return theme === 'lumen' ? 'dist/chi.css' : `dist/chi-${theme}.css`;
+});
+
 const filesToHash = [
-  'dist/chi.css',
-  'dist/chi-centurylink.css',
-  'dist/chi-connect.css',
-  // 'dist/chi-test.css',
+  ...cssFilesToHash,
   'dist/js/chi.js',
   'dist/assets/themes/lumen/images/favicon.svg',
   'dist/assets/themes/lumen/images/favicon.ico',

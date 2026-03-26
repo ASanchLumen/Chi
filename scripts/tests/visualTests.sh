@@ -11,8 +11,11 @@ fi
 
 echo "[CHI]: Installing dependencies..."
 
-npm ci
-npx playwright install
+# backstop runs on node 20 not 22, npm ci will give conflicts with package-lock
+# TO BE REMOVED ONCE MIGRATION TO NODE22 IS COMPLETE
+export SKIP_CHI_DOCUMENTATION=1
+bash ./scripts/tests/sync-package-tests-lock.sh
+
 
 npm run build
 
