@@ -1,6 +1,6 @@
 {
   "name": "@centurylink/chi",
-  "version": "6.95.0",
+  "version": "7.0.0",
   "description": "Chi is Lumen's design system for building consistent digital products and experiences.",
   "license": "MIT",
   "private": false,
@@ -15,7 +15,8 @@
     "start:local": "vite -c vite.config.ts",
     "start:dist": "node server.cjs",
     "start": "npm run start:dist & npm run start:local",
-    "build": "bash ./scripts/build/build.sh",
+    "build": "cross-env THEMES_TO_BUILD=lumen,connect,centurylink bash ./scripts/build/build.sh",
+    "build:prod": "cross-env BUILD_TARGET=prod bash ./scripts/build/build.sh",
     "sync:skills": "tsx src/mcp/scripts/sync-skills.ts",
     "build:mcp": "tsx src/mcp/scripts/generate.ts",
     "generate:css-vars": "tsx scripts/build/css/vars/build.ts",
@@ -32,7 +33,7 @@
   },
   "dependencies": {
     "@centurylink/chi-custom-elements": "2.0.0",
-    "@centurylink/chi-documentation": "1.67.0",
+    "@centurylink/chi-documentation": "2.0.0",
     "@centurylink/chi-vue": "3.35.0"
   },
   "devDependencies": {
