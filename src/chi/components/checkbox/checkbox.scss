@@ -42,18 +42,19 @@
       }
 
       &::after {
+        background-image: $checkbox-icon-background-image;
         color: $checkbox-icon-color;
         content: $checkbox-icon-content;
         display: block;
-        font-family: $font-family-icon;
+        font-family: $checkbox-icon-font-family;
         font-size: $checkbox-icon-font-size;
         height: $checkbox-icon-height;
         left: $checkbox-icon-left;
-        line-height: 1;
+        line-height: $checkbox-icon-line-height;
         position: absolute;
         top: $checkbox-label-after-top;
         transform: scale(0);
-        transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        transition: $checkbox-icon-transition;
         width: $checkbox-icon-width;
       }
 
@@ -91,6 +92,7 @@
         }
 
         &::after {
+          background-image: $checkbox-checked-icon-background-image;
           color: $checkbox-checked-icon-color;
           transform: scale(1);
         }

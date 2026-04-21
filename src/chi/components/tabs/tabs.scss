@@ -534,7 +534,7 @@
 
         &.-xs > li {
           &.-active > a {
-            box-shadow: inset 0 (-$tabs-solid-horizontal-xs-active-border-width) 0 $color-border-primary;
+            box-shadow: $tabs-horizontal-xs-active-box-shadow;
 
             &.chi-dropdown__trigger {
               &:not(.-primary) {
@@ -542,12 +542,12 @@
                   &:not(.-dark) {
                     &:not(.-light) {
                       &:not(.-danger) {
-                        box-shadow: inset 0 (-$tabs-solid-horizontal-xs-active-border-width) 0 $color-border-primary;
+                        box-shadow: $tabs-horizontal-xs-active-box-shadow;
 
                         &:hover,
                         &:active,
                         &.-active {
-                          box-shadow: inset 0 (-$tabs-solid-horizontal-xs-active-border-width) 0 $color-border-primary;
+                          box-shadow: $tabs-horizontal-xs-active-box-shadow;
                         }
                       }
                     }
@@ -564,7 +564,7 @@
 
         &.-sm > li {
           &.-active > a {
-            box-shadow: inset 0 (-$tabs-solid-horizontal-sm-active-border-width) 0 $color-border-primary;
+            box-shadow: $tabs-horizontal-sm-active-box-shadow;
 
             &.chi-dropdown__trigger {
               &:not(.-primary) {
@@ -572,12 +572,12 @@
                   &:not(.-dark) {
                     &:not(.-light) {
                       &:not(.-danger) {
-                        box-shadow: inset 0 (-$tabs-solid-horizontal-sm-active-border-width) 0 $color-border-primary;
+                        box-shadow: $tabs-horizontal-sm-active-box-shadow;
 
                         &:hover,
                         &:active,
                         &.-active {
-                          box-shadow: inset 0 (-$tabs-solid-horizontal-sm-active-border-width) 0 $color-border-primary;
+                          box-shadow: $tabs-horizontal-sm-active-box-shadow;
                         }
                       }
                     }
@@ -1041,7 +1041,7 @@
 
       &.-xs > li {
         &.-active > a {
-          box-shadow: inset 0 (-$tabs-solid-horizontal-xs-active-border-width) 0 0 $tabs-inverse-item-active-border-color;
+          box-shadow: $tabs-inverse-horizontal-xs-active-box-shadow;
         }
 
         &:not(.-active) > a:hover {
@@ -1051,7 +1051,7 @@
 
       &.-sm > li {
         &.-active > a {
-          box-shadow: inset 0 (-$tabs-solid-horizontal-sm-active-border-width) 0 0 $tabs-inverse-item-active-border-color;
+          box-shadow: $tabs-inverse-horizontal-sm-active-box-shadow;
         }
 
         &:not(.-active) > a:hover {
@@ -1129,7 +1129,7 @@
       }
 
       &.-solid {
-        box-shadow: none !important;
+        box-shadow: $tabs-inverse-solid-box-shadow;
 
         & > li {
           &.-active {
@@ -1144,7 +1144,7 @@
         }
 
         &.-border {
-          box-shadow: inset 0 (-$tabs-horizontal-border-bottom-width) 0 0 $color-grey-80 !important;
+          box-shadow: $tabs-inverse-solid-border-box-shadow;
 
           & > li {
             &:not(.-active) {

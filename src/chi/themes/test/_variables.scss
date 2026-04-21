@@ -1298,6 +1298,11 @@ $checkbox-label-line-height: $checkbox-size;
 $checkbox-icon-content: 'check';
 $checkbox-icon-font-size: $checkbox-size;
 $checkbox-icon-color: $checkbox-hover-border-color;
+$checkbox-icon-background-image: none;
+$checkbox-icon-font-family: $font-family-icon;
+$checkbox-icon-line-height: 1;
+$checkbox-icon-transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+$checkbox-checked-icon-background-image: none;
 $checkbox-checked-icon-color-disabled: $color-icon-muted;
 
 // Customize panel
@@ -2629,6 +2634,12 @@ $tabs-solid-horizontal-lg-active-border-width: 0.25rem;
 $tabs-solid-horizontal-md-active-border-width: 0.25rem;
 $tabs-solid-horizontal-sm-active-border-width: 0.125rem;
 $tabs-solid-horizontal-xs-active-border-width: 0.125rem;
+$tabs-horizontal-xs-active-box-shadow: inset 0 (-$tabs-solid-horizontal-xs-active-border-width) 0 $color-border-primary;
+$tabs-horizontal-sm-active-box-shadow: inset 0 (-$tabs-solid-horizontal-sm-active-border-width) 0 $color-border-primary;
+$tabs-inverse-horizontal-xs-active-box-shadow: inset 0 (-$tabs-solid-horizontal-xs-active-border-width) 0 0 $tabs-inverse-item-active-border-color;
+$tabs-inverse-horizontal-sm-active-box-shadow: inset 0 (-$tabs-solid-horizontal-sm-active-border-width) 0 0 $tabs-inverse-item-active-border-color;
+$tabs-inverse-solid-box-shadow: none !important;
+$tabs-inverse-solid-border-box-shadow: inset 0 (-$tabs-horizontal-border-bottom-width) 0 0 $color-grey-80 !important;
 $tabs-solid-horizontal-padding: 0.5rem 1rem;
 $tabs-solid-opacity-disabled: 1;
 $tabs-solid-outline-focus-visible: none;
